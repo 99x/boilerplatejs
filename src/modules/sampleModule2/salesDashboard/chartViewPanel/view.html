@@ -1,0 +1,44 @@
+<div id="salesInfo-div">
+    <div id="chart-div" >
+		<div id="chart-placeholder"  data-bind="flotChart: chartData(), visible:selectedYear"></div>
+	</div>
+	<div id="table-div" data-bind="visible:tableEnabled">
+		<!-- Table markup-->
+
+		<table id="table-salesinfo">
+
+			<!-- Table header -->
+
+			<thead>
+				<tr>
+					<th scope="row" id="table-header" colspan="2"><strong data-bind="text: selectedDept"></strong><strong> Department</strong></th>
+				</tr>
+				<tr>
+					<th scope="row" id="table-header" colspan="2">Sales for the Year <strong data-bind="text: selectedYear"></strong></th>
+				</tr>
+				<tr>
+					<th scope="col">Month</th>
+					<th scope="col">Sales</th>
+				</tr>
+			</thead>
+
+			<!-- Table footer -->
+
+			<tfoot>
+				
+			</tfoot>
+
+			<!-- Table body -->
+
+			<tbody data-bind="foreach:selectedData">
+				<tr>
+					<td data-bind="text: month"></td>
+					<td data-bind="text: sales"></td>
+				</tr>
+			</tbody>
+
+		</table>
+
+	</div>
+
+</div>

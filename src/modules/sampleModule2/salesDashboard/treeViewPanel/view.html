@@ -1,0 +1,13 @@
+<div id="treeView" data-bind="visible:moduleEnabled">
+	<ul id="salesInfo" data-bind="foreach:{data : salesInfo ,afterRender: drawTree }">
+		<li class="department">
+			<a href="#"
+			data-bind="text: name"></a>
+			<ul id="salesDept" data-bind="foreach: years">
+				<li class="years">
+					<a href="#" data-bind="text: year, click:function(data, event) { $root.yearClicked(year,$parent.name,data) }"></a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,42 @@
+<div>
+    <table id="table-salesinfo">
+        <thead>
+            <tr>
+                <th colspan="2">
+                    Departments List
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    New department name:
+                    <input class="txtbox-input " type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
+                    <button data-bind="enable: itemToAdd().length > 0, click: addItem">
+                        Add Dept
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>All departments</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select class="txtbox-input" multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems">
+                    </select>
+                </td>
+                <td>
+                    <button data-bind="click: removeSelected, enable: selectedItems().length > 0">
+                        Remove
+                    </button>
+                    <br />
+                    <button data-bind="click: sortItems, enable: allItems().length > 1">
+                        Sort
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
