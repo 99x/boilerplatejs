@@ -13,7 +13,7 @@ define(['./../settings'], function(Settings) {
 		this.imageId = ko.observable();
 		(function(id) {
 			// Getting data from JSON objects
-			$.getJSON(moduleContext.getSettings().urls.dumSvr + id + ".json", function(data) {
+			$.getJSON(moduleContext.getSettings().urls.dumSvr + id + ".json.js", function(data) {
 
 				self.pId(data.id);
 				self.firstName(data.firstName);
