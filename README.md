@@ -2,8 +2,10 @@
 
 ## Introduction ##
 
-We made boilerplate.js to take the pain out of large scale Javascript/HTML5 product development. Boilerplate.js is a collection of product engineering patterns, and a solid integration of industry-leading Javascript frameworks.
-It is NOT a website building tool OR a utility library solving just MVC. Boilerplate.js is your own startup code to kickstart next large-scale javascript product. It is just that we did some basic coding and library integrations to make your life easy!
+We wrote boilerplateJS to take the pain out of large scale Javascript/HTML5 product development. 
+* BoilerplateJS is a collection of product engineering patterns, and a solid integration of industry-leading Javascript frameworks.
+* It is NOT a website building tool OR a utility library solving just a single consern (such as MVC). 
+* BoilerplateJS is your own startup code to kickstart next large-scale javascript product. It is just that we did some basic coding and library integrations to make your life easy!
 
 
 ## Architectural Concerns - Large Scale Development ##
