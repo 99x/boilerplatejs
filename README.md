@@ -1,12 +1,12 @@
 ![BoilerplateJS - JavaScript Reference Architecture](https://github.com/ectechno/boilerplatejs/raw/master/themes/images/logo.jpg)
 
-## Why we wrote BoilerplateJS? ##
+## Why did we write BoilerplateJS? ##
 
 We made boilerplate.js to take the pain out of large scale Javascript/HTML5 product development. Boilerplate.js is a collection of product engineering patterns, and a solid integration of industry-leading Javascript frameworks.
 It is NOT a website building tool OR a utility library solving just MVC. Boilerplate.js is your own startup code to kickstart next large-scale javascript product. It is just that we did some basic coding and library integrations to make your life easy!
 
 
-## What is it it? ## 
+## What's in it? ## 
 BoilerplateJS addresses following concerns you will have in large-scale javascript development:
 
 ### How should I organize my solution structure? ###
