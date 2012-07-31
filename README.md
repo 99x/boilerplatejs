@@ -9,7 +9,7 @@ We wrote boilerplateJS to take the pain out of large scale Javascript/HTML5 prod
 
 
 ## License ##
-All code is free for commercial and non-commercial deployments and distribution. BoilerplateJS is releases under [MIT License](http://www.opensource.org/licenses/mit-license.php)
+BoilerplateJS code is free for commercial and non-commercial deployments and distribution. BoilerplateJS is releases under [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 
 ## Architectural Concerns - Large Scale Development ##
