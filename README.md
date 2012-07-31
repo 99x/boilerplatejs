@@ -8,6 +8,10 @@ We wrote boilerplateJS to take the pain out of large scale Javascript/HTML5 prod
 * BoilerplateJS is your own startup code to kickstart next large-scale javascript product. It is just that we did some basic coding and library integrations to make your life easy!
 
 
+## License ##
+All code is free for commercial and non-commercial deployments and distribution. BoilerplateJS is releases under [MIT License](http://www.opensource.org/licenses/mit-license.php)
+
+
 ## Architectural Concerns - Large Scale Development ##
 BoilerplateJS addresses following concerns you will have in large-scale javascript development:
 
