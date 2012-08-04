@@ -1,12 +1,4 @@
-﻿define([], function () {
-	
-	 /*
-    //do neccesary configurations for the thirdparty libs
-    */
-    _.templateSettings = {
-        interpolate: /\{\{(.+?)\}\}/g
-    };
-    
+﻿define(['./helpers/localizer'], function (Localizer) {
 
     var Panel = function (viewTemplate, parentEl, nls) {
         this.viewId = this.createView(viewTemplate, parentEl, nls);
@@ -34,10 +26,11 @@
         parentElement = typeof parentElement !== 'undefined' ? parentElement : $('body');
 
         //apply localization on the template
-        if(nls) {
-            var compiled = _.template(viewText);
-            viewText = compiled({nls : nls});
-        }
+        viewText = Localizer.localize(viewText, nls);
+        //if(nls) {
+        //    var compiled = _.template(viewText);
+        //    viewText = compiled({nls : nls});
+        //}
 
 		
         // create a random id for the child

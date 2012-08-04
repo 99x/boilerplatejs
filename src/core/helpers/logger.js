@@ -1,17 +1,17 @@
 ﻿define([], function() {
-	return {
-		info : function(msg) {
+	return function(){
+		this.info = function(msg) {
 			if (console) {
 				console.log(msg);
 			}
-		},
+		};
 		
-		error : function(msg, error) {
+		this.error = function(msg, error) {
 			if (console) {
                 console.log("ERROR : " + msg);
 				console.error(error);
 			}
-		}
+		};
 	};
 
 });

@@ -10,7 +10,7 @@
 * It is possible to create such hierachies by nesting contexts. Context can provide several 
 * necessary services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
 */
-define(['./helpers/mediator', './helpers/settings'], function (Mediator, Settings) {
+define(['./helpers/mediator', './helpers/settings', './helpers/storage', './helpers/localizer'], function (Mediator, Settings, Storage, Localizer) {
 
     /*
     * This is the constructor function for the context and it takes a reference to a parent
@@ -27,7 +27,6 @@ define(['./helpers/mediator', './helpers/settings'], function (Mediator, Setting
     */
     var Context = function (parentContext) {
         this.parentContext = parentContext;
-        this.objectStore = {};
         this.settings = this.parentContext ? new Settings(this.parentContext.settings) : new Settings();
         this.mediator = this.parentContext ? new Mediator(this.parentContext.mediator) : new Mediator();
     };
@@ -81,8 +80,8 @@ define(['./helpers/mediator', './helpers/settings'], function (Mediator, Setting
     * @param {key} name of the object to store
     * @param {objectToStore} object to store in
     */
-    Context.prototype.store = function (key, objectToStore) {
-        this.objectStore[key] = objectToStore;
+    Context.prototype.persistObject = function (key, objectToStore) {
+        Storage.persist(key, objectToStore);
     };
 
     /*
@@ -91,9 +90,24 @@ define(['./helpers/mediator', './helpers/settings'], function (Mediator, Setting
     * @param {key} name of the object
     * @return The stored object if found, else 'undefined'
     */
-    Context.prototype.retrieve = function (key) {
-        return this.objectStore[key];
-    }
+    Context.prototype.retreiveObject = function (key) {
+        return Storage.retreive(key);
+    };
+    
+    /*
+     * Removed the object stored in persistance store
+     * @param {key} name of the object to be removed
+     */
+     Context.prototype.removeObject = function (key) {
+         return Storage.remove(key);
+     };
+     
+     /*
+      * Set the language for the whole system. Will cause the page to refresh
+      */
+     Context.prototype.setLanguage = function (lang) {
+         return Localizer.setLanguage(lang);
+     };
 
     /*
     * If someone is interested in obtaining the parent context, this method could be used. But it is not a

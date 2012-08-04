@@ -18,6 +18,8 @@ require.config({
 	}
 });
 
+
+
 /*
  * This is the main entry to the application. This script is called from the
  * main HTML file.
@@ -39,6 +41,6 @@ require(["domReady", "./global-context" ], function(domReady, GlobalContext) {
 		 * as classes for OO programming. So below we create an instance by
 		 * calling 'new' operator on that function.
 		 */
-		new GlobalContext();
+		new GlobalContext();;
 	});
 });
