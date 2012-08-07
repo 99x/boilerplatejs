@@ -1,6 +1,6 @@
 define([], function () {
 
-    return function (moduleContext) {
+    var ViewModel = function (moduleContext) {
         this.firstName = ko.observable("hello");
         this.lastName = ko.observable("earth");
 
@@ -9,4 +9,6 @@ define([], function () {
             return this.firstName() + " " + this.lastName();
         }, this);
     };
+    
+    return ViewModel;
 });

@@ -1,31 +1,31 @@
-define([], function(){
-	
-	ko.bindingHandlers.flotChart={
-			init : function(element, valueAccessor) {
-			},
+define([], function() {
 
-			update : function(element, valueAccessor) {
-				var flotData = valueAccessor();
+	ko.bindingHandlers.flotChart = {
+		init : function(element, valueAccessor) {
+		},
 
-				var options = {
-					lines : {
-						show : true
-					},
-					points : {
-						show : true
-					},
-					xaxis : {
-						ticks : flotData.tickLabels
-					}
-				};
+		update : function(element, valueAccessor) {
+			var flotData = valueAccessor();
 
-				var data = [ {
-					"label" : flotData.label,
-					"data" : flotData.dataItems
-				} ];
+			var options = {
+				lines : {
+					show : true
+				},
+				points : {
+					show : true
+				},
+				xaxis : {
+					ticks : flotData.tickLabels
+				}
+			};
 
-				self.plot = $.plot(element, data, options);
+			var data = [ {
+				"label" : flotData.label,
+				"data" : flotData.dataItems
+			} ];
 
-			}
-	}
+			self.plot = $.plot(element, data, options);
+
+		}
+	};
 });

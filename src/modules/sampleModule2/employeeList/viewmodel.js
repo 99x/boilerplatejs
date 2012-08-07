@@ -1,6 +1,6 @@
 define(['_boiler_'], function (Boiler) {
 
-    return function (moduleContext) {
+    var ViewModel = function (moduleContext) {
         var self = this;
         this.salesPersons = ko.observableArray();
 
@@ -14,4 +14,6 @@ define(['_boiler_'], function (Boiler) {
         });
 
     };
+    
+    return ViewModel;
 });

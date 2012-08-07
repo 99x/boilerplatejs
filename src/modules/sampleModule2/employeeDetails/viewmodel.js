@@ -1,6 +1,6 @@
 define(['./../settings'], function(Settings) {
 
-	return function(moduleContext, id) {
+	var ViewModel = function(moduleContext, id) {
 
 		var self = this;
 		// Binding variables in view with blank obeservables
@@ -26,4 +26,6 @@ define(['./../settings'], function(Settings) {
 		})(id);
 
 	};
+	
+	return ViewModel;
 });

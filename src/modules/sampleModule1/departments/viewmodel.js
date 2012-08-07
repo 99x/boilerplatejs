@@ -1,6 +1,6 @@
 define([], function () {
 
-    return function (moduleContext) {
+    var ViewModel = function (moduleContext) {
 
         var self = this;
         this.itemToAdd = ko.observable('Boiler Department');
@@ -26,7 +26,7 @@ define([], function () {
             self.allItems(result);
         });
 
-
-
     };
+    
+    return ViewModel;
 });

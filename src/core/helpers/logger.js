@@ -1,5 +1,5 @@
 ﻿define([], function() {
-	return function(){
+	var Logger = function(){
 		this.info = function(msg) {
 			if (console) {
 				console.log(msg);
@@ -13,5 +13,7 @@
 			}
 		};
 	};
+	
+	return Logger;
 
 });

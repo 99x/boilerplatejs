@@ -1,5 +1,5 @@
 define(['./component'], function(Component) {
-	return function(moduleContext) {
+	var RouteHandler = function(moduleContext) {
 
 		return {
 			activate : function(parent, vals) {
@@ -9,4 +9,6 @@ define(['./component'], function(Component) {
 		};
 
 	};
+	
+	return RouteHandler;
 });

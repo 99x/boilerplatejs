@@ -1,7 +1,7 @@
 ﻿define([], function () {
 
 
-    return function (context) {
+    var DomController =  function (context) {
 
         var self = this;
         self.handles = {};
@@ -22,7 +22,9 @@
                     });
                 }
             }
-        }
+        };
 
     };
+    
+    return DomController;
 });

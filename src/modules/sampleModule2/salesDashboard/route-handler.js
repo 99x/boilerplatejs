@@ -1,13 +1,13 @@
-define(['./component', './viewmodel'], function (SplitterComponent, ViewModel) {
-    return function (moduleContext) {
+define([ './component', './viewmodel' ], function(SplitterComponent, ViewModel) {
+	var RouteHandler = function(moduleContext) {
+		
+		var vm = new ViewModel(moduleContext);
 
-        return {
-            activate: function (parentEl, vals) {
-                
-                var vm = new ViewModel(moduleContext);
-                var component = new SplitterComponent(parentEl, vm);
-            }
-        };
+		this.activate = function(parentEl, vals) {
+			new SplitterComponent(parentEl, vm);
+		};
 
-    };
+	};
+
+	return RouteHandler;
 });

@@ -25,10 +25,19 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
     * possible to define methods within the class body, we use this approach for better performance. For
     * more information read about prototypes in javascripts.
     */
-    var Context = function (parentContext) {
+    var Context = function (uniqueId, parentContext) {   	
+    	if (uniqueId) {
+    		this.id = uniqueId;
+    	} else {
+    		throw "an id must be defined for a context";
+    	}
         this.parentContext = parentContext;
         this.mediator = this.parentContext ? this.parentContext.mediator : new Mediator();
         this.settings = this.parentContext ? new Settings(this.parentContext.settings) : new Settings();
+    };
+    
+    Context.prototype.getUid = function () {
+        return this.id;
     };
 
     /*
@@ -125,13 +134,13 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
         return this.parentContext;
     };
 
-    /**
+    /*
     * Helper method to construct child contexts under this parent context.
     * Children will recieve a reference to this object through a constructor argument.
     */
     Context.prototype.loadChildContexts = function (children) {
-        for (key in children) {
-            var ChildContextClass = children[key];
+        for (var i = 0; i < children.length; i++) {
+        	var ChildContextClass = children[i];
             new ChildContextClass(this); //initializes the module
         }
     };

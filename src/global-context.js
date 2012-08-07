@@ -10,19 +10,21 @@
  * and classes ('Boiler' in the case), whereas object instances ('settings' and 'modules') 
  * are represented with camelCase variable names.
  */
-define(["_boiler_", "./settings", "./modules/module-contexts"], function (Boiler, settings, moduleContexts) {
+define(["_boiler_", "./settings", "./modules/modules"], function (Boiler, settings, moduleContexts) {
 
     /*
      * Following is our function representing GlobalContext 'class'. Others can import this 
      * script as a AMD module and they will obtain the function to be used as a 'class' in 
      * creating instances.
      */
-    return function () {
+    var GlobalContext = function () {
         //Lets use core Boiler classes to create our global context instance
-        var globalContext = new Boiler.Context();
+        var globalContext = new Boiler.Context("GlobalModule");
         //now lets add settings, which are to be available as global settings
         globalContext.addSettings(settings);
         //here we load the sub modules of the global context
         globalContext.loadChildContexts(moduleContexts);
     };
+    
+    return GlobalContext;
 });

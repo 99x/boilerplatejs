@@ -1,6 +1,6 @@
 define(['./chartBinding'], function(chartBinding) {
 
-	return function(moduleContext) {
+	var ViewModel = function(moduleContext) {
 		var self = this;
 
 		this.plot = null;
@@ -10,7 +10,7 @@ define(['./chartBinding'], function(chartBinding) {
 					function(result) {
 						self.salesInfo(result);
 					});
-		}
+		};
 
 		this.selectedYear = ko.observable();
 		this.selectedDept = ko.observable();
@@ -50,14 +50,16 @@ define(['./chartBinding'], function(chartBinding) {
 				},
 				"plugins" : [ "themes", "html_data" ]
 			});
-		}
+		};
 
 		this.yearClicked = function(years, department, data) {
 			self.tableEnabled(true);
 			self.selectedYear(years);
 			self.selectedDept(department);
 			self.selectedData(data.values);
-		}
+		};
 
 	};
+	
+	return ViewModel;
 });
