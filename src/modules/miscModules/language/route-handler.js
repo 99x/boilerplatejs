@@ -13,6 +13,9 @@ define(['_boiler_', 'text!./view.html' ], function(Boiler, template) {
 					moduleContext.setLanguage("sv");
 				});
 
+				$('#clearLang').click(function (event) { 
+					moduleContext.clearLanguage();
+				});
 			}
 		};
 	};

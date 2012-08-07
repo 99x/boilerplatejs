@@ -30,6 +30,11 @@
 		Storage.persist("user-language", locale);
 		location.reload(); 
 	};
+	
+	Localizer.clearLanguage = function() {
+		Storage.remove("user-language");
+		location.reload(); 
+	};
 
 	return Localizer;
 

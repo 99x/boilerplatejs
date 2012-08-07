@@ -27,8 +27,8 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
     */
     var Context = function (parentContext) {
         this.parentContext = parentContext;
+        this.mediator = this.parentContext ? this.parentContext.mediator : new Mediator();
         this.settings = this.parentContext ? new Settings(this.parentContext.settings) : new Settings();
-        this.mediator = this.parentContext ? new Mediator(this.parentContext.mediator) : new Mediator();
     };
 
     /*
@@ -108,6 +108,14 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
      Context.prototype.setLanguage = function (lang) {
          return Localizer.setLanguage(lang);
      };
+     
+     /*
+      * Clear any language settings stored. Falls back to browser language detection
+      */
+     Context.prototype.clearLanguage = function () {
+         return Localizer.clearLanguage();
+     };
+     
 
     /*
     * If someone is interested in obtaining the parent context, this method could be used. But it is not a

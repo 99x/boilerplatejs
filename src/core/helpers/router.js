@@ -1,4 +1,4 @@
-﻿define([ ], function() {
+﻿define([], function() {
 
 	var Router = function() {
 		var router = crossroads.create();

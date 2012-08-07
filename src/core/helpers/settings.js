@@ -1,6 +1,6 @@
 ﻿define([], function() {
 	
-	return function(parentSettings) {
+	var Settings = function(parentSettings) {
 		
 		var isSettingsChained = true;
 		var localSettings = {};
@@ -23,4 +23,6 @@
 		};
 		
 	};
+	
+	return Settings;
 });

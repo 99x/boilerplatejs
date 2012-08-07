@@ -1,8 +1,8 @@
-define(['_boiler_', 'text!./view.html', './viewmodel'],
-		function (Boiler, template, ViewModel) {
+define(['_boiler_', 'text!./view.html'],
+		function (Boiler, template) {
 
-		    return function (moduleContext, parent) {
-		        var vm = new ViewModel(moduleContext);
+		    return function (moduleContext, parent, vm) {
+		        
 		        var panel = new Boiler.UiPanel(template, parent);
 		        ko.applyBindings(vm, panel.getDomElement());
 		    }
