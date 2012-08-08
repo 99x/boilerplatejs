@@ -14,6 +14,7 @@ define(function (require) {
      */
     
     /**
+	@type Script
 	@namespace _boiler_
 	**/
     return {
