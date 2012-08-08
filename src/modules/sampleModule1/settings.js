@@ -1,6 +1,6 @@
 define({
     urls: {
-        departments: "./dummyServer/departments.json.js"
+        departments: "./server/departments.json.js"
     },
 
 });

@@ -8,11 +8,19 @@ body {
 /** Main  Header Styles **/
 header{
 	padding-bottom:36px;
-	background: url(./../images/menu_bar.gif) bottom left repeat-x;
+	background: url(./menu_bar.gif) bottom left repeat-x;
 }
 
 header img{
 	margin: 30px 0 0 20px;
+}
+
+a.site-logo {
+	background: url(./logo.jpg) no-repeat;
+	display:block;
+	width:250px;
+	height:70px;
+	margin: 30px 0px 0px 25px;
 }
 
 /** Side Menu Styles **/
@@ -158,6 +166,7 @@ td, th {
 	padding-left:25px;
 }
 
+/*
 .lang .en{
 	background:url(./../images/lang/en.png) no-repeat;
 }
@@ -165,7 +174,7 @@ td, th {
 .lang .sv{
 	background:url(./../images/lang/sv.png) no-repeat;
 }
-
+*/
 .salesinfo img {
 	display: block;
 	margin-left: auto;

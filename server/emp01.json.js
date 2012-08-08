@@ -5,5 +5,5 @@
 	"age" : 21,
 	"email":"bob@99x.lk",
 	"averageSales" : 1000,
-	"imageId":"./dummyServer/imgEmp01.png"
+	"imageId":"./server/imgEmp01.png"
 }
