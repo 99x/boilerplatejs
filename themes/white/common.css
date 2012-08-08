@@ -1,524 +1,181 @@
-/*styles addressing common DOM elements*/
 body {
-	font: normal 11px "Trebuchet MS";
+	font: normal 12px "Trebuchet MS";
 	color: #111111;
 	margin: 0px !important;
 	padding: 0px !important;
-	border-top: 6px solid #608ecb;
 }
 
-td, div, p, input, select, textarea {
-	font: normal 11px "Trebuchet MS";
-	color: #111111;
+/** Main  Header Styles **/
+header{
+	padding-bottom:36px;
+	background: url(./../images/menu_bar.gif) bottom left repeat-x;
 }
 
-td, div, p {
-	line-height: 17px;
+header img{
+	margin: 30px 0 0 20px;
 }
 
-img {
-	border: 0px;
+/** Side Menu Styles **/
+aside {
+	width: 23%;
+	float: left;
+	-webkit-box-shadow: 2px -1px 4px rgba(120, 120, 120, 0.75);
+	-moz-box-shadow: 2px -1px 4px rgba(120, 120, 120, 0.75);
+	box-shadow: 2px -1px 4px rgba(120, 120, 120, 0.75);
+	min-height: 500px;
 }
 
-a:link, a:visited, a:active {
-	text-decoration: underline;
-	color: #0153bc;
+aside ul{
+	padding-top:10px;
+	padding-left:20px;
 }
 
-a:hover {
-	text-decoration: underline;
-	color: #000000;
-}
-
-/*page body and header*/
-.bodyWrapper {
-	width: 980px;
-	margin: 0px auto 0px auto;
-}
-
-.appcontent {
-    position: relative;
-    top: -130px;
-    left: 200px;
-}
-
-#salesInfo-div {
-position: relative;
-left: -230px;
-}
-
-.mainMenu {
-    width:200px;
-}
-
-.header {
-	border-bottom: 4px solid #608ecb;
-	margin-bottom: 1px;
-	padding: 1px;
-}
-
-.logo {
-	padding: 10px 0px 10px 0px;
-	text-align: center;
-}
-
-.content {
-	border-top: 1px solid #e5e5e5;
-	padding: 10px 0px;
-}
-
-.paddedText {
-	padding: 0px 10px;
-}
-
-.title {
-	background-image: url(../images/titleBack.jpg);
-	background-repeat: repeat-x;
-	border: 1px solid #cdcdcd;
-	font: bold 11px Tahoma;
-	color: #000000;
-	height: 19px;
-	padding: 8px 10px 2px 10px;
-	margin-bottom: 15px;
-}
-
-.gridTitle {
-	background-image: url(../images/titleBack.jpg);
-	background-repeat: repeat-x;
-	border: 1px solid #cdcdcd;
-	font: bold 11px Tahoma;
-	color: #000000;
-	height: 19px;
-	padding: 8px 10px 2px 10px;
-	margin-bottom: 1px;
-}
-
-.toolbar {
-	padding-top: 4px;
-	clear: both;
-}
-
-.smallBoldText {
-	font: bold 10px Tahoma;
-}
-
-/*login screen*/
-.userLoginCaption {
-	background-image: url(../images/userLoginBack.jpg);
-	background-repeat: no-repeat;
-	width: 122px;
-	height: 39px;
-	padding: 42px 0px 0px 0px;
-	font: bold 10px Tahoma;
-	color: #ffffff;
-	background-position: 0px 25px;
-	text-align: center;
-}
-
-.loginControlPadding {
-	padding-top: 36px;
-	vertical-align: top;
-	padding-left: 12px;
-	font: bold 10px Tahoma;
-}
-
-.loginControlPadding input {
-	margin-top: 4px;
-}
-
-/*common widths and paddings*/
-.width125 {
-	width: 125px;
-}
-
-.padding35x2 {
-	padding: 0px 35px;
-}
-
-/*form elements*/
-.txtBox {
-	border: 1px solid #c6c6c6;
-	height: 18px;
-}
-
-.smallTxtBox {
-	border: 1px solid #e5e5e5;
-	height: 14px;
-	font-size: 10px;
-	color: #585858;
-}
-
-.btnGenaral {
-	background-color: #000000;
-	border: 1px solid #000000;
-	color: #ffffff;
-	font: bold 10px Tahoma;
-	height: 22px;
-}
-
-.btnLight {
-	background-color: #b8b8b8;
-	border: 1px solid #a8a8a8;
-	color: #ffffff;
-}
-
-.formTable td {
-	vertical-align: top;
-	text-align: left;
-}
-
-.formTable
-
-input
-[
-type
-=
-text
-]
-,
-.formTable
-
-textarea
-,
-formTable
-
-input
-[
-type
-=
-email
-]
-,
-{
-border
-:
-1px
-
-solid
-
-#c6c6c6
-;
-
-height
-:
-18px;
-
-}
-.formTable {
-	padding: 0px 0px 0px 20px;
-}
-/*popup button panel*/
-.btnPanel {
-	text-align: right;
-	padding: 10px 0px 10px 0px;
-}
-
-/*menus*/
-.leftMenu {
-	margin: 0px;
-	padding: 0px;
-	border: 1px solid #dbdbde;
-	border-bottom: 0px solid #dbdbde;
-}
-
-.leftMenu li {
+aside li{
 	list-style: none;
 }
 
-.leftMenu li a:link, .leftMenu li a:visited, .leftMenu li a:active {
-	background-image: url(../images/frontPageButtonBack.jpg);
-	background-repeat: no-repeat;
-	height: 15px;
-	width: 123px;
-	padding: 7px 5px 6px 25px;
+aside li a{
+	font-size:12pt;
+	font-weight:bold;
+}
+
+li a{
+	color: #666;
 	text-decoration: none;
-	color: #333333;
+	line-height: 1.5em;
+	text-shadow: 0 1px 0 white;
+	margin: 2px 0;
+}
+
+/** Hyperlink Styles **/
+a, a:visited {
+	color:#5E5E5E;
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+/** Generic Module View Styles **/
+article{
+	border: 1px solid #9BA0AF;
+	border-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin: 10px 20px;
+}
+
+article header{
+	padding:0;
+	height: 38px;
+	background: #e2e2e2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 96%, #bababa 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(96%,#fefefe), color-stop(100%,#bababa)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 96%,#bababa 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 96%,#bababa 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 96%,#bababa 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 96%,#bababa 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#bababa',GradientType=0 ); /* IE6-9 */
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+article header h1,h2,h3,h4,h5,h6{
+	text-shadow: 0 1px 0 white;
+	padding : 8px;
+	margin: 0px 18px;
+}
+
+article div{
+	padding:5px;
+}
+
+
+/** Generic Table Styles **/
+table { 
+	width:100%;
+	border-collapse: collapse; 
+}
+
+tr:nth-of-type(odd) { 
+	background: #eee; 
+}
+th { 
+	background: #333; 
+	color: white; 
+	font-weight: bold; 
+}
+td, th { 
+	padding: 6px; 
+	border-bottom: 1px dotted #ccc;
+	text-align: left; 
+}
+
+/** Main Content and Positioning  Styles **/
+.main-content{
+	width:75%;
+	padding-left:10px;
+	float:left;
+}
+
+.width_quarter {
+	width: 25%;
+	margin-right: 0;
+}
+
+.width_3_quarter {
+	width: 70%;
+	margin-right: 0;
+}
+
+.left{
+	float:left;
+}
+
+.right{
+	float:right;
+}
+
+
+/** Language Bar Styles **/
+.lang{
+	margin-right:30px;
+	margin-top:50px;
+	float:right;
+}
+
+.lang li{
+	float:left;
+	padding-right:20px;
+	list-style: none;
+}
+
+.lang li a{
+	font-size:10pt;
+	padding-left:25px;
+}
+
+.lang .en{
+	background:url(./../images/lang/en.png) no-repeat;
+}
+
+.lang .sv{
+	background:url(./../images/lang/sv.png) no-repeat;
+}
+
+.salesinfo img {
 	display: block;
-	border-bottom: 1px solid #dbdbde;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.leftMenu li a:hover {
-	background-image: url();
-	background-repeat: no-repeat;
-	height: 15px;
-	width: 123px;
-	padding: 7px 5px 6px 25px;
-	text-decoration: none;
-	color: #ffffff;
-	display: block;
-	border-bottom: 1px solid #dbdbde;
-}
-
-.topMenu {
-	margin: 0px;
-	padding: 0px;
-	float: left;
-	border: 1px solid #cdcdcd;
-	background-image: url(../images/menuBack.jpg);
-	background-repeat: repeat-x;
-	width: 100%;
-}
-
-.topMenu li {
-	display: inline;
-	float: left;
-}
-
-.topMenu li a:link, .topMenu li a:visited, .topMenu li a:active {
-	display: block;
-	padding: 8px 27px 8px 27px;
-	background-image: url(../images/menuBack.jpg);
-	background-repeat: repeat-x;
-	font: bold 11px Tahoma;
-	border-right: 1px solid #e7e7e7;
-	border-left: 1px solid #ffffff;
-	color: #000000;
-	text-decoration: none;
-}
-
-.topMenu li a:hover {
-	display: block;
-	padding: 8px 27px 8px 27px;
-	background-image: url(../images/menuHoverBack2.jpg);
-	background-repeat: repeat-x;
-	color: #ffffff;
-	border-right: 1px solid #e7e7e7;
-	border-left: 1px solid #ffffff;
-	text-decoration: none;
-}
-
-.topMenuSelected a {
-	display: block;
-	padding: 8px 27px 8px 27px;
-	background-image: url(../images/menuHoverBack.jpg) !important;
-	background-repeat: repeat-x;
-	color: #ffffff !important;
-	border-right: 1px solid #e7e7e7;
-	border-left: 1px solid #ffffff;
-	text-decoration: none;
-}
-
-.topSubMenu {
-	margin: 0px;
-	padding: 0px;
-	float: left;
-	height: 25px;
-	background-image: url(../images/subMenuback.jpg);
-	background-repeat: repeat-x;
-	width: 100%;
-	border-left: 1px solid #cdcdcd;
-	border-right: 1px solid #cdcdcd;
-	display: none;
-}
-
-.topSubMenu li {
-	display: inline;
-	float: left;
-}
-
-.topSubMenu li a:link, .topSubMenu li a:visited, .topSubMenu li a:active {
-	display: block;
-	padding: 5px 12px 6px 12px;
-	background-image: url(../images/subMenuback.jpg);
-	background-repeat: repeat-x;
-	font: normal 11px Tahoma;
-	color: #000000;
-	text-decoration: none;
-}
-
-.topSubMenu li a:hover {
-	display: block;
-	padding: 5px 12px 10px 12px;
-	background-image: url(../images/subMenuHoverSelected2.jpg);
-	background-position: center top;
-	color: #ffffff;
-	text-decoration: none;
-}
-
-.topSubMenuSelected a {
-	background-image: url(../images/subMenuHoverSelected.jpg) !important;
-	background-position: center top !important;
-	color: #ffffff !important;
-	padding: 5px 12px 10px 12px !important;
-	background-repeat: no-repeat !important;
-}
-
-#moreMenuIcon {
-	margin-left: 40px;
-	position: absolute;
-}
-
-#moreMenuIcon img {
-	margin-top: 7px;
-	cursor: pointer;
-}
-
-#moreMenuIcon ul {
-	position: absolute;
-	border: 1px solid #cdcdcd !important;
-	background-color: #ffffff !important;
-	margin-left: -98px;
-	margin-top: 7px;
-	padding: 0px !important;
-	display: none;
-}
-
-#moreMenuIcon ul li {
-	display: block;
-	clear: left;
-	padding: 0px !important;
-}
-
-#moreMenuIcon a {
-	padding: 5px 12px 6px 12px !important;
-}
-
-/*error messages*/
-.errorMsgBottom {
-	background-image: url(../images/errorDown.png);
-	background-repeat: no-repeat;
-	padding: 7px 6px 4px 6px;
-	color: #ffffff;
-	font: normal 11px "Trebuchet MS";
-	position: absolute;
-}
-
-.errorMsgSide {
-	background-image: url(../images/errorSide.png);
-	background-repeat: no-repeat;
-	padding: 6px 6px 6px 9px;
-	color: #ffffff;
-	font: normal 11px "Trebuchet MS";
-	position: absolute;
-}
-
-div.message {
-
-}
-
-div.error {
-	display: inline-block;
-	background-image: url(../images/errorDown.png);
-	background-repeat: no-repeat;
-	padding: 7px 6px 4px 9px;
-	color: #ffffff;
-	font: normal 11px "Trebuchet MS";
-	position: absolute;
-}
-/*hide kendo grouping header*/
-.k-grid-pager, .k-grouping-header {
-	display: none !important;
-}
-
-.k-header .k-link {
-	text-decoration: none;
-	font-family: Tahoma;
-	font-weight: bold;
-}
-
-.k-grid-content table td {
-	border-bottom: 1px solid #efefef;
-}
-
-/*data tabels grid*/
-.dataTables_length {
-	width: 49%;
-	float: left;
-	color: #000000;
-	padding: 2px 0px 2px 10px;
-}
-
-.dataTables_filter {
-	width: 49%;
-	float: right;
-	text-align: right;
-	color: #000000;
-	padding: 2px 0px 2px 0px;
-}
-
-.dataTables_filter input {
-	margin-right: 0px;
-}
-
-.dataTables_wrapper {
-	border-bottom: 1px solid #cdcdcd;
-}
-
-.dataTableGrid {
-	width: 100%;
+.clear {
 	clear: both;
-	border-collapse: collapse;
 }
 
-.dataTableGrid th, .dataTableGrid td {
-	padding: 6px 6px 5px 6px;
-	text-align: left;
-	border: 1px solid #cdcdcd;
-}
-
-.dataTableGrid th {
-	border-bottom: 1px solid #cdcdcd;
-	border-top: 1px solid #cdcdcd;
-	background-image: url(../images/gridHeader.jpg);
-	background-repeat: repeat-x;
-	font-family: Tahoma;
-}
-
-.odd td, .even td {
-	border-bottom: 1px solid #ffffff !important;
-}
-
-.even {
-	background-color: #f4f4f4;
-}
-
-.dataTables_info {
-	padding: 5px;
-	width: 50%;
-	float: left;
-}
-
-.dataTables_paginate {
-	height: 30px;
-	float: right;
-	text-align: right;
-	color: #000000;
-	width: auto;
-}
-
-.paginate_button {
-	display: inline-block;
-	border: 1px solid #cdcdcd;
-	color: #333333;
-	margin: 4px 0px 0px 4px;
-	padding: 0px 4px;
-	cursor: pointer;
-}
-
-.paginate_active {
-	display: inline-block;
-	background-color: #666666;
-	border: 1px solid #666666;
-	color: #ffffff;
-	margin: 4px 0px 0px 4px;
-	padding: 0px 4px;
-}
-
-.first, .previous, .next, .last {
-	background-color: #f1f1f1;
-}
-
-.paginate_button_disabled {
-	color: #d3d3d3;
-	border: 1px solid #d3d3d3;
-	cursor: default;
-}
-
-.rowSelected {
-	background-image: url(../images/gridSelectedBack.jpg);
-	background-repeat: repeat-x;
-	color: #ffffff;
-}
 
 /*salesinfo panel*/
 #panel {
@@ -529,56 +186,12 @@ div.error {
 	width: 600px;
 	float: right;
 }
+
 #treeView {
-	width: 130px;
+	width: 90%;
 	float: left;
 }
 
-/* salesinfo table view*/
-#table-div {
-	width: auto;
-	height: auto;
-	float: right;
-}
-#table-salesinfo {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-	font-size: 12px;
-	width: 400px;
-	text-align: center;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-#table-salesinfo th {
-	padding: 8px;
-	font-weight: normal;
-	font-size: 13px;
-	color: #039;
-	background: #b9c9fe;
-}
-#table-salesinfo th:first-child {
-	-moz-border-radius: 6px 0 0 0;
-	-webkit-border-radius: 6px 0 0 0;
-	border-radius: 6px 0 0 0;
-}
-#table-salesinfo th:last-child {
-	-moz-border-radius: 0 6px 0 0;
-	-webkit-border-radius: 0 6px 0 0;
-	border-radius: 0 6px 0 0;
-}
-#table-salesinfo th:only-child {
-	-moz-border-radius: 6px 6px 0 0;
-	-webkit-border-radius: 6px 6px 0 0;
-	border-radius: 6px 6px 0 0;
-}
-#table-salesinfo td {
-	padding: 8px;
-	background: #e8edff;
-	border-top: 1px solid #fff;
-	color: #669;
-}
-#table-salesinfo tr:hover td {
-	background: #d0dafd;
-}
 
 /*Salesinfo chart view*/
 #chart-div {
@@ -586,91 +199,15 @@ div.error {
 	height: auto;
 }
 
+#chart-div table{
+	width:auto;
+}
+
 #chart-placeholder {
 	height: 200px;
 }
 
-/* Portal View */
-
-/* Portal Header */
-.portal-header {
-	width: 980px;
-	height: 73px;
-	padding: 3px;
-	margin: 0px auto 0px auto;
-	background: url(./../images/logo.jpg) top left no-repeat;
-	border-radius: 0px 0px 5px 5px;
-	-moz-border-radius: 0px 0px 5px 5px;
-	-webkit-border-radius: 0px 0px 5px 5px;
-	border: 1px solid #164B80;
-}
-/* Main Portal View */
-.main-portal {
-	width: 980px;
-	margin: 0px auto 0px auto;
-}
-/* Portlet View */
-.scriptportlet-dept, .salespersonlist, .salesperson-details {
-	margin: 10px;
-	padding: 10px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid #164B80;
-	width: 400px;
-}
-
-/* Textbox View */
-.txtbox-input {
-	background-image: url(./../images/form_bg.jpg);
-	background-repeat: repeat-x;
-	border: 1px solid #d1c7ac;
-	width: 150px;
-	color: #333333;
-	padding: 3px;
-	margin-right: 4px;
-	margin-bottom: 8px;
-	font-family: tahoma, arial, sans-serif;
-}
-/* Button View */
-button.btnPortal {
-	background-color: #eeeeee;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
-	background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
-	background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-	background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-	background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
-	background-image: linear-gradient(top, #eeeeee, #cccccc);
-	border: 1px solid #ccc;
-	border-bottom: 1px solid #bbb;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	color: #333;
-	font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-	line-height: 1;
-	padding: 4px 0;
-	text-align: center;
-	text-shadow: 0 1px 0 #eee;
-	width: 100px;
-}
-button.btnPortal:hover {
-	background-color: #dddddd;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
-	background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
-	background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
-	background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
-	background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
-	background-image: linear-gradient(top, #dddddd, #bbbbbb);
-	border: 1px solid #bbb;
-	border-bottom: 1px solid #999;
-	cursor: pointer;
-	text-shadow: 0 1px 0 #ddd;
-}
-button.btnPortal:active {
-	border: 1px solid #aaa;
-	border-bottom: 1px solid #888;
-	-webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
-	-moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
-	box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+#salesInfo-div {
+	position: relative;
+	left: -230px;
 }
