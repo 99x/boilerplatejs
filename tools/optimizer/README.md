@@ -1,3 +1,5 @@
+Requirements - To use the optimizer Node.js (0.4.0 or later) should be installed.
+
 Optimizing the project requires Java 1.6 or later.
 
 To optimize the project,
