@@ -12,6 +12,10 @@ define(function (require) {
      * We use 'require' function from requirejs inside the object to load appropriate core classes
      * from the respective AMD modules.
      */
+    
+    /**
+	@namespace _boiler_
+	**/
     return {
         Context : require("./core/context"),
         DomController : require("./core/dom-controller"),

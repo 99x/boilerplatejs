@@ -1,4 +1,4 @@
-﻿/*
+﻿/**
 * Context is one of the most important classes in boilerplate. This represents a sandboxed environment
 * for writing group of functionalities. Contexts can be nested to create hierachies for complex 
 * implementations. 
@@ -9,7 +9,10 @@
 *
 * It is possible to create such hierachies by nesting contexts. Context can provide several 
 * necessary services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
-*/
+
+@class context
+@constructor
+**/
 define(['./helpers/mediator', './helpers/settings', './helpers/storage', './helpers/localizer'], function (Mediator, Settings, Storage, Localizer) {
 
     /*
@@ -25,6 +28,14 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
     * possible to define methods within the class body, we use this approach for better performance. For
     * more information read about prototypes in javascripts.
     */
+   
+   /**
+	* context class
+	* @class context
+	* @constructor
+	* @param {Object} uniqueId
+	* @param {Object} parentContext reference to a parent context    
+	*/
     var Context = function (uniqueId, parentContext) {   	
     	if (uniqueId) {
     		this.id = uniqueId;

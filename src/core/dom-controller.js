@@ -1,6 +1,11 @@
 ﻿define([], function () {
 
-
+	/**
+	* dom-controller class
+	* @class dom-controller
+	* @constructor
+	* @param {Object} context 
+	*/
     var DomController =  function (context) {
 
         var self = this;
