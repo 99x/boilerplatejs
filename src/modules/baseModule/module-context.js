@@ -3,7 +3,7 @@ define(['_boiler_', './mainMenu/route-handler', './language/route-handler'], fun
     var BaseModuleContext = function(globalContext) {
         var moduleContext = new Boiler.Context("baseModule", globalContext);
         var controller = new Boiler.DomController(moduleContext);
-        controller.addRoutes({ "mainMenu": MainMenuRouteHandler, "language": LanguageRouteHandler });
+        controller.addRoutes({ "main-menu": MainMenuRouteHandler, "language": LanguageRouteHandler });
         controller.start();
     };
     

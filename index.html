@@ -1,5 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
+
 <head>
     <title>BoilerplateJS</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,18 +16,23 @@
     <script src="./libs/pubsub/pubsub-20120708.js" type="text/javascript" charset="utf-8"></script>
     <script src="./libs/jquery/jstree/jstree-1.0-rc3.js" type="text/javascript" charset="utf-8"></script>
     <script src="./libs/flot/jquery.flot.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./libs/flot/jquery.flot.resize.js" type="text/javascript" charset="utf-8"></script>
     <script src="./libs/amplifystore/amplify.store.min.1.1.0.js" type="text/javascript" charset="utf-8"></script>
     
- </head>
+</head>
 <body>
-    <div class="bodyWrapper">
-        <div class="portal-header" ></div>
-        <div class="content">
-        	<div class="language"></div>
-            <div class="mainMenu"></div>
-            <div class="appcontent"></div>
-        </div>
-    </div>
+	<header>
+		<section class="language"></section> 
+		<a href="#"><img alt="BolerplateJS" class="site-logo" src="themes/images/logo.jpg"/></a>
+	</header>
+	<aside>
+		<section class="main-menu"></section>
+	</aside>
+		<section class="main-content">
+	        <div class="content">
+	            <div class="appcontent"></div>
+	        </div>
+	    </section>
     <script type="text/javascript" data-main="src/main" src="./libs/require/require.js"></script>
 </body>
 </html>

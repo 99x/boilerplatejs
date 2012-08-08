@@ -1,0 +1,219 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body {
+	background-color: white;
+	margin: 30px 80px 100px 80px;
+	font: 13px normal Helvetica, Arial, sans-serif;
+	color: #454545;
+}
+
+article, aside, footer, header, hgroup, menu, nav, section {
+		display: block; 
+}
+
+a, a:visited {
+	color:#5E5E5E;
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+
+p{
+	line-height:1.5em;
+	padding-bottom:1em;
+}
+
+img{
+	border-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #454545;
+	font-family: 13px normal Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+		
+footer{
+	color: #666666;
+	font-size:12px;
+	text-align: center;
+}
+
+article{
+	border: 1px solid #9BA0AF;
+	border-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin: 10px 20px;
+}
+
+article header{
+	height: 38px;
+	background: #e2e2e2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 96%, #bababa 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(96%,#fefefe), color-stop(100%,#bababa)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 96%,#bababa 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 96%,#bababa 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 96%,#bababa 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 96%,#bababa 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#bababa',GradientType=0 ); /* IE6-9 */
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+article header h1,h2,h3,h4,h5,h6{
+	text-shadow: 0 1px 0 white;
+	padding : 8px;
+	margin: 0px 18px;
+}
+
+table { 
+	width:100px;
+	border-collapse: collapse; 
+}
+
+tr:nth-of-type(odd) { 
+	background: #eee; 
+}
+th { 
+	background: #333; 
+	color: white; 
+	font-weight: bold; 
+}
+td, th { 
+	padding: 6px; 
+	border-bottom: 1px dotted #ccc;
+	text-align: left; 
+}
+
+
+.width_3_quarter {
+	width: 70%;
+	margin-right: 0;
+	float:right;
+}
+
+.width_quarter {
+	width: 25%;
+	margin-right: 0;
+	float:left;
+}
+
+.clear {
+	clear: both;
+}
+
+article table{
+		width : 100%;
+}
+
+#appcontent{
+	background-color: #fafafa;
+	margin-bottom:10px;
+	padding: 10px 10px 60px 10px;
+	border-bottom: 1px solid #D0D0D0;
+	border-left: 1px solid #D0D0D0;
+	border-right: 1px solid #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+}
+
+
+
+
+
+/* Main Menu Styles*/
+.menu{
+      font: 13px/27px Arial,sans-serif;
+      color:#878787;
+      height:30px;
+}
+.menu a:hover{
+    background-color:#e8e8e8;
+}
+.menu a {
+    text-decoration: none;
+    padding: 4px 8px 7px;
+    color:#666666;
+    outline:none;
+}
+.menu ul{
+    list-style: none;
+    margin:0;
+    padding:0 0 0 10px;
+}
+.menu ul li{
+    padding:0;
+    float:left;
+    
+}
+.menu ul li ul li{
+    padding:0;
+    float:none;
+    margin: 0 0 0 0px;
+    width:100%;
+}
+.menu ul li ul{
+    position: absolute;
+    border: 1px solid #ececec;
+    box-shadow: 0 1px 5px #D0D0D0;
+    margin-top: -1px;
+    display:none;
+    padding: 0px 16px 0px 0;
+}
+.active ul{
+    display:block !important; 
+}
+.active a{
+    background-color: #fafafa;
+    border: 1px solid #ececec;
+    border-bottom: none;
+    box-shadow: 0 -1px 5px #D0D0D0;
+    display: block;
+    height: 29px;
+    padding: 0 8px 0 8px;
+    position:relative;
+    z-index: 1;
+}
+.active a:hover{
+    background-color:white;
+}
+.active ul a:hover{
+    background-color:#e8e8e8;
+}
+
+.active ul a{
+    border: 0 !important;
+    box-shadow: 0 0 0 #D0D0D0;
+    border:0;
+    width: 100%;
+}
+.arrow {
+    border-color: #3366CC transparent transparent;
+    border-style: solid dashed dashed;
+    margin-left: 5px;
+    position: relative;
+    top: 10px;
+}
+
+#chart-div table{
+	width:auto;
+}
+
+/*Salesinfo chart view*/
+#chart-div {
+	width: inherit;
+	height:auto;
+	margin: 5px;
+}
+
+#chart-placeholder {
+	height: 200px;
+}
