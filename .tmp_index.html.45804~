@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!--meta http-equiv="cache-control" content="no-cache" /-->
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <!--link href="./themes/white/common.css" type="text/css" rel="stylesheet" /-->
+    <link href="./themes/white/common.css" type="text/css" rel="stylesheet" />
     <script src="./libs/jquery/jquery-min.js" type="text/javascript" charset="utf-8"></script>
     <script src="./libs/knockout/knockout-2.1.0pre.js" type="text/javascript" charset="utf-8"></script>
     <script src="./libs/underscore/underscore-1.3.3.js" type="text/javascript" charset="utf-8"></script>
@@ -22,7 +22,6 @@
 </head>
 <body>
 	<header>
-		<section class="theme"></section> 
 		<section class="language"></section> 
 		<a href="#" class="site-logo"></a>
 	</header>

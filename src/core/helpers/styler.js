@@ -1,23 +1,39 @@
 ﻿define([], function() {
 
-	var Styler = function() {};
+	var Styler = function() {
+	};
 
+	Styler.attachCssLink = function(elementId, css) {
+		var style = document.getElementById(elementId);
+		if (!style) {
+			var style = document.createElement("link");
+			style.type = "text/css";
+			style.rel = "stylesheet";
+			style.href = "style.css";
+		}
 
-	Styler.linkCss = function (styleText) {
-        var head = document.getElementsByTagName('head')[0]; // Get head element
+		document.getElementsByTagName("head")[0].appendChild(ss);
+	};
 
-        var style = document.createElement('style'); // Create style Node
-        style.type = 'text/css';
+	Styler.attachCssText = function(elementId, css) {
 
-        var cssRules = document.createTextNode(styleText); // Create style rules
+		var elem = document.getElementById(elementId);
+		if (elem) {
+			elem.parentNode.removeChild(elem);
+		}
 
-        if (style.styleSheet)
-            style.styleSheet.cssText = cssRules.nodeValue;
-        else
-            style.appendChild(cssRules);
+		var style = document.createElement('style');
+		style.type = 'text/css';
+		style.setAttribute("id", elementId);
 
-        $(head).prepend(style);
-    }
+		if (style.styleSheet) {
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+		document.getElementsByTagName('head')[0].appendChild(style);
+
+	};
 
 	return Styler;
 });
