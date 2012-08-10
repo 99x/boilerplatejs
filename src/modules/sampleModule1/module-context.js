@@ -1,7 +1,12 @@
-define(['Boiler', './routes', './settings'], function (Boiler, routes, settings) {
+define(['Boiler', './settings', './departments/route-handler', './helloEarth/route-handler'], function(Boiler, settings, DepartmentRouteHandler, HelloEarthRouteHandler) {
+	
+	var routes = {
+		'departments' : DepartmentRouteHandler,
+		'helloearth' : HelloEarthRouteHandler
+	};
 
     var ModuleContext = function (globalContext) {
-
+		
         var moduleContext = new Boiler.Context("sampleModule1", globalContext);
         moduleContext.addSettings(settings);
 
