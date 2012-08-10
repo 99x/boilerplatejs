@@ -1,4 +1,4 @@
-define(['_boiler_', 'text!./view.html', 'text!./style.css' ], function(Boiler, template, style) {
+define(['Boiler', 'text!./view.html', 'text!./style.css' ], function(Boiler, template, style) {
 
 	var RouteHandler = function(moduleContext) {
 		return {

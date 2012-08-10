@@ -2,7 +2,7 @@
  * This file holds the function (or you may call it a 'class' if you are from .NET or Java world)
  * to create a root context. 'Boiler.Context' can be nested to create a hierachy of contexts 
  * for complex implementations. Below we use requirejs to import following files 
- *      '_boiler_'      : Namespace for accessing the core boilerplate functions
+ *      'Boiler'      : Namespace for accessing the core boilerplate functions
  *      './settings'    : The global setting ( to make available for all children contexts)
  *      './modules'     : The object containing all sub module calsses
  *
@@ -10,7 +10,7 @@
  * and classes ('Boiler' in the case), whereas object instances ('settings' and 'modules') 
  * are represented with camelCase variable names.
  */
-define(["_boiler_", "./settings", "./modules/modules"], function (Boiler, settings, moduleContexts) {
+define(["Boiler", "./settings", "./modules/modules"], function (Boiler, settings, moduleContexts) {
 
     /*
      * Following is our function representing GlobalContext 'class'. Others can import this 

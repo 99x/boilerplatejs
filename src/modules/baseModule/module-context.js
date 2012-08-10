@@ -1,4 +1,4 @@
-define(['_boiler_', './mainMenu/route-handler', './language/route-handler', './theme/route-handler', './landingPage/route-handler'], function (Boiler, MainMenuRouteHandler, LanguageRouteHandler, ThemeRouteHandler, LandingPageRouteHandler) {
+define(['Boiler', './mainMenu/route-handler', './language/route-handler', './theme/route-handler', './landingPage/route-handler'], function (Boiler, MainMenuRouteHandler, LanguageRouteHandler, ThemeRouteHandler, LandingPageRouteHandler) {
 
     var BaseModuleContext = function(globalContext) {
         var moduleContext = new Boiler.Context("baseModule", globalContext);

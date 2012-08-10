@@ -16,6 +16,7 @@ define(function (require) {
         Context : require("./core/context"),
         DomController : require("./core/dom-controller"),
         UrlController : require("./core/url-controller"),
-        UiPanel: require("./core/ui-panel")
+        UiPanel: require("./core/ui-panel"),
+        Helpers : require ("./core/helpers/_helpers_")
     };
 });

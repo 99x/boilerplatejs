@@ -1,4 +1,4 @@
-define([ '_boiler_', 'text!./view.html'],function( Boiler, viewText) {
+define([ 'Boiler', 'text!./view.html'],function( Boiler, viewText) {
 	var Component = function(vm, parentEl) {
 
 		var panel = new Boiler.UiPanel(viewText, parentEl);

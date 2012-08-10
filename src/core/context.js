@@ -10,7 +10,7 @@
 * It is possible to create such hierachies by nesting contexts. Context can provide several 
 * necessary services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
 */
-define(['./helpers/mediator', './helpers/settings', './helpers/storage', './helpers/localizer'], function (Mediator, Settings, Storage, Localizer) {
+define(['./helpers/_helpers_'], function (Helpers) {
 
     /*
     * This is the constructor function for the context and it takes a reference to a parent
@@ -32,8 +32,8 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
     		throw "an id must be defined for a context";
     	}
         this.parentContext = parentContext;
-        this.mediator = this.parentContext ? this.parentContext.mediator : new Mediator();
-        this.settings = this.parentContext ? new Settings(this.parentContext.settings) : new Settings();
+        this.mediator = this.parentContext ? this.parentContext.mediator : new Helpers.Mediator();
+        this.settings = this.parentContext ? new Helpers.Settings(this.parentContext.settings) : new Helpers.Settings();
     };
     
     Context.prototype.getUid = function () {
@@ -90,7 +90,7 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
     * @param {objectToStore} object to store in
     */
     Context.prototype.persistObject = function (key, objectToStore) {
-        Storage.persist(key, objectToStore);
+        Helpers.Storage.persist(key, objectToStore);
     };
 
     /*
@@ -100,7 +100,7 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
     * @return The stored object if found, else 'undefined'
     */
     Context.prototype.retreiveObject = function (key) {
-        return Storage.retreive(key);
+        return Helpers.Storage.retreive(key);
     };
     
     /*
@@ -108,21 +108,21 @@ define(['./helpers/mediator', './helpers/settings', './helpers/storage', './help
      * @param {key} name of the object to be removed
      */
      Context.prototype.removeObject = function (key) {
-         return Storage.remove(key);
+         return Helpers.Storage.remove(key);
      };
      
      /*
       * Set the language for the whole system. Will cause the page to refresh
       */
      Context.prototype.setLanguage = function (lang) {
-         return Localizer.setLanguage(lang);
+         return Helpers.Localizer.setLanguage(lang);
      };
      
      /*
       * Clear any language settings stored. Falls back to browser language detection
       */
      Context.prototype.clearLanguage = function () {
-         return Localizer.clearLanguage();
+         return Helpers.Localizer.clearLanguage();
      };
      
 

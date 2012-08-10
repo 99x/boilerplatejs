@@ -1,9 +1,9 @@
-﻿define(['./helpers/router'], function (Router) {
+﻿define(['./helpers/_helpers_'], function (Helpers) {
 
     var UrlController = function (context, parentEl) {
 
         var allHandles = {};
-        var router = new Router();
+        var router = new Helpers.Router();
 
         /*
         * Wrapper for handles. This allows us to intercept activation calls so
@@ -43,7 +43,7 @@
     };
 
     UrlController.goTo = function (newPath) {
-        Router.routeTo(newPath);
+        Helpers.Router.routeTo(newPath);
     };
 
     return UrlController;

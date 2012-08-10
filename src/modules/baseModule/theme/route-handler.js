@@ -1,4 +1,4 @@
-define(['_boiler_', 'text!./view.html', 'text!./style.css'], function(Boiler, template, componentStyle) {
+define(['Boiler', 'text!./view.html', 'text!./style.css'], function(Boiler, template, componentStyle) {
 
 	/**
 	 * Lets define the themes we have in the system. We use CSS text to import appropriate

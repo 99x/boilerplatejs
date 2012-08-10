@@ -1,11 +1,11 @@
-﻿define(['./helpers/localizer', './helpers/styler'], function (Localizer, Styler) {
+﻿define(['./helpers/_helpers_'], function (Helpers) {
 
     var Panel = function (viewTemplate, parentEl, nls) {
         this.viewId = this.createView(viewTemplate, parentEl, nls);
     };
     
     Panel.prototype.setStyleText = function(uniqueId, style) {
-    	Styler.attachCssText(uniqueId, style);
+    	Helpers.Styler.attachCssText(uniqueId, style);
     };
 
     Panel.prototype.dispose = function () {
@@ -31,7 +31,7 @@
 
         //apply localization on the template
         if(nls) {
-        	viewText = Localizer.localize(viewText, nls);
+        	viewText = Helpers.Localizer.localize(viewText, nls);
         }
 
         // create a random id for the child
