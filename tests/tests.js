@@ -16,6 +16,7 @@ require.config({
 require([ 
           '../tests/core/helpers/settings', 
           '../tests/core/helpers/router' ,
-          '../tests/core/helpers/mediator' 
-          
+          '../tests/core/helpers/mediator',
+          '../tests/other/js-encapsulation',
+          '../tests/other/js-prototypes'
 ], function() {}); 
