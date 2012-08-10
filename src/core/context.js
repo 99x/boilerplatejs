@@ -26,7 +26,9 @@
  	It is possible to create such hierachies by nesting contexts. Context can provide several 
  	necessary services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
  	
-	@class context
+ 	@namespace Boiler
+ 	@module BoilerCoreClasses
+	@class Context
 	@constructor
 	@param {Object} uniqueId
 	@param {Object} parentContext reference to a parent context    

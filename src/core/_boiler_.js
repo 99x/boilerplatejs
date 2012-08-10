@@ -15,7 +15,7 @@ define(function (require) {
     
     /**
 	@type Script
-	@namespace _boiler_
+	@namespace Boiler
 	**/
     return {
         Context : require("./core/context"),

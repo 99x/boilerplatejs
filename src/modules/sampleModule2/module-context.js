@@ -1,4 +1,4 @@
-define(['_boiler_', './routes', './settings'], function (Boiler, routes, settings) {
+define(['Boiler', './routes', './settings'], function (Boiler, routes, settings) {
 
     var ModuleContext = function (globalContext) {
         var moduleContext = new Boiler.Context("sampleModule2", globalContext);

@@ -1,5 +1,13 @@
 ﻿define(['./helpers/router'], function (Router) {
-
+	 /**
+	url-controller class
+ 	
+	@class UrlController
+	@uses This class uses 'router' as a dependency
+	@constructor
+	@param {Object} context
+	@param {Object} parentEl   
+	**/
     var UrlController = function (context, parentEl) {
 
         var allHandles = {};

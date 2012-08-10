@@ -1,4 +1,4 @@
-define([ '_boiler_', 'text!./view.html', './chartViewPanel/component', './treeViewPanel/component' ], 
+define([ 'Boiler', 'text!./view.html', './chartViewPanel/component', './treeViewPanel/component' ], 
 		function(Boiler, parentViewText, ChartViewComponent, TreeViewComponent) {
 	
 	var Component = function(parentEl, vm) {

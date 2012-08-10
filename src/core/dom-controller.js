@@ -2,7 +2,7 @@
 
 	/**
 	* dom-controller class
-	* @class dom-controller
+	* @class DomController
 	* @constructor
 	* @param {Object} context 
 	*/

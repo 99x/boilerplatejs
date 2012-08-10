@@ -14,7 +14,7 @@ require.config({
 		i18n : '../libs/require/i18n',
 		domReady : '../libs/require/domReady',
 		// namespace that aggregate core classes that are in frequent use
-		_boiler_ : './core/_boiler_'
+		Boiler : './core/_boiler_'
 	}
 });
 

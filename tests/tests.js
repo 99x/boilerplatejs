@@ -8,7 +8,7 @@ require.config({
 		order : './libs/require/order',
 		i18n : './libs/require/i18n',
 
-		_boiler_ : './core/_boiler_'
+		Boiler : './core/Boiler'
 	}
 });
 

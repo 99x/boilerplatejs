@@ -7,7 +7,7 @@
 	} ],
 	paths : {
 		domReady : '../libs/require/domReady',
-		_boiler_ : './core/_boiler_',
+		Boiler : './core/Boiler',
 		text : "../libs/require/text",
 		i18n : "../libs/require/i18n"
 	},

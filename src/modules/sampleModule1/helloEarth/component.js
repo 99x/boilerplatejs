@@ -1,4 +1,4 @@
-define(['_boiler_', 'text!./view.html'],
+define(['Boiler', 'text!./view.html'],
 		function (Boiler, template) {
 
 		    var Component = function (moduleContext, parent, vm) {

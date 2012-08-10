@@ -1,4 +1,4 @@
-define(['_boiler_'], function (Boiler) {
+define(['Boiler'], function (Boiler) {
 
     var ViewModel = function (moduleContext) {
         var self = this;
