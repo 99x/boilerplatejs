@@ -95,6 +95,7 @@ article header h1,h2,h3,h4,h5,h6{
 	text-shadow: 0 1px 0 white;
 	padding : 8px;
 	margin: 0px 18px;
+	color: #A3081B; 
 }
 
 article div{
@@ -135,7 +136,7 @@ td, th {
 }
 
 .width_3_quarter {
-	width: 70%;
+	width: 65%;
 	margin-right: 0;
 }
 
@@ -147,34 +148,6 @@ td, th {
 	float:right;
 }
 
-
-/** Language Bar Styles **/
-.lang{
-	margin-right:30px;
-	margin-top:50px;
-	float:right;
-}
-
-.lang li{
-	float:left;
-	padding-right:20px;
-	list-style: none;
-}
-
-.lang li a{
-	font-size:10pt;
-	padding-left:25px;
-}
-
-/*
-.lang .en{
-	background:url(./../images/lang/en.png) no-repeat;
-}
-
-.lang .sv{
-	background:url(./../images/lang/sv.png) no-repeat;
-}
-*/
 .salesinfo img {
 	display: block;
 	margin-left: auto;

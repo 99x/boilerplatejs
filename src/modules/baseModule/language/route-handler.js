@@ -3,7 +3,9 @@ define(['_boiler_', 'text!./view.html', 'text!./style.css' ], function(Boiler, t
 	var RouteHandler = function(moduleContext) {
 		return {
 			activate : function(parent) {
-				new Boiler.UiPanel(template, parent, null, style);
+				var panel = new Boiler.UiPanel(template, parent, null, style);
+				
+				panel.setStyleText("langPanelStylesheet", style);
 				
 				$('#langEn').click(function (event) { 
 					moduleContext.setLanguage("en");

@@ -1,0 +1,8 @@
+<ul class="theme">
+	<li>
+		<a class="red" id="themeRed" href="#">Red</a>
+	</li>
+    <li>
+		<a class="gray" id="themeGray" href="#">Gray</a>
+	</li>
+</ul>

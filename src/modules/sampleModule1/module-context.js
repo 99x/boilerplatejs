@@ -8,6 +8,10 @@ define(['_boiler_', './routes', './settings'], function (Boiler, routes, setting
         var controller = new Boiler.UrlController(moduleContext, $(".appcontent"));
         controller.addRoutes(routes);
         controller.start();
+        
+        var controller = new Boiler.DomController(moduleContext);
+        controller.addRoutes(routes);
+        controller.start();
     };
     
     return ModuleContext;

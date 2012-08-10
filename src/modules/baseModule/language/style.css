@@ -1,3 +1,20 @@
+.lang{
+	margin-right:30px;
+	margin-top:50px;
+	float:right;
+}
+
+.lang li{
+	float:left;
+	padding-right:20px;
+	list-style: none;
+}
+
+.lang li a{
+	font-size:10pt;
+	padding-left:25px;
+}
+
 .lang .en{
 	background:url(./assets/modules/baseModule/language/en.png) no-repeat;
 }

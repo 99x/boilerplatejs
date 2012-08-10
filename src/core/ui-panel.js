@@ -1,7 +1,11 @@
 ﻿define(['./helpers/localizer', './helpers/styler'], function (Localizer, Styler) {
 
-    var Panel = function (viewTemplate, parentEl, nls, style) {
-        this.viewId = this.createView(viewTemplate, parentEl, nls, style);
+    var Panel = function (viewTemplate, parentEl, nls) {
+        this.viewId = this.createView(viewTemplate, parentEl, nls);
+    };
+    
+    Panel.prototype.setStyleText = function(uniqueId, style) {
+    	Styler.attachCssText(uniqueId, style);
     };
 
     Panel.prototype.dispose = function () {
@@ -20,21 +24,16 @@
         return document.getElementById(this.viewId);
     };
 
-    Panel.prototype.createView = function (viewText, parentElement, nls, style) {
+    Panel.prototype.createView = function (viewText, parentElement, nls) {
         // set defaults
         containerType = '<span/>';
         parentElement = typeof parentElement !== 'undefined' ? parentElement : $('body');
 
         //apply localization on the template
-        viewText = Localizer.localize(viewText, nls);
-        Styler.linkCss(style);
-        
-        //if(nls) {
-        //    var compiled = _.template(viewText);
-        //    viewText = compiled({nls : nls});
-        //}
+        if(nls) {
+        	viewText = Localizer.localize(viewText, nls);
+        }
 
-		
         // create a random id for the child
         var childId = _.uniqueId(['container_']);
         // create the child container
