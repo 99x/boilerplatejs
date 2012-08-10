@@ -1,17 +1,17 @@
-
+<div><a data-bind="click:backToList"> << Back to list</a></div>
 <article id="salesperson-details">
 	<header>
 		<h1>Sales Person Details</h1>
 	</header>
 
-	<table class="salesinfo" id="table-salesinfo">
+	<table data-bind="with:employee"  id="salesinfo">
 		<tbody>
 			<tr>
 				<td rowspan="7"><img data-bind="attr : {src: imageId}" /></td>
 			</tr>
 			<tr>
 				<td>ID</td>
-				<td><strong data-bind="text: pId"></strong></td>
+				<td><strong data-bind="text: id"></strong></td>
 			</tr>
 			<tr>
 				<td>First name</td>
@@ -33,6 +33,7 @@
 				<td>Average Sales</td>
 				<td><strong data-bind="text: averageSales"></strong></td>
 			</tr>
+
 		</tbody>
 	</table>
 </article>

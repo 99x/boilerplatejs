@@ -2,14 +2,14 @@
 	<header>
 		<h1>Sales Departments</h1>
 	</header>
-	<div id="treeView" data-bind="visible:moduleEnabled">
+	<div id="treeView" >
 		<ul id="salesInfo" data-bind="foreach:{data : salesInfo ,afterRender: drawTree }">
 			<li class="department">
-				<a href="#"
-				data-bind="text: name"></a>
+				<span
+				data-bind="text: name"></span>
 				<ul id="salesDept" data-bind="foreach: years">
 					<li class="years">
-						<a href="#" data-bind="text: year, click:function(data, event) { $root.yearClicked(year,$parent.name,data) }"></a>
+						<a href="#" data-bind="text: year, click:function(data, event) { $root.yearClicked($parent.name,data); }"></a>
 					</li>
 				</ul>
 			</li>

@@ -1,9 +1,9 @@
 define({
     "root": {
-        "departments": "My Departments",
+        "departments": "Knockout MVVM",
         "helloearth": "Hello Earth",
-        "salesdashboard": "Sales Dashboard",
-        "employees": "Employees"
+        "salesdashboard": "Complex Dashboard",
+        "employees": "List-Detail Panels"
     },
     
     "sv" : true

@@ -4,7 +4,7 @@
 			<h1>Anunual Sales Graph</h1>
 		</header>
 	    <div id="chart-div" >
-			<div id="chart-placeholder"  data-bind="flotChart: chartData(), visible:selectedYear"></div>
+			<div id="chart-placeholder"  data-bind="flotChart: chartData()"></div>
 		</div>
 	</article>
 	
@@ -16,7 +16,7 @@
 		<table id="table-salesinfo">
 			<thead>
 				<tr>
-					<th scope="row" id="table-header" colspan="2">Sales for the Year <strong data-bind="text: selectedYear"></strong></th>
+					<th scope="row" id="table-header" colspan="2">Sales for the Year <strong data-bind="text: selectedData().year"></strong></th>
 				</tr>
 				<tr>
 					<th scope="col">Month</th>
@@ -24,7 +24,7 @@
 				</tr>
 			</thead>
 
-			<tbody data-bind="foreach:selectedData">
+			<tbody data-bind="foreach:selectedData().values">
 				<tr>
 					<td data-bind="text: month"></td>
 					<td data-bind="text: sales"></td>

@@ -148,11 +148,6 @@ td, th {
 	float:right;
 }
 
-.salesinfo img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 .clear {
 	clear: both;
@@ -192,4 +187,11 @@ td, th {
 #salesInfo-div {
 	position: relative;
 	left: -230px;
+}
+
+
+#salesinfo img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }

@@ -20,10 +20,10 @@
 						"sales": 220000
 					}, {
 						"month": "May",
-						"sales": 1450000
+						"sales": 145000
 					}, {
 						"month": "Jun",
-						"sales": 450000
+						"sales": 250000
 					}
 				]
 			}, {
@@ -31,13 +31,13 @@
 				"values": [
 					{
 						"month": "Jan",
-						"sales": 250000
+						"sales": 280000
 					}, {
 						"month": "Feb",
 						"sales": 350000
 					}, {
 						"month": "Mar",
-						"sales": 150000
+						"sales": 140000
 					}, {
 						"month": "Apr",
 						"sales": 220000
@@ -46,7 +46,7 @@
 						"sales": 450000
 					}, {
 						"month": "Jun",
-						"sales": 450000
+						"sales": 440000
 					}
 				]
 			}, {
@@ -60,7 +60,7 @@
 						"sales": 250000
 					}, {
 						"month": "Mar",
-						"sales": 350000
+						"sales": 370000
 					}, {
 						"month": "Apr",
 						"sales": 520000
@@ -69,7 +69,7 @@
 						"sales": 450000
 					}, {
 						"month": "Jun",
-						"sales": 450000
+						"sales": 420000
 					}
 				]
 			}
@@ -89,16 +89,16 @@
 						"sales": 320000
 					}, {
 						"month": "Mar",
-						"sales": 150000
+						"sales": 170000
 					}, {
 						"month": "Apr",
-						"sales": 270000
+						"sales": 190000
 					}, {
 						"month": "May",
 						"sales": 450000
 					}, {
 						"month": "Jun",
-						"sales": 450000
+						"sales": 430000
 					}
 				]
 			}, {
@@ -106,16 +106,16 @@
 				"values": [
 					{
 						"month": "Jan",
-						"sales": 250000
+						"sales": 300000
 					}, {
 						"month": "Feb",
-						"sales": 350000
+						"sales": 320000
 					}, {
 						"month": "Mar",
-						"sales": 150000
+						"sales": 330000
 					}, {
 						"month": "Apr",
-						"sales": 920000
+						"sales": 420000
 					}, {
 						"month": "May",
 						"sales": 450000
@@ -129,13 +129,13 @@
 				"values": [
 					{
 						"month": "Jan",
-						"sales": 250000
+						"sales": 280000
 					}, {
 						"month": "Feb",
-						"sales": 350000
+						"sales": 250000
 					}, {
 						"month": "Mar",
-						"sales": 150000
+						"sales": 180000
 					}, {
 						"month": "Apr",
 						"sales": 220000
@@ -144,7 +144,7 @@
 						"sales": 450000
 					}, {
 						"month": "Jun",
-						"sales": 450000
+						"sales": 350000
 					}
 				]
 			}
@@ -158,22 +158,22 @@
 				"values": [
 					{
 						"month": "Jan",
-						"sales": 250000
-					}, {
-						"month": "Feb",
-						"sales": 350000
-					}, {
-						"month": "Mar",
 						"sales": 150000
 					}, {
+						"month": "Feb",
+						"sales": 310000
+					}, {
+						"month": "Mar",
+						"sales": 330000
+					}, {
 						"month": "Apr",
-						"sales": 220000
+						"sales": 400000
 					}, {
 						"month": "May",
 						"sales": 450000
 					}, {
 						"month": "Jun",
-						"sales": 450000
+						"sales": 250000
 					}
 				]
 			}, {
@@ -181,22 +181,22 @@
 				"values": [
 					{
 						"month": "Jan",
-						"sales": 250000
+						"sales": 220000
 					}, {
 						"month": "Feb",
 						"sales": 350000
 					}, {
 						"month": "Mar",
-						"sales": 150000
+						"sales": 170000
 					}, {
 						"month": "Apr",
-						"sales": 220000
+						"sales": 250000
 					}, {
 						"month": "May",
 						"sales": 450000
 					}, {
 						"month": "Jun",
-						"sales": 450000
+						"sales": 470000
 					}
 				]
 			}, {
@@ -204,22 +204,22 @@
 				"values": [
 					{
 						"month": "Jan",
-						"sales": 250000
+						"sales": 310000
 					}, {
 						"month": "Feb",
 						"sales": 350000
 					}, {
 						"month": "Mar",
-						"sales": 150000
+						"sales": 140000
 					}, {
 						"month": "Apr",
-						"sales": 220000
+						"sales": 200000
 					}, {
 						"month": "May",
-						"sales": 450000
+						"sales": 250000
 					}, {
 						"month": "Jun",
-						"sales": 450000
+						"sales": 480000
 					}
 				]
 			}

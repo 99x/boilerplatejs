@@ -3,27 +3,20 @@ define(['./chartBinding'], function(chartBinding) {
 	var ViewModel = function(moduleContext) {
 		var self = this;
 
-		this.plot = null;
-
-		this.init = function() {
-			$.getJSON(moduleContext.getSettings().urls.yearlysales,
-					function(result) {
-						self.salesInfo(result);
-					});
-		};
-
-		this.selectedYear = ko.observable();
-		this.selectedDept = ko.observable();
+		this.salesInfo = ko.observableArray();
+		this.selectedDept = ko.observable("");
 		this.selectedData = ko.observableArray();
+		
+		//A knockout computed variable to calculate the data set necessary for the chart
 		this.chartData = ko.computed(function() {
-			var tickLabels = _.map(self.selectedData(), function(item, key) {
+			var tickLabels = _.map(self.selectedData().values, function(item, key) {
 				return [ key, item.month ];
 			});
-			var dataItems = _.map(self.selectedData(), function(item, key) {
+			var dataItems = _.map(self.selectedData().values, function(item, key) {
 				return [ key, item.sales ];
 			});
 
-			var label =  self.selectedDept() + " -  "+ self.selectedYear();
+			var label =  self.selectedDept() + " - " + self.selectedData().year;
 			
 			return {
 				"tickLabels" : tickLabels,
@@ -31,33 +24,33 @@ define(['./chartBinding'], function(chartBinding) {
 				"label"	: label
 			};
 		});
-		this.totalSales = ko.computed(function() {
-			return _.reduce(self.selectedData().values, function(memo, item) {
-				return memo + item.sales;
-			}, 0);
-		});
-
-		this.salesInfo = ko.observableArray();
-		this.moduleEnabled = ko.observable(true);
-		this.tableEnabled = ko.observable(false);
-		this.init();
-
+		
+		//To be called after tree data has been rendered
 		this.drawTree = function() {
-
+			$.jstree._themes = "libs/jquery/jstree/themes/";
 			$("#treeView").jstree({
 				"themes" : {
 					"theme" : "apple"
 				},
-				"plugins" : [ "themes", "html_data" ]
+				"plugins" : [ "themes", "html_data" ],
+				"core" : { "initially_open" : [ "salesDept" ] }
 			});
 		};
-
-		this.yearClicked = function(years, department, data) {
-			self.tableEnabled(true);
-			self.selectedYear(years);
+		
+		this.yearClicked = function(department, data) {
 			self.selectedDept(department);
-			self.selectedData(data.values);
+			self.selectedData(data);
 		};
+		
+		/*
+         * Initialization code:
+         * Get the sales details from server
+         */
+		$.getJSON(moduleContext.getSettings().urls.yearlysales,	function(result) {
+			self.salesInfo(result);
+			self.selectedDept(result[0].name);
+			self.selectedData(result[0].years[0]);
+		});
 
 	};
 	
