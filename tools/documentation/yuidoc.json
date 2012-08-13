@@ -1,0 +1,14 @@
+{
+    "name": "Boilerplate.js",
+    "description": "The Boilerplate.js API: a library to take the pain out of large scale Javascript/HTML5 product development",
+    "version": "1.0.0",
+    "url": "http://www.boilerplatejs.org/",
+    "options": {
+        "linkNatives": "true",        
+        "attributesEmit": "false",
+        "selleck": "false",
+        "ignorePaths": [ "modules" ],
+        "paths": "*/js",
+        "outdir": "../api-js"
+    }
+}

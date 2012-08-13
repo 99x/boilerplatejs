@@ -1,16 +1,4 @@
-﻿/*
-* Context is one of the most important classes in boilerplate. This represents a sandboxed environment
-* for writing group of functionalities. Contexts can be nested to create hierachies for complex 
-* implementations. 
-* For example, 
-*      a product suit may have multiple products, 
-*      and a product may have multiple modules,
-*      and a module may have multiple submodules.
-*
-* It is possible to create such hierachies by nesting contexts. Context can provide several 
-* necessary services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
-*/
-define(['./helpers/_helpers_'], function (Helpers) {
+﻿﻿define(['./helpers/_helpers_'], function (Helpers) {
 
     /*
     * This is the constructor function for the context and it takes a reference to a parent
@@ -25,6 +13,25 @@ define(['./helpers/_helpers_'], function (Helpers) {
     * possible to define methods within the class body, we use this approach for better performance. For
     * more information read about prototypes in javascripts.
     */
+   /**
+	Context is one of the most important classes in boilerplate. This represents a sandboxed environment
+  	for writing group of functionalities. Contexts can be nested to create hierachies for complex 
+  	implementations. 
+  	For example, 
+       a product suit may have multiple products, 
+       and a product may have multiple modules,
+       and a module may have multiple submodules.
+ 
+ 	It is possible to create such hierachies by nesting contexts. Context can provide several 
+ 	necessary services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
+ 	
+ 	@namespace Boiler
+ 	@module BoilerCoreClasses
+	@class Context
+	@constructor
+	@param {Object} uniqueId
+	@param {Object} parentContext reference to a parent context    
+	**/
     var Context = function (uniqueId, parentContext) {   	
     	if (uniqueId) {
     		this.id = uniqueId;
@@ -35,7 +42,12 @@ define(['./helpers/_helpers_'], function (Helpers) {
         this.mediator = this.parentContext ? this.parentContext.mediator : new Helpers.Mediator();
         this.settings = this.parentContext ? new Helpers.Settings(this.parentContext.settings) : new Helpers.Settings();
     };
-    
+    /**
+	Returns the context id
+
+	@method getUid
+	@return {Object} context id
+	**/
     Context.prototype.getUid = function () {
         return this.id;
     };

@@ -1,8 +1,19 @@
-﻿define([], function() {
-
+﻿﻿define([], function() {
+	/**
+	Styler is used to attach css style sheets to the DOM (Document Object Model) and to attach css text to existing style sheets 
+ 	
+	@class Styler
+	@constructor    
+	**/
 	var Styler = function() {
 	};
+	/**
+	Attach a css link to the DOM
 
+	@method attachCssLink		
+	@param {Object} elementId Element ID
+	@param {Object} css
+	**/	
 	Styler.attachCssLink = function(elementId, css) {
 		var style = document.getElementById(elementId);
 		if (!style) {
@@ -14,7 +25,13 @@
 
 		document.getElementsByTagName("head")[0].appendChild(ss);
 	};
+	/**
+	Attach css text to an existing style sheet
 
+	@method attachCssText		
+	@param {Object} elementId Element ID
+	@param {Object} css
+	**/	
 	Styler.attachCssText = function(elementId, css) {
 
 		var elem = document.getElementById(elementId);
