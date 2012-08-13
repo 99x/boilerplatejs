@@ -1,30 +1,30 @@
 ﻿define(['./helpers/_helpers_'], function (Helpers) {
 
-    var Panel = function (viewTemplate, parentEl, nls) {
+    var UIPanel = function (viewTemplate, parentEl, nls) {
         this.viewId = this.createView(viewTemplate, parentEl, nls);
     };
     
-    Panel.prototype.setStyleText = function(uniqueId, style) {
+    UIPanel.prototype.setStyleText = function(uniqueId, style) {
     	Helpers.Styler.attachCssText(uniqueId, style);
     };
 
-    Panel.prototype.dispose = function () {
+    UIPanel.prototype.dispose = function () {
         $('#' + this.viewId).remove();
     };
 
-    Panel.prototype.getElementId = function () {
+    UIPanel.prototype.getElementId = function () {
         return this.viewId;
     };
 
-    Panel.prototype.getJqueryElement = function () {
+    UIPanel.prototype.getJqueryElement = function () {
         return $('#' + this.viewId);
     };
     
-    Panel.prototype.getDomElement = function () {
+    UIPanel.prototype.getDomElement = function () {
         return document.getElementById(this.viewId);
     };
 
-    Panel.prototype.createView = function (viewText, parentElement, nls) {
+    UIPanel.prototype.createView = function (viewText, parentElement, nls) {
         // set defaults
         containerType = '<span/>';
         parentElement = typeof parentElement !== 'undefined' ? parentElement : $('body');
@@ -47,5 +47,5 @@
         return childId;
     };
 
-    return Panel;
+    return UIPanel;
 });
