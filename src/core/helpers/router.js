@@ -2,6 +2,8 @@
 	/**
 	Router is used to handle url navigation by setting up routes and hash codes
  	
+ 	@namespace Boiler.Helpers
+ 	@module BoilerCoreClasses
 	@class Router
 	@constructor    
 	**/

@@ -58,7 +58,15 @@
     UIPanel.prototype.getDomElement = function () {
         return document.getElementById(this.viewId);
     };
+	/**
+	Creates a view
 
+	@method createView
+	@param viewText
+	@param parentElement
+	@param nls
+	@return childId
+	**/
     UIPanel.prototype.createView = function (viewText, parentElement, nls) {
         // set defaults
         containerType = '<span/>';

@@ -2,6 +2,8 @@
 	/**
 	Mediator is used for handling the messaging inside the framework
  	
+ 	@namespace Boiler.Helpers
+ 	@module BoilerCoreClasses
 	@class Mediator
 	@constructor    
 	**/

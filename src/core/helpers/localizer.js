@@ -15,8 +15,11 @@
 	}
 
 	/**
-	Localizer class
+	Localizer is used to handle the localization of the framework by providing the functions required for setting a different language and 
+	resetting the user language settings to the defaults 
  	
+ 	@namespace Boiler.Helpers
+ 	@module BoilerCoreClasses
 	@class Localizer
 	@constructor    
 	**/
@@ -38,7 +41,7 @@
 		});
 	};
 	/**
-	Sets the language
+	Sets the language to the provided locale
 
 	@method setLanguage
 	@static

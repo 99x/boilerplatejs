@@ -2,6 +2,8 @@
 	/**
 	Settings class
  	
+ 	@namespace Boiler.Helpers
+ 	@module BoilerCoreClasses
 	@class Settings
 	@constructor    
 	**/

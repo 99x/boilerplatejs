@@ -1,10 +1,13 @@
 ﻿﻿define([], function () {
 
 	/**
-	* dom-controller class
-	* @class DomController
-	* @constructor
-	* @param {Object} context 
+	DOM controller is used when it is required to add certain elements to the DOM when there is a url change
+	 
+	@namespace Boiler
+ 	@module BoilerCoreClasses
+	@class DomController
+	@constructor
+	@param {Object} context 
 	*/
     var DomController =  function (context) {
 
@@ -12,10 +15,20 @@
         self.handles = {};
 
         return {
+        	/**
+			Add routes
+
+			@method addRoutes		
+			@param {Object} newHandles
+			**/	
             addRoutes: function (newHandles) {
                 _.extend(self.handles, newHandles);
             },
+			/**
+			Start the DOM controller
 
+			@method start
+			**/	
             start: function () {
                 for (path in self.handles) {
                     var HandlerClass = self.handles[path];
