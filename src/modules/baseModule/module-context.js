@@ -1,4 +1,4 @@
-define(['Boiler', './mainMenu/route-handler', './language/route-handler', './theme/route-handler', './landingPage/route-handler'], function (Boiler, MainMenuRouteHandler, LanguageRouteHandler, ThemeRouteHandler, LandingPageRouteHandler) {
+define(['Boiler', './mainMenu/route-handler', './language/route-handler', './theme/route-handler', './landingPage/component'], function (Boiler, MainMenuRouteHandler, LanguageRouteHandler, ThemeRouteHandler, LandingPageComponent) {
 
     var BaseModuleContext = function(globalContext) {
         var moduleContext = new Boiler.Context("baseModule", globalContext);
@@ -6,8 +6,8 @@ define(['Boiler', './mainMenu/route-handler', './language/route-handler', './the
         controller.addRoutes({ "main-menu": MainMenuRouteHandler, "language": LanguageRouteHandler, "theme" : ThemeRouteHandler });
         controller.start();
         
-        var controller = new Boiler.UrlController(moduleContext, $(".appcontent"));
-        controller.addRoutes({"/":LandingPageRouteHandler});
+        var controller = new Boiler.UrlController($(".appcontent"));
+        controller.addRoutes({"/": new LandingPageComponent()});
         controller.start();
     };
     

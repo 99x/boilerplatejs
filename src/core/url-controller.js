@@ -10,7 +10,7 @@
 	@param {Object} context
 	@param {Object} parentEl   
 	**/
-	var UrlController = function(context, parentEl) {
+	var UrlController = function(parentEl) {
 
 		var allHandles = {};
 		var router = new Helpers.Router();
@@ -65,8 +65,7 @@
 			**/	
 			addRoutes : function(handles) {
 				for (path in handles) {
-					var HandlerClass = handles[path];
-					var handlerObj = new Wrapper(new HandlerClass(context));
+					var handlerObj = new Wrapper(handles[path]);
 					router.addRoute(path, handlerObj.activate);
 					allHandles[path] = handlerObj;
 				}

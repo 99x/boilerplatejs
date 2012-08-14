@@ -1,28 +1,19 @@
-define(['Boiler', './settings', './departments/component', './helloEarth/route-handler'], function(Boiler, settings, DepartmentRouteHandler, HelloEarthRouteHandler) {
+define(['Boiler', './settings', './departments/component', './helloEarth/component'], function(Boiler, settings, DepartmentComponent, HelloEarthComponent) {
 
-	var routes = {
-		'departments' : DepartmentRouteHandler,
-		'helloearth' : HelloEarthRouteHandler
-	};
+	var Module = function(globalContext) {
 
-	var ModuleContext = function(globalContext) {
+		var context = new Boiler.Context("sampleModule1", globalContext);
+		context.addSettings(settings);
 
-		var moduleContext = new Boiler.Context("sampleModule1", globalContext);
-		moduleContext.addSettings(settings);
-
-		var controller = new Boiler.UrlController(moduleContext, $(".appcontent"));
-		controller.addRoutes({'departments' : DepartmentRouteHandler});
+		var controller = new Boiler.UrlController($(".appcontent"));
+		controller.addRoutes( {
+			'departments' : new DepartmentComponent(context),
+			'helloearth' : new HelloEarthComponent(context)
+		});
 		controller.start();
 
-		var controller2 = new Boiler.UrlController(moduleContext, $(".appcontent"));
-		controller2.addRoutes({'helloearth' : HelloEarthRouteHandler});
-		controller2.start();
-
-		var controller = new Boiler.DomController(moduleContext);
-		controller.addRoutes(routes);
-		controller.start();
 	};
 
-	return ModuleContext;
+	return Module;
 
-}); 
+});
