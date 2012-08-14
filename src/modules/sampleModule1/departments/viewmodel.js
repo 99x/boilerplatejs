@@ -1,11 +1,22 @@
 define([], function () {
+	
+	var DEFAULT_DEPT_NAME = 'Boiler Department';
 
     var ViewModel = function (moduleContext) {
 
         var self = this;
-        this.itemToAdd = ko.observable('Boiler Department');
+        this.itemToAdd = ko.observable(DEFAULT_DEPT_NAME);
         this.allItems = ko.observableArray([]);
         this.selectedItems = ko.observableArray();
+        
+        this.setNewDepartmentName = function(name){
+        	if (name) {
+        		this.itemToAdd(name);
+        	} else {
+        		this.itemToAdd(DEFAULT_DEPT_NAME);
+        	}
+        };
+
 
         this.addItem = function () {
             if ((this.itemToAdd() != "") && (this.allItems.indexOf(this.itemToAdd()) < 0)) // Prevent blanks and duplicates

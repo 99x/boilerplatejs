@@ -3,23 +3,26 @@ define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!.
 	var Component = function(moduleContext) {
 		Boiler.UiPanel.setStyleText("DEPAERTMENT_PANEL_CSS", styleText);
 
-		var panel = new Boiler.UiPanel(template, null, nls);
-		var vm = null;
+		var panel, vm = null;
 		
-
 		this.activate = function(parent, params) {
-			if(!vm) {
-				vm = new ViewModel(moduleContext, params.initvalue);
+			if (!panel) {
+				panel = new Boiler.UiPanel(template, parent, nls);
+				vm = new ViewModel(moduleContext);
+				ko.applyBindings(vm, panel.getDomElement());
 			}
-			panel.appendTo(parent);
-			ko.applyBindings(vm, panel.getDomElement());
+			
+			vm.setNewDepartmentName(params.name);
+			panel.show();
 		}
-		
-		this.deactivate = function(){
-			panel.remove();
+
+		this.deactivate = function() {
+			if(panel) {
+				panel.hide();
+			}
 		}
 	};
 
 	return Component;
 
-}); 
+});

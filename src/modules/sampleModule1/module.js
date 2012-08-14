@@ -7,7 +7,7 @@ define(['Boiler', './settings', './departments/component', './helloEarth/compone
 
 		var controller = new Boiler.UrlController($(".appcontent"));
 		controller.addRoutes( {
-			'departments' : new DepartmentComponent(context),
+			'departments/:name:' : new DepartmentComponent(context),
 			'helloearth' : new HelloEarthComponent(context)
 		});
 		controller.start();

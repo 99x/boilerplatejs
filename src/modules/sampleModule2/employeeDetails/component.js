@@ -1,16 +1,28 @@
-define(['Boiler', 'text!./view.html', './viewmodel'], function (Boiler, template, ViewModel) {
+define(['Boiler', 'text!./view.html', './viewmodel'], function(Boiler, template, ViewModel) {
 
+	var Component = function(moduleContext) {
 
-    var Component = function (moduleContext, parent, id) {
-        var vm = new ViewModel(moduleContext, id);
-        var panel = new Boiler.UiPanel(template, parent);
-        ko.applyBindings(vm, panel.getDomElement());
+		var vm, panel = null;
 
-        this.dispose = function () {
-            panel.dispose();
-        };
-    };
-    
-    return Component;
+		this.activate = function(parent, params) {
+			if (!panel) {
+				vm = new ViewModel(moduleContext, params.id);
+				panel = new Boiler.UiPanel(template, parent);
+				ko.applyBindings(vm, panel.getDomElement());
+			}
+			
+			vm.setEmployee(params.id);
+			panel.show();
+		}
 
-}); 
+		this.deactivate = function() {
+			if (panel) {
+				panel.hide();
+			}
+
+		};
+	};
+
+	return Component;
+
+});

@@ -1,22 +1,24 @@
 define(["Boiler"], function(Boiler) {
 
-	var ViewModel = function(moduleContext, id) {
+	var ViewModel = function(moduleContext) {
 
 		var self = this;
 		this.employee = ko.observable();
-		
+
 		this.backToList = function() {
 			Boiler.UrlController.goTo("employee/all");
 		}
-		/*
-		 *  Initialization code:
-		 *  Get the employee details from the server.
-		 */
-		$.getJSON(moduleContext.getSettings().urls.dumSvr + id + ".json.js", function(data) {
-			self.employee(data);
-		});
 
+		this.setEmployee = function(id) {
+			//Get the employee details from the server.
+			if (id) {
+				$.getJSON(moduleContext.getSettings().urls.dumSvr + id + ".json.js", function(data) {
+					self.employee(data);
+				});
+			}
+
+		}
 	};
-	
+
 	return ViewModel;
 });

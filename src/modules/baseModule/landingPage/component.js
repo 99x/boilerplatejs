@@ -1,14 +1,17 @@
 define(['Boiler', 'text!./view.html'], function(Boiler, template) {
 
 	var RouteHandler = function(moduleContext) {
-		var panel = new Boiler.UiPanel(template);
+		var panel = null;
 		this.activate = function(parent, params) {
-			panel.appendTo(parent);
+			if(!panel) {
+				panel = new Boiler.UiPanel(template, parent);
+			}
+			panel.show();
 		};
 
 		this.deactivate = function() {
 			if (panel) {
-				panel.remove();
+				panel.hide();
 			}
 		}
 	};

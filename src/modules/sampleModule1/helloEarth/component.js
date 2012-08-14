@@ -2,19 +2,23 @@ define(['Boiler', './viewmodel', 'text!./view.html'], function(Boiler, ViewModel
 
 	var Component = function(moduleContext) {
 
-		var panel = new Boiler.UiPanel(template, null, null);
-		var vm = null;
+		var vm, panel = null;
 
 		this.activate = function(parent, params) {
-			if (!vm) {
+			if (!panel) {
+				panel = new Boiler.UiPanel(template, parent, null);
 				vm = new ViewModel(moduleContext);
+				ko.applyBindings(vm, panel.getDomElement());
 			}
-			panel.appendTo(parent);
-			ko.applyBindings(vm, panel.getDomElement());
+			panel.show();
+			
 		}
 
 		this.deactivate = function() {
-			panel.remove();
+			if(panel) {
+				panel.hide();
+			}
+			
 		}
 
 	};
