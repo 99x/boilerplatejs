@@ -9,7 +9,7 @@ define(function(require) {
 	return [
         require('./baseModule/module-context'),
 		require('./sampleModule1/module'),
-        //require('./sampleModule2/module-context')
+        require('./sampleModule2/module-context')
 	];
 
 });

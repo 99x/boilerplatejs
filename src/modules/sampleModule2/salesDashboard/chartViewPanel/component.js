@@ -1,14 +1,7 @@
 define([ 'Boiler', 'text!./view.html'],function( Boiler, viewText) {
-	var Component = function(vm, parentEl) {
-
-		var panel = new Boiler.UiPanel(viewText, parentEl);
-		ko.applyBindings(vm, panel.getDomElement());
-
-		return{
-			getElementId : function(){
-				return panel.getElementId();
-			}
-		};
+	var Component = function() {
+		var panel = new Boiler.UiPanel(viewText);
+		return panel;
 	};
 	
 	return Component;
