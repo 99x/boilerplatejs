@@ -5,7 +5,7 @@ define(['Boiler', 'text!./view.html', 'text!./style.css' ], function(Boiler, tem
 			activate : function(parent) {
 				var panel = new Boiler.UiPanel(template, parent, null, style);
 				
-				panel.setStyleText("langPanelStylesheet", style);
+				Boiler.UiPanel.setStyleText("langPanelStylesheet", style);
 				
 				$('#langEn').click(function (event) { 
 					moduleContext.setLanguage("en");

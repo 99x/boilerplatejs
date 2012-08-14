@@ -3,8 +3,8 @@ define([ 'Boiler', 'text!./view.html', './chartViewPanel/component', './treeView
 	
 	var Component = function(parentEl, vm) {
 		var splitterPanel = new Boiler.UiPanel(parentViewText, parentEl);
-		new TreeViewComponent(vm, splitterPanel.getJqueryElement());
-		new ChartViewComponent(vm, splitterPanel.getJqueryElement());
+		new TreeViewComponent(vm, splitterPanel.getJQueryElement());
+		new ChartViewComponent(vm, splitterPanel.getJQueryElement());
 		
 	};
 

@@ -1,4 +1,4 @@
-﻿﻿define(['./helpers/_helpers_'], function (Helpers) {
+﻿define(['./helpers/_helpers_'], function(Helpers) {
 	/**
 	URL controller is used to trigger events when there is a url change
  	
@@ -10,10 +10,21 @@
 	@param {Object} context
 	@param {Object} parentEl   
 	**/
-    var UrlController = function (context, parentEl) {
+	var UrlController = function(context, parentEl) {
 
-        var allHandles = {};
-        var router = new Helpers.Router();
+		var allHandles = {};
+		var router = new Helpers.Router();
+
+		/*
+		 * Listen to the DOM events of parent element of this controller
+		 * to get any deactivation calls. Upon deactivation call we will ask
+		 * all components on this parent element to deactivate them.
+		 */
+		parentEl.bind('DEACTIVATE_HANDLERS', function() {
+			for (handler in allHandles) {
+				allHandles[handler].deactivate();
+			}
+		});
 
        	/**
         * Wrapper for handles. This allows us to intercept activation calls so
@@ -24,57 +35,65 @@
 		@private		
 		@param {Object} handle route-handler class
 		**/	
-        function Wrapper(handle) {
-            var selfWrapper = this;
-            selfWrapper.handle = handle;
+		function Wrapper(handle) {
 
-            this.activate = function (vals) {
-                // deactivate all active handles in current controller
-                parentEl.empty();
-                // activate the requested handler
-                selfWrapper.handle.activate(parentEl, vals);
-            };
+			this.handle = handle;
 
-        }
+			var selfWrapper = this;
+			this.activate = function(vals) {
+				// deactivate all active handles in current controller
+				parentEl.trigger('DEACTIVATE_HANDLERS');
+				// activate the requested handler
+				selfWrapper.handle.activate(parentEl, vals);
+			};
 
-        return {
-        	/**
+			this.deactivate = function() {
+								
+				if (jQuery.isFunction(selfWrapper.handle.deactivate)) {
+					selfWrapper.handle.deactivate();
+				}
+			}
+
+		}
+
+		return {
+			        	/**
 			Create handler objects from each route handler using the 'Wrapper' method and add the activated handler object to the router as routes 
 
 			@method addRoutes		
 			@param {Array} handles route-handler object array
 			**/	
-            addRoutes: function (handles) {
-                for (path in handles) {
-                    var HandlerClass = handles[path];
-                    var handlerObj = new Wrapper(new HandlerClass(context));
-                    router.addRoute(path, handlerObj.activate);
-                    allHandles[path] = handlerObj;
-                }
-                
-            },
-			
+			addRoutes : function(handles) {
+				for (path in handles) {
+					var HandlerClass = handles[path];
+					var handlerObj = new Wrapper(new HandlerClass(context));
+					router.addRoute(path, handlerObj.activate);
+					allHandles[path] = handlerObj;
+				}
+
+			},
+
 			/**
 			Start the url controller by initializing the router 
 
 			@method start		
 			**/	
-            start: function () {
-                router.init();
-            }
+			start : function() {
+				router.init();
+			}
+		};
 
-        };
-
-    };
+	};
+	
 	/**
 	Adds a new path to the router
 
 	@method goTo		
 	@param {String} newPath New path
 	**/	
-    UrlController.goTo = function (newPath) {
-        Helpers.Router.routeTo(newPath);
-    };
+	UrlController.goTo = function(newPath) {
+		Helpers.Router.routeTo(newPath);
+	};
 
-    return UrlController;
+	return UrlController;
 });

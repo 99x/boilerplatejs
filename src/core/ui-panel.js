@@ -1,4 +1,4 @@
-﻿﻿define(['./helpers/_helpers_'], function (Helpers) {
+﻿define(['./helpers/_helpers_'], function(Helpers) {
 	/**
 	ui-panel class
  	
@@ -10,9 +10,10 @@
 	@param {Object} parentEl
 	@param {Object} nls    
 	**/
-    var UIPanel = function (viewTemplate, parentEl, nls) {
-        this.viewId = this.createView(viewTemplate, parentEl, nls);
-    };
+	var UIPanel = function(viewTemplate, parentEl, nls) {
+		this.createView(viewTemplate, parentEl, nls);
+	};
+
     /**
 	Sets the style
 
@@ -20,44 +21,53 @@
 	@param {Object} uniqueId
 	@param {Object} style
 	**/
-    UIPanel.prototype.setStyleText = function(uniqueId, style) {
-    	Helpers.Styler.attachCssText(uniqueId, style);
-    };
-	/**
-	Dispose the view component
+	UIPanel.setStyleText = function(uniqueId, style) {
+		Helpers.Styler.attachCssText(uniqueId, style);
+	};
 
-	@method dispose
-	**/
-    UIPanel.prototype.dispose = function () {
-        $('#' + this.viewId).remove();
-    };
 	/**
 	Returns the view id
 
 	@method getElementId
 	@return viewId
 	**/
-    UIPanel.prototype.getElementId = function () {
-        return this.viewId;
-    };
+	UIPanel.prototype.getElementId = function() {
+		return this.viewId;
+	};
+
 	/**
-	Returns the jQuery element id
+	Returns the jQuery element of this component
 
 	@method getJqueryElement
 	@return viewId
 	**/
-    UIPanel.prototype.getJqueryElement = function () {
-        return $('#' + this.viewId);
-    };
+	UIPanel.prototype.getJQueryElement = function() {
+		return this.jQueryElement;
+	};
+
     /**
 	Returns the DOM element
 
 	@method getDomElement
 	@return viewId
 	**/
-    UIPanel.prototype.getDomElement = function () {
-        return document.getElementById(this.viewId);
-    };
+	UIPanel.prototype.getDomElement = function() {
+		return this.jQueryElement.get(0);
+	};
+
+	UIPanel.prototype.appendTo = function(parent) {
+		this.jQueryElement.appendTo(parent);
+	};
+
+	/**
+	Detach theDOM element of this component from the DOM tree
+
+	@method dispose
+	**/
+	UIPanel.prototype.remove = function() {
+		this.jQueryElement.remove();
+	};
+
 	/**
 	Creates a view
 
@@ -67,28 +77,20 @@
 	@param nls
 	@return childId
 	**/
-    UIPanel.prototype.createView = function (viewText, parentElement, nls) {
-        // set defaults
-        containerType = '<span/>';
-        parentElement = typeof parentElement !== 'undefined' ? parentElement : $('body');
+	UIPanel.prototype.createView = function(viewText, parentElement, nls) {
+		//apply localization on the template
+		if (nls) {
+			viewText = Helpers.Localizer.localize(viewText, nls);
+		}
+		// create a random id for the child and create a new element
+		this.viewId = _.uniqueId(['bpjscontainer_']);
+		this.jQueryElement = $("<span id='" + this.viewId + "'>" + viewText + "</span>");
 
-        //apply localization on the template
-        if(nls) {
-        	viewText = Helpers.Localizer.localize(viewText, nls);
-        }
+		//if parent is specified, lets attach the element to parent
+		if (parentElement) {
+			parentElement.append(this.jQueryElement);
+		}
+	};
 
-        // create a random id for the child
-        var childId = _.uniqueId(['container_']);
-        // create the child container
-
-        parentElement.append($(containerType, {
-        	id : childId,
-        }));
-        // add template text to the child container as html
-        $('#' + childId).html(viewText);
-
-        return childId;
-    };
-
-    return UIPanel;
+	return UIPanel;
 });

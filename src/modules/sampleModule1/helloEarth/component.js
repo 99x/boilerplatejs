@@ -5,6 +5,10 @@ define(['Boiler', 'text!./view.html'],
 		        
 		        var panel = new Boiler.UiPanel(template, parent);
 		        ko.applyBindings(vm, panel.getDomElement());
+		        
+		        this.remove = function() {
+		        	panel.remove();
+		        }
 		    };
 		    
 		    return Component;
