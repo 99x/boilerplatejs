@@ -10,7 +10,7 @@ define(['./storage'], function(Storage) {
 	var userLang;
 	if (userLang = Storage.retreive("user-language")) {
 		require.config({
-			locale : userLang,
+			locale : userLang
 		});
 	}
 
@@ -37,7 +37,7 @@ define(['./storage'], function(Storage) {
 	Localizer.localize = function(text, nlsObject) {
 		var compiled = _.template(text);
 		return compiled({
-			nls : nlsObject,
+			nls : nlsObject
 		});
 	};
 	/**

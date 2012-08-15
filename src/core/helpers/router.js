@@ -43,7 +43,7 @@ define([], function() {
 				if (!hasher.isActive()) {
 					hasher.init(); // start listening for history change
 				}
-			},
+			}
 
 		};
 
