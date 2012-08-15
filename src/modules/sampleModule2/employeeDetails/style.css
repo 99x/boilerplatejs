@@ -1,0 +1,13 @@
+#salesperson-details img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#controls{
+	padding:5px 10px;
+}
+
+#controls a{
+	cursor: hand; cursor: pointer;
+}
