@@ -4,7 +4,7 @@ define(['Boiler', 'text!./view.html', 'text!./style.css' ], function(Boiler, tem
 		var panel = null;
 		return {
 			activate : function(parent) {
-				panel = new Boiler.ViewTemplate(parent, template);
+				panel = new Boiler.ViewTemplate(parent, template, null, style);
 				
 				Boiler.ViewTemplate.setStyleText("langPanelStylesheet", style);
 				
