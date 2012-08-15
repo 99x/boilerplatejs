@@ -9,7 +9,7 @@
 	@constructor
 	@param {Object} context 
 	*/
-    var DomController =  function (context) {
+    var DomController =  function (parent) {
 
         var self = this;
         self.handles = {};
@@ -31,12 +31,21 @@
 			**/	
             start: function () {
                 for (path in self.handles) {
-                    var HandlerClass = self.handles[path];
-                    $("." + path).each(function (index) {
+                    parent.find(path).each(function (index) {
                         var paramString = $(this).attr("params");
                         var params = paramString ? eval("({" + paramString + "})") : {};
-                        var handlerObj = new HandlerClass(context);
-                        handlerObj.activate($(this), params);
+                        
+                        //ask other handlers on this component to deactivate
+                        $(this).trigger('DEACTIVATE_HANDLERS');
+                        
+                        //bind the current handler for deactivation events
+                        $(this).bind('DEACTIVATE_HANDLERS', function(){
+                        	(function(handler) {
+                        		handler.deactivate();
+                        	})(self.handles[path]);
+                        });
+                        //activate the current handler
+                        self.handles[path].activate($(this), params);
                     });
                 }
             }

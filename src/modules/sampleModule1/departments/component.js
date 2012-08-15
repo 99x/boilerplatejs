@@ -1,13 +1,13 @@
 define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!./nls/resources'], function(Boiler, template, ViewModel, styleText, nls) {
 
 	var Component = function(moduleContext) {
-		Boiler.UiPanel.setStyleText("DEPAERTMENT_PANEL_CSS", styleText);
+		Boiler.ViewTemplate.setStyleText("DEPAERTMENT_PANEL_CSS", styleText);
 
 		var panel, vm = null;
 		
 		this.activate = function(parent, params) {
 			if (!panel) {
-				panel = new Boiler.UiPanel(template, parent, nls);
+				panel = new Boiler.ViewTemplate(parent, template, nls);
 				vm = new ViewModel(moduleContext);
 				ko.applyBindings(vm, panel.getDomElement());
 			}

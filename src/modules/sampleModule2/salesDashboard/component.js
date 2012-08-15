@@ -1,4 +1,4 @@
-define(['Boiler', 'text!./view.html', './viewmodel', './chartViewPanel/component', './treeViewPanel/component'], function(Boiler, parentViewText, ViewModel, ChartViewComponent, TreeViewComponent) {
+define(['Boiler', 'text!./view.html', './viewmodel', './chartViewPanel/component', './treeViewPanel/component'], function(Boiler, viewText, ViewModel, ChartViewComponent, TreeViewComponent) {
 
 	var Component = function(context) {
 
@@ -7,10 +7,9 @@ define(['Boiler', 'text!./view.html', './viewmodel', './chartViewPanel/component
 		this.activate = function(parent, params) {
 			if (!panel) {
 				vm = new ViewModel(context);
-				panel = new Boiler.UiPanel(parentViewText);
-				panel.getJQueryElement().append(new TreeViewComponent().getJQueryElement());
-				panel.getJQueryElement().append(new ChartViewComponent().getJQueryElement());
-				panel.appendTo(parent);
+				panel = new Boiler.ViewTemplate(parent, viewText);
+				new TreeViewComponent(panel.getJQueryElement());
+				new ChartViewComponent(panel.getJQueryElement());
 				ko.applyBindings(vm, panel.getDomElement());
 			}
 			panel.show();

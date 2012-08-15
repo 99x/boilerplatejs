@@ -123,7 +123,7 @@ td, th {
 }
 
 /** Main Content and Positioning  Styles **/
-.main-content{
+.appcontent {
 	width:75%;
 	padding-left:10px;
 	float:left;

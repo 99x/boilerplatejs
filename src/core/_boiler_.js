@@ -19,7 +19,7 @@
         Context : require("./core/context"),
         DomController : require("./core/dom-controller"),
         UrlController : require("./core/url-controller"),
-        UiPanel: require("./core/ui-panel"),
+        ViewTemplate: require("./core/view-template"),
         Helpers : require ("./core/helpers/_helpers_")
     };
 });

@@ -1,15 +1,15 @@
 ﻿define(['./helpers/_helpers_'], function(Helpers) {
 	/**
-	URL controller is used to trigger events when there is a url change
- 	
- 	@namespace Boiler
- 	@module BoilerCoreClasses
-	@class UrlController
-	@uses This class uses helpers as a dependency
-	@constructor
-	@param {Object} context
-	@param {Object} parentEl   
-	**/
+	 URL controller is used to trigger events when there is a url change
+
+	 @namespace Boiler
+	 @module BoilerCoreClasses
+	 @class UrlController
+	 @uses This class uses helpers as a dependency
+	 @constructor
+	 @param {Object} context
+	 @param {Object} parentEl
+	 **/
 	var UrlController = function(parentEl) {
 
 		var allHandles = {};
@@ -26,15 +26,15 @@
 			}
 		});
 
-       	/**
-        * Wrapper for handles. This allows us to intercept activation calls so
-        * that we are able to execute custom logic such as deactivation of
-        * other handles.		
+		/**
+		 * Wrapper for handles. This allows us to intercept activation calls so
+		 * that we are able to execute custom logic such as deactivation of
+		 * other handles.
 
-		@method Wrapper
-		@private		
-		@param {Object} handle route-handler class
-		**/	
+		 @method Wrapper
+		 @private
+		 @param {Object} handle route-handler class
+		 **/
 		function Wrapper(handle) {
 
 			this.handle = handle;
@@ -48,21 +48,20 @@
 			};
 
 			this.deactivate = function() {
-								
+
 				if (jQuery.isFunction(selfWrapper.handle.deactivate)) {
 					selfWrapper.handle.deactivate();
 				}
 			}
-
 		}
 
 		return {
-			        	/**
-			Create handler objects from each route handler using the 'Wrapper' method and add the activated handler object to the router as routes 
+			/**
+			 Create handler objects from each route handler using the 'Wrapper' method and add the activated handler object to the router as routes
 
-			@method addRoutes		
-			@param {Array} handles route-handler object array
-			**/	
+			 @method addRoutes
+			 @param {Array} handles route-handler object array
+			 **/
 			addRoutes : function(handles) {
 				for (path in handles) {
 					var handlerObj = new Wrapper(handles[path]);
@@ -73,23 +72,23 @@
 			},
 
 			/**
-			Start the url controller by initializing the router 
+			 Start the url controller by initializing the router
 
-			@method start		
-			**/	
+			 @method start
+			 **/
 			start : function() {
 				router.init();
 			}
 		};
 
 	};
-	
-	/**
-	Adds a new path to the router
 
-	@method goTo		
-	@param {String} newPath New path
-	**/	
+	/**
+	 Adds a new path to the router
+
+	 @method goTo
+	 @param {String} newPath New path
+	 **/
 	UrlController.goTo = function(newPath) {
 		Helpers.Router.routeTo(newPath);
 	};

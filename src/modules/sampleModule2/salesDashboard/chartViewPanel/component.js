@@ -1,7 +1,6 @@
 define([ 'Boiler', 'text!./view.html'],function( Boiler, viewText) {
-	var Component = function() {
-		var panel = new Boiler.UiPanel(viewText);
-		return panel;
+	var Component = function(parent) {
+		new Boiler.ViewTemplate(parent, viewText);
 	};
 	
 	return Component;

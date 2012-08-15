@@ -10,8 +10,8 @@
 	 @param {Object} parentEl
 	 @param {Object} nls
 	 **/
-	var UIPanel = function(viewTemplate, parentEl, nls) {
-		this.createView(viewTemplate, parentEl, nls);
+	var ViewTemplate = function(parent, viewTemplate, nls) {
+		this.createView(parent, viewTemplate, nls);
 	};
 
 	/**
@@ -21,7 +21,7 @@
 	 @param {Object} uniqueId
 	 @param {Object} style
 	 **/
-	UIPanel.setStyleText = function(uniqueId, style) {
+	ViewTemplate.setStyleText = function(uniqueId, style) {
 		Helpers.Styler.attachCssText(uniqueId, style);
 	};
 
@@ -31,7 +31,7 @@
 	 @method getElementId
 	 @return viewId
 	 **/
-	UIPanel.prototype.getElementId = function() {
+	ViewTemplate.prototype.getElementId = function() {
 		return this.viewId;
 	};
 
@@ -41,7 +41,7 @@
 	 @method getJqueryElement
 	 @return viewId
 	 **/
-	UIPanel.prototype.getJQueryElement = function() {
+	ViewTemplate.prototype.getJQueryElement = function() {
 		return this.jQueryElement;
 	};
 
@@ -51,11 +51,11 @@
 	 @method getDomElement
 	 @return viewId
 	 **/
-	UIPanel.prototype.getDomElement = function() {
+	ViewTemplate.prototype.getDomElement = function() {
 		return this.jQueryElement.get(0);
 	};
 
-	UIPanel.prototype.appendTo = function(parent) {
+	ViewTemplate.prototype.appendTo = function(parent) {
 		this.jQueryElement.appendTo(parent);
 	};
 
@@ -64,15 +64,15 @@
 
 	 @method dispose
 	 **/
-	UIPanel.prototype.remove = function() {
+	ViewTemplate.prototype.remove = function() {
 		this.jQueryElement.remove();
 	};
 
-	UIPanel.prototype.hide = function() {
+	ViewTemplate.prototype.hide = function() {
 		this.jQueryElement.hide();
 	};
 
-	UIPanel.prototype.show = function() {
+	ViewTemplate.prototype.show = function() {
 		this.jQueryElement.show();
 	};
 
@@ -85,7 +85,7 @@
 	 @param nls
 	 @return childId
 	 **/
-	UIPanel.prototype.createView = function(viewText, parentElement, nls) {
+	ViewTemplate.prototype.createView = function(parentElement, viewText, nls) {
 		//apply localization on the template
 		if (nls) {
 			viewText = Helpers.Localizer.localize(viewText, nls);
@@ -100,5 +100,5 @@
 		}
 	};
 
-	return UIPanel;
+	return ViewTemplate;
 });

@@ -7,7 +7,7 @@ define(['Boiler', 'text!./view.html', './viewmodel'], function(Boiler, template,
 		this.activate = function(parent, params) {
 			if (!panel) {
 				vm = new ViewModel(moduleContext);
-				panel = new Boiler.UiPanel(template, parent);
+				panel = new Boiler.ViewTemplate(parent, template);
 				ko.applyBindings(vm, panel.getDomElement());
 			}
 			panel.show();

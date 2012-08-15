@@ -1,11 +1,12 @@
 define(['Boiler', 'text!./view.html', 'text!./style.css' ], function(Boiler, template, style) {
 
 	var RouteHandler = function(moduleContext) {
+		var panel = null;
 		return {
 			activate : function(parent) {
-				var panel = new Boiler.UiPanel(template, parent, null, style);
+				panel = new Boiler.ViewTemplate(parent, template);
 				
-				Boiler.UiPanel.setStyleText("langPanelStylesheet", style);
+				Boiler.ViewTemplate.setStyleText("langPanelStylesheet", style);
 				
 				$('#langEn').click(function (event) { 
 					moduleContext.setLanguage("en");
@@ -18,6 +19,12 @@ define(['Boiler', 'text!./view.html', 'text!./style.css' ], function(Boiler, tem
 				$('#clearLang').click(function (event) { 
 					moduleContext.clearLanguage();
 				});
+			},
+			
+			deactivate : function(){
+				if(panel) {
+					panel.remove();
+				}
 			}
 		};
 	};

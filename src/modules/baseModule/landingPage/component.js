@@ -4,7 +4,7 @@ define(['Boiler', 'text!./view.html'], function(Boiler, template) {
 		var panel = null;
 		this.activate = function(parent, params) {
 			if(!panel) {
-				panel = new Boiler.UiPanel(template, parent);
+				panel = new Boiler.ViewTemplate(parent, template);
 			}
 			panel.show();
 		};
