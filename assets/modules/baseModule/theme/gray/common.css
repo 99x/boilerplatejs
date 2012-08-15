@@ -31,28 +31,27 @@ aside {
 	-moz-box-shadow: 2px -1px 4px rgba(120, 120, 120, 0.75);
 	box-shadow: 2px -1px 4px rgba(120, 120, 120, 0.75);
 	min-height: 500px;
-}
-
-aside ul{
-	padding-top:10px;
-	padding-left:20px;
-}
-
-aside li{
-	list-style: none;
-}
-
-aside li a{
-	font-size:12pt;
-	font-weight:bold;
-}
-
-li a{
+	
 	color: #666;
 	text-decoration: none;
 	line-height: 1.5em;
 	text-shadow: 0 1px 0 white;
 	margin: 2px 0;
+}
+
+aside ul{
+	padding-top:10px;
+	padding-left:20px;
+	font-size:12pt;
+	font-weight:bold;
+}
+
+aside li{
+	padding-left:25px;
+	padding-top:5px;
+	list-style: none;
+	font-size:10pt;
+	font-weight:bold;
 }
 
 /** Hyperlink Styles **/
@@ -89,13 +88,15 @@ article header{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#bababa',GradientType=0 ); /* IE6-9 */
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	text-shadow: 0 1px 0 #fff;
 }
 
 article header h1,h2,h3,h4,h5,h6{
-	text-shadow: 0 1px 0 white;
-	padding : 8px;
+	padding: 8px;
 	margin: 0px 18px;
+	font-size: 10pt;
 }
+
 
 article div{
 	padding:5px;
@@ -145,52 +146,4 @@ td, th {
 
 .right{
 	float:right;
-}
-
-
-
-.clear {
-	clear: both;
-}
-
-
-/*salesinfo panel*/
-#panel {
-	width: 900px;
-	margin: 0px auto 0px auto;
-}
-#salesInfo-div {
-	width: 600px;
-	float: right;
-}
-
-#treeView {
-	width: 90%;
-	float: left;
-}
-
-
-/*Salesinfo chart view*/
-#chart-div {
-	width: inherit;
-	height: auto;
-}
-
-#chart-div table{
-	width:auto;
-}
-
-#chart-placeholder {
-	height: 200px;
-}
-
-#salesInfo-div {
-	position: relative;
-	left: -230px;
-}
-
-#salesinfo img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
