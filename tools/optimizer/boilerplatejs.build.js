@@ -1,15 +1,15 @@
 ({
 	appDir : "../../",
 	baseUrl : "src",
-	dir : "../../../boilderplateJS-initideploy-build",
+	dir : "../../../boilderplateJS-optimized-build",
 	modules : [ {
 		name : "main",
 	} ],
 	paths : {
 		domReady : '../libs/require/domReady',
-		Boiler : './core/Boiler',
+		Boiler : './core/_boiler_',
 		text : "../libs/require/text",
 		i18n : "../libs/require/i18n"
 	},
-	fileExclusionRegExp: /^dummyServer$/
+	fileExclusionRegExp: /^server$/
 })
