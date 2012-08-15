@@ -88,14 +88,15 @@ article header{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#bababa',GradientType=0 ); /* IE6-9 */
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	text-shadow: 0 1px 0 #666;
 }
 
 article header h1,h2,h3,h4,h5,h6{
-	text-shadow: 0 1px 0 white;
-	padding : 8px;
+	padding: 8px;
 	margin: 0px 18px;
 	font-size: 10pt;
 }
+
 
 article div{
 	padding:5px;
