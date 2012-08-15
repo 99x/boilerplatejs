@@ -1,4 +1,4 @@
-﻿﻿define([], function() {
+define([], function() {
 	/**
 	Router is used to handle url navigation by setting up routes and hash codes
  	

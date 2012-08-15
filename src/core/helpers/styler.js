@@ -1,4 +1,4 @@
-﻿﻿define([], function() {
+define([], function() {
 	/**
 	Styler is used to attach css style sheets to the DOM (Document Object Model) and to attach css text to existing style sheets 
  	

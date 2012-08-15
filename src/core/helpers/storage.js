@@ -1,4 +1,4 @@
-﻿﻿define([], function() {
+define([], function() {
 	/**
 	This is used to store persistent data and retreive them or remove them when it is required. 
 	 

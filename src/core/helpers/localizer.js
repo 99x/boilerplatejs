@@ -1,4 +1,4 @@
-﻿﻿define(['./storage'], function(Storage) {
+define(['./storage'], function(Storage) {
 
 	// do neccesary configurations for the underscore template pattern
 	_.templateSettings = {
