@@ -1,3 +1,5 @@
 .settings/*
 .project
-.user
+.usertools/optimizer/build
+tools/optimizer/build
+tools/documentation/docs

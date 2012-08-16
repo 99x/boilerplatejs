@@ -1,7 +1,7 @@
 ({
 	appDir : "../../",
 	baseUrl : "src",
-	dir : "../../../boilderplateJS-optimized-build",
+	dir : "./build",
 	modules : [ {
 		name : "main",
 	} ],
