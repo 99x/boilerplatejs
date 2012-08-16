@@ -1,4 +1,4 @@
-﻿﻿define([], function() {
+define([], function() {
 	/**
 	Mediator is used for handling the messaging inside the framework
  	

@@ -1,4 +1,4 @@
-﻿﻿define(['./storage'], function(Storage) {
+define(['./storage'], function(Storage) {
 
 	// do neccesary configurations for the underscore template pattern
 	_.templateSettings = {
@@ -10,7 +10,7 @@
 	var userLang;
 	if (userLang = Storage.retreive("user-language")) {
 		require.config({
-			locale : userLang,
+			locale : userLang
 		});
 	}
 
@@ -37,7 +37,7 @@
 	Localizer.localize = function(text, nlsObject) {
 		var compiled = _.template(text);
 		return compiled({
-			nls : nlsObject,
+			nls : nlsObject
 		});
 	};
 	/**

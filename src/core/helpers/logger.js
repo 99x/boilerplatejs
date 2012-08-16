@@ -1,4 +1,4 @@
-﻿﻿define([], function() {
+define([], function() {
 	/**
 	Logger is used when we want to log something (some information or error) on the server side as it can be referred later
  	

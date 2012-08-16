@@ -32,8 +32,8 @@ require.config({
  * 
  * Here we use requirejs domReady plugin to run our code once the DOM is ready to be used.
  */
-require(["domReady", "./global-context" ], function(domReady, GlobalContext) {
-	domReady(function() {
+require([ "./global-context" ], function( GlobalContext) {
+	//domReady(function() {
 		/*
 		 * The "./global-context" script contains a requirejs AMD module. It
 		 * returns a function (not an object instance) that encapsulates logic
@@ -42,5 +42,5 @@ require(["domReady", "./global-context" ], function(domReady, GlobalContext) {
 		 * calling 'new' operator on that function.
 		 */
 		new GlobalContext();;
-	});
+	//});
 });

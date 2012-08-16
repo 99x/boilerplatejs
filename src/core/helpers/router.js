@@ -1,4 +1,4 @@
-﻿﻿define([], function() {
+define([], function() {
 	/**
 	Router is used to handle url navigation by setting up routes and hash codes
  	
@@ -43,7 +43,7 @@
 				if (!hasher.isActive()) {
 					hasher.init(); // start listening for history change
 				}
-			},
+			}
 
 		};
 

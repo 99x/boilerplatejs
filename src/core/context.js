@@ -1,4 +1,4 @@
-﻿﻿define(['./helpers/_helpers_'], function (Helpers) {
+define(['./helpers/_helpers_'], function (Helpers) {
 
     /*
     * This is the constructor function for the context and it takes a reference to a parent
