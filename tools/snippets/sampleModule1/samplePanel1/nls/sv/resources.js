@@ -1,0 +1,3 @@
+define({
+        "title": "min titel"
+});
