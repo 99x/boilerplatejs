@@ -1,6 +1,8 @@
 define(function(require) {
 
 	/**
+	Namespace variable defining helper classes mainly used by the core classes in 'Boiler' namespace.
+	
 	@type Script
 	@namespace Boiler.Helpers
 	**/

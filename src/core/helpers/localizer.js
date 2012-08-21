@@ -5,8 +5,7 @@ define(['./storage'], function(Storage) {
 		interpolate : /\{\{(.+?)\}\}/g
 	};
 	
-	//Storage.persist("user-language", "sv");
-	//Storage.remove("user-language");
+	//if user has saved the language preference before, lets use that to configure requirejs i18n
 	var userLang;
 	if (userLang = Storage.retreive("user-language")) {
 		require.config({
@@ -15,24 +14,25 @@ define(['./storage'], function(Storage) {
 	}
 
 	/**
-	Localizer is used to handle the localization of the framework by providing the functions required for setting a different language and 
-	resetting the user language settings to the defaults 
- 	
+	Localizer is used to handle the localization aspects by providing the functions 
+	required for setting a different language and resetting the user language settings to the defaults.
  	@namespace Boiler.Helpers
  	@module BoilerCoreClasses
 	@class Localizer
-	@constructor    
+	@static    
 	**/
 	var Localizer = function() {
 	};
+	
+	
 	/**
-	Returns an object containing parameters for localization
-
+	Apply localization to the given text. The text should contain tags such as {{nls.your_tag_name}} that will be
+	replaced by the 'your_tag_name' property in the nlsObject. 
 	@method localize
 	@static
-	@param {Object} text
-	@param {Object} nlsObject
-	@return {Object}
+	@param text {String}  string that need to be localized. Tags should be in the form {{nls.your_tag_name}}
+	@param nlsObject {Object}  contains localization properties
+	@return {String} localized text
 	**/
 	Localizer.localize = function(text, nlsObject) {
 		var compiled = _.template(text);
@@ -40,20 +40,24 @@ define(['./storage'], function(Storage) {
 			nls : nlsObject
 		});
 	};
+	
+	
 	/**
-	Sets the language to the provided locale
-
+	Sets the language to the provided locale. This will store the locale information in LocalStore
+	and do a page refresh. Please note this will result in a location.refresh() call.
 	@method setLanguage
-	@static
-	@param {Object} locale
+	@static 
+	@param locale {String} locale string to which locale should be set
 	**/
 	Localizer.setLanguage = function(locale) {
-		console.log(locale);
 		Storage.persist("user-language", locale);
 		location.reload(); 
 	};
+	
+	
 	/**
-	Reset the language to the default language
+	Reset the locally stored language settings. This will let to pich browser 
+	locale to be in effect the next time user access the application
 
 	@method clearLanguage
 	@static

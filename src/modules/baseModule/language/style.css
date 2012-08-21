@@ -17,9 +17,9 @@
 }
 
 .lang .en{
-	background:url(./assets/modules/baseModule/language/en.png) no-repeat;
+	background:url(./src/modules/baseModule/language/assets/en.png) no-repeat;
 }
 
 .lang .sv{
-	background:url(./assets/modules/baseModule/language/sv.png) no-repeat;
+	background:url(./src/modules/baseModule/language/assets/sv.png) no-repeat;
 }

@@ -5,8 +5,8 @@ define(['Boiler', 'text!./view.html', 'text!./style.css'], function(Boiler, temp
 	 * CSS file when the theme is requested.
 	 */
 	var themes = {
-		red : "@import url('./assets/modules/baseModule/theme/red/common.css');",
-		gray : "@import url('./assets/modules/baseModule/theme/gray/common.css');"
+		red : "@import url('./src/modules/baseModule/theme/red/common.css');",
+		gray : "@import url('./src/modules/baseModule/theme/gray/common.css');"
 	};
 
 	var RouteHandler = function(moduleContext) {

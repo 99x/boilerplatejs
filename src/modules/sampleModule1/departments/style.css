@@ -3,7 +3,8 @@
 }
 
 .select-input {
-	width: 300px;
+	width: 450px;
 	height: 150px;
+	background-image: url('./src/modules/sampleModule1/departments/assets/departments.jpeg');
 }
 

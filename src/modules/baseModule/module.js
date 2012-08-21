@@ -3,7 +3,9 @@ define(['Boiler', './mainMenu/route-handler', './language/route-handler', './the
 	var Module = function(globalContext) {
 		var context = new Boiler.Context("baseModule", globalContext);
 
+		//scoped DomController that will be effective only on $('#page-content')
 		var controller = new Boiler.DomController($('#page-content'));
+		//add routes with DOM node selector queries and relavant components
 		controller.addRoutes({
 			".main-menu" : new MainMenuRouteHandler(context),
 			".language" : new LanguageRouteHandler(context),
@@ -11,6 +13,7 @@ define(['Boiler', './mainMenu/route-handler', './language/route-handler', './the
 		});
 		controller.start();
 
+		//the landing page should respond to the root URL, so let's use an URLController too
 		var controller = new Boiler.UrlController($(".appcontent"));
 		controller.addRoutes({
 			"/" : new LandingPageComponent()
