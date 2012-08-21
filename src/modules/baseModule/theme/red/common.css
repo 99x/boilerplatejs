@@ -23,6 +23,7 @@ a.site-logo {
 	margin: 30px 0px 0px 25px;
 }
 
+
 /** Side Menu Styles **/
 aside {
 	width: 23%;
@@ -47,6 +48,7 @@ aside ul{
 	color: #AA203B;
 }
 
+
 aside li{
 	padding-left:25px;
 	padding-top:5px;
@@ -54,6 +56,8 @@ aside li{
 	font-size:10pt;
 	font-weight:bold;
 }
+
+
 
 /** Hyperlink Styles **/
 a, a:visited {
@@ -123,6 +127,17 @@ td, th {
 	border-bottom: 1px dotted #ccc;
 	text-align: left; 
 }
+
+
+.main-menu ul a, a:visited {
+	color:#AA203B;
+}
+
+
+.main-menu li a, a:visited {
+	color:#5E5E5E;
+}
+
 
 /** Main Content and Positioning  Styles **/
 .main-content{
