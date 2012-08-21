@@ -1,7 +1,7 @@
 define({
     "root": {
         "departments": "Knockout MVVM",
-        "helloearth": "Hello Earth",
+        "clickcounter": "Click Counter",
         "salesdashboard": "Complex Dashboard",
         "employees": "List-Detail Panels"
     },
