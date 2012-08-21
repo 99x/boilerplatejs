@@ -1,7 +1,7 @@
 define(['Boiler', './mainMenu/route-handler', './language/route-handler', './theme/route-handler', './landingPage/component'], function(Boiler, MainMenuRouteHandler, LanguageRouteHandler, ThemeRouteHandler, LandingPageComponent) {
 
 	var Module = function(globalContext) {
-		var context = new Boiler.Context("baseModule", globalContext);
+		var context = new Boiler.Context(globalContext);
 
 		//scoped DomController that will be effective only on $('#page-content')
 		var controller = new Boiler.DomController($('#page-content'));

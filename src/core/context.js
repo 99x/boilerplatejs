@@ -1,55 +1,28 @@
 define(['./helpers/_helpers_'], function (Helpers) {
 
-    /*
-    * This is the constructor function for the context and it takes a reference to a parent
-    * context. If supplied, it will be initialized to support chaining of it's functionalities.
-    * For example, all child contexts will inherit the settings of its parent contexts. Event notifications 
-    * will bubble through the context hierachy so that inter context communication is possibe 
-    * within a hierachy tree.
-    *
-    * Lets assign the function to a variable which we will be returning at the end of the script. Below
-    * the constructor function, you can find instance methods for Context class. This might appear strange
-    * since they are defined outside the class body and attached to 'prototype' of the class. Although it is 
-    * possible to define methods within the class body, we use this approach for better performance. For
-    * more information read about prototypes in javascripts.
-    */
     /**
 	Context is one of the most important classes in boilerplate. This represents a sandboxed environment
   	for writing group of functionalities. Contexts can be nested to create hierachies for complex 
   	implementations. 
   	For example, 
-    a product suit may have multiple products, 
-    and a product may have multiple modules,
-    and a module may have multiple submodules.
+     - a product suit may have multiple products, 
+     - and a product may have multiple modules,
+     - and a module may have multiple submodules.
     It is possible to create such hierachies by nesting contexts. Context can provide several 
-    necessary services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
+    important services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
  	
  	@namespace Boiler
  	@module BoilerCoreClasses
 	@class Context
 	@constructor
-	@param {Object} uniqueId
 	@param {Object} parentContext reference to a parent context    
 	**/
-    var Context = function (uniqueId, parentContext) {   	
-    	if (uniqueId) {
-    		this.id = uniqueId;
-    	} else {
-    		throw "an id must be defined for a context";
-    	}
+    var Context = function (parentContext) {   	
         this.parentContext = parentContext;
         this.mediator = this.parentContext ? this.parentContext.mediator : new Helpers.Mediator();
         this.settings = this.parentContext ? new Helpers.Settings(this.parentContext.settings) : new Helpers.Settings();
     };
-    /**
-	Returns the context id
 
-	@method getUid
-	@return {Object} context id
-	**/
-    Context.prototype.getUid = function () {
-        return this.id;
-    };
 
     /**
     * This is the method to get settings from the context. This will return a object that has 

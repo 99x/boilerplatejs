@@ -7,9 +7,9 @@ define([], function () {
  	@module BoilerCoreClasses
 	@class DomController
 	@constructor
-	@param {Object} context 
+	@param scope {Object} the jQuery element within which the routes get applied 
 	*/
-    var DomController =  function (parent) {
+    var DomController =  function (scope) {
 
         var self = this;
         self.handles = {};
@@ -31,7 +31,7 @@ define([], function () {
 			**/	
             start: function () {
                 for (path in self.handles) {
-                    parent.find(path).each(function (index) {
+                    scope.find(path).each(function (index) {
                         var paramString = $(this).attr("params");
                         var params = paramString ? eval("({" + paramString + "})") : {};
                         

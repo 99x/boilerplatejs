@@ -1,8 +1,8 @@
 ﻿/*
  * This file holds the function (or you may call it a 'class' if you are from .NET or Java world)
- * to create a root context. 'Boiler.Context' can be nested to create a hierachy of contexts 
+ * to create a root application context. 'Boiler.Context' can be nested to create a hierachy of contexts 
  * for complex implementations. Below we use requirejs to import following files 
- *      'Boiler'      : Namespace for accessing the core boilerplate functions
+ *      'Boiler'      : Namespace alias for accessing the core boilerplate functions
  *      './settings'    : The global setting ( to make available for all children contexts)
  *      './modules'     : The object containing all sub module calsses
  *
@@ -17,14 +17,14 @@ define(["Boiler", "./settings", "./modules/modules"], function (Boiler, settings
      * script as a AMD module and they will obtain the function to be used as a 'class' in 
      * creating instances.
      */
-    var GlobalContext = function () {
+    var AppContext = function () {
         //Lets use core Boiler classes to create our global context instance
-        var globalContext = new Boiler.Context("GlobalModule");
+        var appContext = new Boiler.Context();
         //now lets add settings, which are to be available as global settings
-        globalContext.addSettings(settings);
+        appContext.addSettings(settings);
         //here we load the sub modules of the global context
-        globalContext.loadChildContexts(moduleContexts);
+        appContext.loadChildContexts(moduleContexts);
     };
     
-    return GlobalContext;
+    return AppContext;
 });

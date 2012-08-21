@@ -7,10 +7,9 @@
 	 @class UrlController
 	 @uses This class uses helpers as a dependency
 	 @constructor
-	 @param {Object} context
-	 @param {Object} parentEl
+	 @param scope {Object} jQuery element to which the routed components get attached to
 	 **/
-	var UrlController = function(parentEl) {
+	var UrlController = function(scope) {
 
 		var allHandles = {};
 		var router = new Helpers.Router();
@@ -20,7 +19,7 @@
 		 * to get any deactivation calls. Upon deactivation call we will ask
 		 * all components on this parent element to deactivate them.
 		 */
-		parentEl.bind('DEACTIVATE_HANDLERS', function() {
+		scope.bind('DEACTIVATE_HANDLERS', function() {
 			for (handler in allHandles) {
 				allHandles[handler].deactivate();
 			}
@@ -42,9 +41,9 @@
 			var selfWrapper = this;
 			this.activate = function(vals) {
 				// deactivate all active handles in current controller
-				parentEl.trigger('DEACTIVATE_HANDLERS');
+				scope.trigger('DEACTIVATE_HANDLERS');
 				// activate the requested handler
-				selfWrapper.handle.activate(parentEl, vals);
+				selfWrapper.handle.activate(scope, vals);
 			};
 
 			this.deactivate = function() {

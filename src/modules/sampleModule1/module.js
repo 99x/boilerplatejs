@@ -2,7 +2,7 @@ define(['Boiler', './settings', './departments/component', './clickCounter/compo
 
 	var Module = function(globalContext) {
 
-		var context = new Boiler.Context("sampleModule1", globalContext);
+		var context = new Boiler.Context(globalContext);
 		context.addSettings(settings);
 
 		var controller = new Boiler.UrlController($(".appcontent"));

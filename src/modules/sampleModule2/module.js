@@ -2,7 +2,7 @@ define(['Boiler', './settings', './employeeList/component', './employeeDetails/c
 
 	var Module = function(globalContext) {
 
-		var context = new Boiler.Context("sampleModule2", globalContext);
+		var context = new Boiler.Context(globalContext);
 		context.addSettings(settings);
 
 		var controller = new Boiler.UrlController($(".appcontent"));

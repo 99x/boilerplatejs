@@ -32,15 +32,15 @@ require.config({
  * 
  * Here we use requirejs domReady plugin to run our code once the DOM is ready to be used.
  */
-require([ "./global-context", "domReady" ], function( GlobalContext, domReady) {
+require([ "./appcontext", "domReady" ], function( AppContext, domReady) {
 	domReady(function() {
 		/*
-		 * The "./global-context" script contains a requirejs AMD module. It
+		 * The "./appcontext" script contains a requirejs AMD module. It
 		 * returns a function (not an object instance) that encapsulates logic
 		 * for creating a GlobalContext. In javascripts, functions can be used
 		 * as classes for OO programming. So below we create an instance by
 		 * calling 'new' operator on that function.
 		 */
-		new GlobalContext();;
+		new AppContext();;
 	});
 });
