@@ -1,4 +1,4 @@
-define(['Boiler', './viewmodel.js', 'text!./view.html'], function(Boiler, ViewModel, template) {
+define(['Boiler', './viewmodel', 'text!./view.html'], function(Boiler, ViewModel, template) {
 
 	var Component = function(moduleContext) {
 

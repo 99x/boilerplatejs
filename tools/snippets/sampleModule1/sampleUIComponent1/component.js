@@ -1,4 +1,4 @@
-define(['Boiler', 'text!./view.html', './viewmodel.js', 'text!./style.css', 'i18n!./nls/resources.js'], function(Boiler, template, ViewModel, styleText, nls) {
+define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!./nls/resources'], function(Boiler, template, ViewModel, styleText, nls) {
 
 	var Component = function(moduleContext) {
 		Boiler.ViewTemplate.setStyleText("{CSS_IDENTIFIER}", styleText);
