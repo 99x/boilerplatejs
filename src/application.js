@@ -14,10 +14,12 @@
 define(["Boiler", "./settings", "./modules/modules"], function(Boiler, settings, moduleContexts) {
 
 	/**
-	 * AppContext class to create a global context that
-	 * will act as the parent for module contexts.
-	 */
-	var AppContext = function() {
+	 * Application class holds the global context that will act as the parent for module contexts.
+	 * 
+	 * @class Application
+	 * @constructor
+	 **/
+	var Application = function() {
 		//Create our root context instance
 		var appContext = new Boiler.Context();
 		//now lets add global settings
@@ -26,5 +28,5 @@ define(["Boiler", "./settings", "./modules/modules"], function(Boiler, settings,
 		appContext.loadChildContexts(moduleContexts);
 	};
 
-	return AppContext;
+	return Application;
 });

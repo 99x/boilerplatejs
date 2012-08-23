@@ -32,7 +32,7 @@ require.config({
  * 
  * Here we use requirejs domReady plugin to run our code once the DOM is ready to be used.
  */
-require([ "./appcontext", "domReady" ], function( AppContext, domReady) {
+require([ "./application", "domReady" ], function( Application, domReady) {
 	domReady(function() {
 		/*
 		 * The "./appcontext" script contains a requirejs AMD module. It
@@ -41,6 +41,6 @@ require([ "./appcontext", "domReady" ], function( AppContext, domReady) {
 		 * as classes for OO programming. So below we create an instance by
 		 * calling 'new' operator on that function.
 		 */
-		new AppContext();;
+		new Application();;
 	});
 });

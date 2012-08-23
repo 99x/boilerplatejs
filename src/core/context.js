@@ -1,5 +1,6 @@
 define(['./helpers/_helpers_'], function (Helpers) {
 
+
     /**
 	Context is one of the most important classes in boilerplate. This represents a sandboxed environment
   	for writing group of functionalities. Contexts can be nested to create hierachies for complex 
