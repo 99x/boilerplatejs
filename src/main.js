@@ -41,6 +41,6 @@ require([ "./application", "domReady" ], function( Application, domReady) {
 		 * as classes for OO programming. So below we create an instance by
 		 * calling 'new' operator on that function.
 		 */
-		new Application();;
+		new Application();
 	});
 });
