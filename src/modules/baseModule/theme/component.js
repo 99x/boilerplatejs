@@ -18,8 +18,7 @@ define(['Boiler', 'text!./view.html', 'text!./style.css'], function(Boiler, temp
 		return {
 			//this is the method that will be called by the handler
 			activate : function(parent) {
-				panel = new Boiler.ViewTemplate(parent, template);
-				Boiler.ViewTemplate.setStyleText("themeComponentStyle", componentStyle);
+				panel = new Boiler.ViewTemplate(parent, template, null, componentStyle);
 
 				//if we have a stored theme setting lest use it OR use default
 				var storedThemeKey = moduleContext.retreiveObject(THEME_UNIQUE_KEY);
