@@ -8,7 +8,7 @@ then
 else
 	echo "Node.js installation found!"
 	CURRENT=$PWD
-	echo "Current Directory :${CURRENT}"
+	echo "Current Directory :${CURRENT} ! Please wait..."
 	node r.js -o boilerplatejs.build.js
-	echo "Created the optimized build on the current directory : ${CURRENT}!"
+	echo "Created the optimized build at : ${CURRENT}/build"
 fi

@@ -11,5 +11,4 @@
 		text : "../libs/require/text",
 		i18n : "../libs/require/i18n"
 	},
-	fileExclusionRegExp: /^server$/
 })
