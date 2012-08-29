@@ -1,13 +1,14 @@
-define(['Boiler', 'text!./view.html', './viewmodel', 'text!./style.css', 'i18n!./nls/resources'], function(Boiler, template, ViewModel, styleText, nls) {
+define(['require', 'Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/resources'], function(require, Boiler, template, ViewModel, nls) {
 
 	var Component = function(moduleContext) {
-		Boiler.ViewTemplate.setStyleText("DEPAERTMENT_PANEL_CSS", styleText);
+		
 
 		var panel, vm = null;
 		
 		this.activate = function(parent, params) {
 			if (!panel) {
 				panel = new Boiler.ViewTemplate(parent, template, nls);
+				Boiler.ViewTemplate.setStyleLink("DEPAERTMENT_PANEL_CSS", require.toUrl('./style.css'));
 				vm = new ViewModel(moduleContext);
 				ko.applyBindings(vm, panel.getDomElement());
 			}

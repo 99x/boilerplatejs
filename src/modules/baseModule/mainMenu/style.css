@@ -3,14 +3,14 @@
 }
 
 #home{
-	background:url(./src/modules/baseModule/mainMenu/assets/home.png) no-repeat;
+	background:url(./assets/home.png) no-repeat;
 }
 
 #product-module-a{
-	background:url(./src/modules/baseModule/mainMenu/assets/module_a.png) no-repeat;
+	background:url(./assets/module_a.png) no-repeat;
 }
 
 #product-module-b{
-	background:url(./src/modules/baseModule/mainMenu/assets/module_b.png) no-repeat;
+	background:url(./assets/module_b.png) no-repeat;
 }
 

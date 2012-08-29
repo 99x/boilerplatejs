@@ -1,39 +1,41 @@
 define([], function() {
 	/**
-	Styler is used to attach css style sheets to the DOM (Document Object Model) and to attach css text to existing style sheets 
- 	
- 	@namespace Boiler.Helpers
- 	@module BoilerCoreClasses
-	@class Styler
-	@constructor    
-	**/
+	 Styler is used to attach css style sheets to the DOM (Document Object Model) and to attach css text to existing style sheets
+
+	 @namespace Boiler.Helpers
+	 @module BoilerCoreClasses
+	 @class Styler
+	 @constructor
+	 **/
 	var Styler = function() {
 	};
 	/**
-	Attach a css link to the DOM
+	 Attach a css link to the DOM
 
-	@method attachCssLink		
-	@param {Object} elementId Element ID
-	@param {Object} css
-	**/	
-	Styler.attachCssLink = function(elementId, css) {
-		var style = document.getElementById(elementId);
-		if (!style) {
-			var style = document.createElement("link");
-			style.type = "text/css";
-			style.rel = "stylesheet";
-			style.href = "style.css";
+	 @method attachCssLink
+	 @param {Object} elementId Element ID
+	 @param {Object} css
+	 **/
+	Styler.attachCssLink = function(elementId, href) {
+		var link = document.getElementById(elementId);
+		if (!link) {
+			var link = document.createElement("link");
+			link.type = "text/css";
+			link.rel = "stylesheet";
+			link.href = href;
+			document.getElementsByTagName("head")[0].appendChild(link);
+		} else {
+			link.href = href;
 		}
 
-		document.getElementsByTagName("head")[0].appendChild(ss);
 	};
 	/**
-	Attach css text to an existing style sheet
+	 Attach css text to an existing style sheet
 
-	@method attachCssText		
-	@param {Object} elementId Element ID
-	@param {Object} css
-	**/	
+	 @method attachCssText
+	 @param {Object} elementId Element ID
+	 @param {Object} css
+	 **/
 	Styler.attachCssText = function(elementId, css) {
 
 		var elem = document.getElementById(elementId);

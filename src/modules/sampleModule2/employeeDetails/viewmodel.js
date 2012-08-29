@@ -12,7 +12,10 @@ define(["Boiler"], function(Boiler) {
 		this.setEmployee = function(id) {
 			//Get the employee details from the server.
 			if (id) {
-				$.getJSON(moduleContext.getSettings().urls.dumSvr + id + ".json.js", function(data) {
+				var url = moduleContext.getSettings().urls.empdetails.replace('{empid}', id);
+				
+				$.getJSON(url, function(data) {
+					data.imageurl = moduleContext.getSettings().urls.empimages.replace('{empid}', id);
 					self.employee(data);
 				});
 			}

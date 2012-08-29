@@ -1,12 +1,12 @@
-define(['Boiler', 'text!./view.html', 'text!./style.css'], function(Boiler, template, componentStyle) {
+define(['require', 'Boiler', 'text!./view.html', 'text!./style.css'], function(require, Boiler, template, componentStyle) {
 
 	/**
 	 * Lets define the themes we have in the system. We use CSS text to import appropriate
 	 * CSS file when the theme is requested.
 	 */
 	var themes = {
-		red : "@import url('./src/modules/baseModule/theme/red/common.css');",
-		gray : "@import url('./src/modules/baseModule/theme/gray/common.css');"
+		red : require.toUrl( "./red/common.css"),
+		gray : require.toUrl("./gray/common.css")
 	};
 
 	var RouteHandler = function(moduleContext) {
@@ -23,12 +23,11 @@ define(['Boiler', 'text!./view.html', 'text!./style.css'], function(Boiler, temp
 				//if we have a stored theme setting lest use it OR use default
 				var storedThemeKey = moduleContext.retreiveObject(THEME_UNIQUE_KEY);
 				if (!storedThemeKey) {
-					storedThemeKey = "gray";
-					//default
+					storedThemeKey = "gray";//default
 				}
 
 				//lets use the panel to set style in header
-				Boiler.ViewTemplate.setStyleText(THEME_UNIQUE_KEY, themes[storedThemeKey]);
+				Boiler.ViewTemplate.setStyleLink(THEME_UNIQUE_KEY, themes[storedThemeKey]);
 				//set the current theme selected on the select box
 				$(".theme select").val(storedThemeKey);
 
@@ -38,7 +37,7 @@ define(['Boiler', 'text!./view.html', 'text!./style.css'], function(Boiler, temp
 					//read the selected value
 					css = themes[selection];
 					//set style in header
-					Boiler.ViewTemplate.setStyleText(THEME_UNIQUE_KEY, css);
+					Boiler.ViewTemplate.setStyleLink(THEME_UNIQUE_KEY, css);
 					//sale in the local store
 					moduleContext.persistObject(THEME_UNIQUE_KEY, selection);
 				});

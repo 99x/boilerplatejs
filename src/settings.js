@@ -6,7 +6,5 @@
 */
 define({
     appName: "BoilerplateJS",
-    urls: {
-        menu: "./DumSvr/menu.json.js"
-    }
 });
+

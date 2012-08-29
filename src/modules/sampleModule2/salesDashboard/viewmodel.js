@@ -1,4 +1,4 @@
-define(['./chartBinding'], function(chartBinding) {
+define(['require', './chartBinding'], function(require, chartBinding) {
 
 	var ViewModel = function(moduleContext) {
 		var self = this;
@@ -27,7 +27,7 @@ define(['./chartBinding'], function(chartBinding) {
 		
 		//To be called after tree data has been rendered
 		this.drawTree = function() {
-			$.jstree._themes = "libs/jquery/jstree/themes/";
+			$.jstree._themes = require.toUrl("../../../../libs/jquery/jstree/jstree.themes/");
 			$("#treeView").jstree({
 				"themes" : {
 					"theme" : "apple"

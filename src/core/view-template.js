@@ -16,14 +16,27 @@
 	};
 
 	/**
-	 Sets the style
+	 Create a style tag on the head and attach the given text in to it as CSS.
+	 If a style tag exists with the given styleId, CSS text will be replaced.
 
 	 @method setStyleText
-	 @param {Object} uniqueId
-	 @param {Object} style
+	 @param styleId {String} uniqueId for the style tag
+	 @param style {String} CSS text as a string
 	 **/
-	ViewTemplate.setStyleText = function(uniqueId, style) {
-		Helpers.Styler.attachCssText(uniqueId, style);
+	ViewTemplate.setStyleText = function(styleId, style) {
+		Helpers.Styler.attachCssText(styleId, style);
+	};
+
+	/**
+	 Create a css link tag on the head with the reference to the given href.
+	 If a link tag exists with the given linkId, href will be replaced.
+
+	 @method setStyleLink
+	 @param linkId {String} uniqueId for the link tag
+	 @param href {String} URL to the CSS file
+	 **/
+	ViewTemplate.setStyleLink = function(linkId, href) {
+		Helpers.Styler.attachCssLink(linkId, href);
 	};
 
 	/**
@@ -92,11 +105,11 @@
 		if (nls) {
 			viewText = Helpers.Localizer.localize(viewText, nls);
 		}
-		
-		if(!styleText) {
+
+		if (!styleText) {
 			styleText = "";
 		} else {
-			styleText = "<style type='text/css' scoped='scoped'>"+styleText+"</style>";
+			styleText = "<style type='text/css' scoped='scoped'>" + styleText + "</style>";
 		}
 		// create a random id for the child and create a new element
 		this.viewId = _.uniqueId(['bpjscontainer_']);
