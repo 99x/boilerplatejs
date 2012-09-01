@@ -1,41 +1,40 @@
 require([], function() {
 
-	module("other/js-encapsulation Tests",{
-		setup : function(){
+	module("other/js-prototypes Tests", {
+		setup : function() {
 			Mediator = testr('core/helpers/mediator');
 		}
 	});
-	
-	
+
 	// in JS, functions can be used as OO classes
 	var Person = function(name) {
-		var self = this;
-		
-		//private methods and attributes
-		this.getNickname = function(){
-			return "Yaka";
-		};
-		
-		//public methods and attributes (return obj)
-		return {
-			getName : function() {
-				return name + ' ' + self.getNickname();
-			}
-		}
+		this.name = null;
 	};
-	
-	//static functions attached to 'Person' class 
-	Person.hasBrain = function() {
-		return true;
+
+	// use of prototypes improves performance and memory use
+	Person.prototype.getName = function() {
+		return this.name;
 	}
+	
+	Person.prototype.setName = function(name) {
+		this.name = name;
+	}	
+	
+	var Manager = function() {}
+	Manager.prototype = new Person();
 
 
-	test('use of private methods', function() {
-		var developer = new Person("Hasith");
-		equal(developer.getName(), "Hasith Yaka", "name creation of the person'");
-		ok(!jQuery.isFunction(developer.getNickname), "private functions shouldn't be exposed");
-		ok(!jQuery.isFunction(developer.hasBrain), "static functions shouldn't be exposed via instances");
-		ok(jQuery.isFunction(Person.hasBrain), "static functions are exposed on the class itself");
+	test('use of prototype inheritance', function() {
+		var manager1 = new Manager();
+		manager1.setName("mgr one");
+		
+		var manager2 = new Manager();
+		manager2.setName("mgr two");
+		
+		
+		equal(manager1.getName(), "mgr one", "one prototype instance, but differnt behavior");
+		equal(manager2.getName(), "mgr two", "one prototype instance, but differnt behavior");
+
 	});
 
 });
