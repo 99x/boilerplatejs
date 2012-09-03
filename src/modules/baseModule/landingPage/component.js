@@ -1,6 +1,6 @@
 define(['Boiler', 'text!./view.html'], function(Boiler, template) {
 
-	var RouteHandler = function(moduleContext) {
+	var Component = function(moduleContext) {
 		var panel = null;
 		this.activate = function(parent, params) {
 			if(!panel) {
@@ -16,6 +16,6 @@ define(['Boiler', 'text!./view.html'], function(Boiler, template) {
 		}
 	};
 
-	return RouteHandler;
+	return Component;
 
 }); 

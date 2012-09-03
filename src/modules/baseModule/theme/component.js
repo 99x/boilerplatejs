@@ -9,7 +9,7 @@ define(['require', 'Boiler', 'text!./view.html', 'text!./style.css'], function(r
 		gray : require.toUrl("./gray/common.css")
 	};
 
-	var RouteHandler = function(moduleContext) {
+	var Component = function(moduleContext) {
 		//unique key of this sub-module to be used when necessary
 		var THEME_UNIQUE_KEY = "themeStylesheet";
 		
@@ -52,6 +52,6 @@ define(['require', 'Boiler', 'text!./view.html', 'text!./style.css'], function(r
 		};
 	};
 
-	return RouteHandler;
+	return Component;
 
 });

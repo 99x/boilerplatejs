@@ -1,6 +1,6 @@
 define(['require', 'Boiler', 'text!./view.html'], function(require, Boiler, template) {
 
-	var RouteHandler = function(moduleContext) {
+	var Component = function(moduleContext) {
 		var panel = null;
 		return {
 			activate : function(parent) {
@@ -28,6 +28,6 @@ define(['require', 'Boiler', 'text!./view.html'], function(require, Boiler, temp
 		};
 	};
 
-	return RouteHandler;
+	return Component;
 
 });

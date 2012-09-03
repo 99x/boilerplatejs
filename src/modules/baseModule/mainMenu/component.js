@@ -1,6 +1,6 @@
 define(['require', 'Boiler', 'text!./view.html', 'i18n!./nls/resources'], function(require, Boiler, template, nls, style) {
 
-	var RouteHandler = function(moduleContext) {
+	var Component = function(moduleContext) {
 		var panel = null;
 		return {
 			activate : function(parent) {
@@ -16,6 +16,6 @@ define(['require', 'Boiler', 'text!./view.html', 'i18n!./nls/resources'], functi
 		};
 	};
 
-	return RouteHandler;
+	return Component;
 
 }); 
