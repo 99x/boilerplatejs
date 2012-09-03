@@ -1,12 +1,12 @@
-define(['require', 'Boiler', 'text!./view.html', 'text!./style.css'], function(require, Boiler, template, componentStyle) {
+define(['require', 'Boiler', 'text!./view.html', 'path!./red/common.css', 'path!./gray/common.css'], function(require, Boiler, template, redTheme, grayTheme) {
 
 	/**
 	 * Lets define the themes we have in the system. We use CSS text to import appropriate
 	 * CSS file when the theme is requested.
 	 */
 	var themes = {
-		red : require.toUrl( "./red/common.css"),
-		gray : require.toUrl("./gray/common.css")
+		red : redTheme,
+		gray : grayTheme
 	};
 
 	var Component = function(moduleContext) {
@@ -18,7 +18,7 @@ define(['require', 'Boiler', 'text!./view.html', 'text!./style.css'], function(r
 		return {
 			//this is the method that will be called by the handler
 			activate : function(parent) {
-				panel = new Boiler.ViewTemplate(parent, template, null, componentStyle);
+				panel = new Boiler.ViewTemplate(parent, template, null);
 
 				//if we have a stored theme setting lest use it OR use default
 				var storedThemeKey = moduleContext.retreiveObject(THEME_UNIQUE_KEY);

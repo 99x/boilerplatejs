@@ -1,7 +1,7 @@
-define(['require'], function(require) {
+define(['path!../../../server/'], function(serverPath) {
 	return {
 		urls : {
-			departments : require.toUrl("../../../server/departments.txt")
+			departments : serverPath + "departments.txt"
 		}
 	}
 }); 

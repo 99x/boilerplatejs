@@ -13,6 +13,7 @@ require.config({
 		order : '../libs/require/order',
 		i18n : '../libs/require/i18n',
 		domReady : '../libs/require/domReady',
+		path :  '../libs/require/path',
 		// namespace that aggregate core classes that are in frequent use
 		Boiler : './core/_boiler_'
 	}

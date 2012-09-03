@@ -1,11 +1,11 @@
 
-define(['require'], function(require) {
+define(['path!../../../server/'], function(serverPath) {
 	return {
 		urls : {
-			empimages : require.toUrl("../../../server/{empid}.png"),
-			empdetails : require.toUrl("../../../server/{empid}.txt"),
-			yearlysales : require.toUrl("../../../server/yearly-sales.txt"),
-			employees : require.toUrl("../../../server/employees.txt")
+			empimages : serverPath + "{empid}.png",
+			empdetails : serverPath + "{empid}.txt",
+			yearlysales : serverPath + "yearly-sales.txt",
+			employees : serverPath + "employees.txt"
 		}
 	}
 });
