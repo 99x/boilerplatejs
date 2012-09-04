@@ -2,8 +2,9 @@ body {
 	font: normal 12px "Trebuchet MS";
 	color: #111111;
 	margin: 0px !important;
-	padding: 0px !important;
+	padding: 0px;
 }
+
 
 /** Main  Header Styles **/
 header{
