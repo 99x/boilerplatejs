@@ -27,7 +27,7 @@ define(['require', 'Boiler', 'text!./view.html', 'path!./red/common.css', 'path!
 				}
 
 				//lets use the panel to set style in header
-				Boiler.ViewTemplate.setStyleLink(THEME_UNIQUE_KEY, themes[storedThemeKey]);
+				Boiler.ViewTemplate.setStyleLink(themes[storedThemeKey], THEME_UNIQUE_KEY);
 				//set the current theme selected on the select box
 				$(".theme select").val(storedThemeKey);
 
@@ -37,7 +37,7 @@ define(['require', 'Boiler', 'text!./view.html', 'path!./red/common.css', 'path!
 					//read the selected value
 					css = themes[selection];
 					//set style in header
-					Boiler.ViewTemplate.setStyleLink(THEME_UNIQUE_KEY, css);
+					Boiler.ViewTemplate.setStyleLink(css, THEME_UNIQUE_KEY);
 					//sale in the local store
 					moduleContext.persistObject(THEME_UNIQUE_KEY, selection);
 				});
