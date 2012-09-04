@@ -1,23 +1,25 @@
-<article id="salesperson-list">
-	<header>
-		<h1>Sales Person List</h1>
-	</header>
-	<table>
-		<thead>
-			<tr>
-				<th>First name</th>
-				<th>Last Name</th>
-				<th>Average Sales</th>
-			</tr>
-    	</thead>
+<div class="portlet-blue">
 
-		<tbody data-bind="foreach:salesPersons">
-        <tr>
-			<td><a href="#" data-bind="text: firstName, click:$root.personClicked"></a></td>
-			<td><a href="#" data-bind="text: lastName, click:$root.personClicked"></a></td>
-			<td><a href="#" data-bind="text: averageSales, click:$root.personClicked"></a></td>
-		</tr>    
-    </tbody>
+    <div class="title"><span>Sales Person List</span>
+    </div>
+    <div class="content">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last Name</th>
+                <th>Average Sales</th>
+            </tr>
+            </thead>
 
-	</table>
-</article>
+            <tbody data-bind="foreach:salesPersons">
+            <tr>
+                <td><a href="#" data-bind="text: firstName, click:$root.personClicked"></a></td>
+                <td><a href="#" data-bind="text: lastName, click:$root.personClicked"></a></td>
+                <td><a href="#" data-bind="text: averageSales, click:$root.personClicked"></a></td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

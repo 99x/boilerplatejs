@@ -1,18 +1,20 @@
-<article  class="width_quarter left">
-	<header>
-		<h1>Sales Departments</h1>
-	</header>
-	<div id="treeView" >
-		<ul id="salesInfo" data-bind="foreach:{data : salesInfo ,afterRender: drawTree }">
-			<li class="department">
+<div class="portlet-blue width_quarter left">
+    <div class="title"><span>Sales Departments</span></div>
+
+    <div class="content">
+        <div id="treeView">
+            <ul id="salesInfo" data-bind="foreach:{data : salesInfo ,afterRender: drawTree }">
+                <li class="department">
 				<span
-				data-bind="text: name"></span>
-				<ul id="salesDept" data-bind="foreach: years">
-					<li class="years">
-						<a href="#" data-bind="text: year, click:function(data, event) { $root.yearClicked($parent.name,data); }"></a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-</article>
+                        data-bind="text: name"></span>
+                    <ul id="salesDept" data-bind="foreach: years">
+                        <li class="years">
+                            <a href="#"
+                               data-bind="text: year, click:function(data, event) { $root.yearClicked($parent.name,data); }"></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

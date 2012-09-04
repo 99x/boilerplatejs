@@ -4,5 +4,5 @@
 	"age" : 23,
 	"email":"alice@99x.lk",
 	"averageSales" : 10500,
-	"imageId":"./server/imgEmp03.png"
+	"imageId":"./server/emp03.png"
 }

@@ -9,7 +9,7 @@ define(['require', 'Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/reso
 				//attach the template to the DOM
 				panel = new Boiler.ViewTemplate(parent, template, nls);
 				//attach the stylesheet of this component
-				Boiler.ViewTemplate.setStyleLink("DEPAERTMENT_PANEL_CSS", cssPath);
+				Boiler.ViewTemplate.setStyleLink(cssPath);
 				//create out viewmodel
 				vm = new ViewModel(moduleContext);
 				//use knockout for bindings
