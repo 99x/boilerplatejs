@@ -3,3 +3,4 @@
 .usertools/optimizer/build
 tools/optimizer/build
 tools/documentation/docs
+.idea/*

@@ -1,39 +1,42 @@
-<article id="controls"><a data-bind="click:backToList"> << Back to list</a></article>
-<article id="salesperson-details">
-	<header>
-		<h1>Sales Person Details</h1>
-	</header>
+<div class="portlet-gray">
 
-	<table data-bind="with:employee">
-		<tbody>
-			<tr>
-				<td rowspan="7"><img data-bind="attr : {src: imageurl}" /></td>
-			</tr>
-			<tr>
-				<td>ID</td>
-				<td><strong data-bind="text: id"></strong></td>
-			</tr>
-			<tr>
-				<td>First name</td>
-				<td><strong data-bind="text: firstName"></strong></td>
-			</tr>
-			<tr>
-				<td>Last name</td>
-				<td><strong data-bind="text: lastName"></strong></td>
-			</tr>
-			<tr>
-				<td>Age</td>
-				<td><strong data-bind="text: age"></strong></td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td><strong data-bind="text: email"></strong></td>
-			</tr>
-			<tr>
-				<td>Average Sales</td>
-				<td><strong data-bind="text: averageSales"></strong></td>
-			</tr>
+    <div class="title"><span>Sales Person Details</span>
+    </div>
 
-		</tbody>
-	</table>
-</article>
+    <div class="content">
+        <table data-bind="with:employee">
+            <tbody>
+            <tr>
+                <td rowspan="7" width="150"><img data-bind="attr : {src: imageId}"/></td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td><strong data-bind="text: id"></strong></td>
+            </tr>
+            <tr>
+                <td>First name</td>
+                <td><strong data-bind="text: firstName"></strong></td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td><strong data-bind="text: lastName"></strong></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><strong data-bind="text: age"></strong></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><strong data-bind="text: email"></strong></td>
+            </tr>
+            <tr>
+                <td>Average Sales</td>
+                <td><strong data-bind="text: averageSales"></strong></td>
+            </tr>
+
+            </tbody>
+        </table>
+        <a data-bind="click:backToList" href=""> << Back to list</a>
+    </div>
+
+</div>

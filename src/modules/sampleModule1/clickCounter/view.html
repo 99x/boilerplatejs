@@ -1,13 +1,13 @@
-<article  class="width_3_quarter left">
-	<header>
-		<h1>Click Counter</h1>
-	</header>
-	<div>
-	    <div>You've clicked <span data-bind='text: numberOfClicks'>&nbsp;</span> times</div>
-	    <button data-bind='click: registerClick, disable: hasClickedTooManyTimes'>Click me</button>
-		<div data-bind='visible: hasClickedTooManyTimes'>
-		    That's too many clicks! Please stop before you wear out your fingers.
-		    <button data-bind='click: resetClicks'>Reset clicks</button>
-		</div>
-	</div>
-</article>
+<div class="portlet-blue">
+    <div class="title"><span>Click Counter</span></div>
+    <div class="content">
+        <div>You've clicked <span data-bind='text: numberOfClicks'>&nbsp;</span> times</div>
+        <br/>
+        <button data-bind='click: registerClick, disable: hasClickedTooManyTimes'>Click me</button>
+        <div data-bind='visible: hasClickedTooManyTimes'>
+            <div class="error">That's too many clicks! Please stop before you wear out your fingers.</div>
+            <br/><br/>
+            <button data-bind='click: resetClicks'>Reset clicks</button>
+        </div>
+    </div>
+</div>

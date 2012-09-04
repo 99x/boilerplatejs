@@ -1,4 +1,4 @@
-define(['require', 'Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/resources', 'path!./style.css'], function(require, Boiler, template, ViewModel, nls, cssPath) {
+define(['Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/resources', 'path!./style.css'], function(Boiler, template, ViewModel, nls, cssPath) {
 
 	var Component = function(moduleContext) {
 
@@ -15,7 +15,8 @@ define(['require', 'Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/reso
 		this.activate = function(parent, params) {
 			// if panel is not created, lets create it and initiate bindings
 			if (!panel) {
-				panel = new Boiler.ViewTemplate(parent, template, nls, cssPath);
+				panel = new Boiler.ViewTemplate(parent, template, nls);
+				Boiler.ViewTemplate.setStyleLink(cssPath);
 				vm = new ViewModel(moduleContext);
 				ko.applyBindings(vm, panel.getDomElement());
 			}

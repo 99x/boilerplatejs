@@ -32,11 +32,11 @@
 	 If a link tag exists with the given linkId, href will be replaced.
 
 	 @method setStyleLink
-	 @param linkId {String} uniqueId for the link tag
 	 @param href {String} URL to the CSS file
+	 @param linkId {String} uniqueId for the link tag
 	 **/
-	ViewTemplate.setStyleLink = function(linkId, href) {
-		Helpers.Styler.attachCssLink(linkId, href);
+	ViewTemplate.setStyleLink = function(href,linkId) {
+		Helpers.Styler.attachCssLink(href, linkId);
 	};
 
 	/**

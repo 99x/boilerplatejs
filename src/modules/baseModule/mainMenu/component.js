@@ -5,7 +5,7 @@ define(['require', 'Boiler', 'text!./view.html', 'i18n!./nls/resources', 'path!.
 		return {
 			activate : function(parent) {
 				panel = new Boiler.ViewTemplate(parent, template, nls);
-				Boiler.ViewTemplate.setStyleLink('languageStyleLink', cssPath);
+				Boiler.ViewTemplate.setStyleLink(cssPath);
 			},
 
 			deactivate : function() {
