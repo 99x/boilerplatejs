@@ -1,4 +1,4 @@
-define(['Boiler', 'text!./view.html','text!./style.css', './viewmodel'], function(Boiler, template, style,  ViewModel) {
+define(['Boiler', 'text!./view.html','text!./style.css', './viewmodel'], function(Boiler, template, styleText,  ViewModel) {
 
 	var Component = function(moduleContext) {
 
@@ -7,7 +7,7 @@ define(['Boiler', 'text!./view.html','text!./style.css', './viewmodel'], functio
 		this.activate = function(parent, params) {
 			if (!panel) {
 				vm = new ViewModel(moduleContext, params.id);
-				panel = new Boiler.ViewTemplate(parent, template, null, style);
+				panel = new Boiler.ViewTemplate(parent, template, null, styleText);
 				ko.applyBindings(vm, panel.getDomElement());
 			}
 			

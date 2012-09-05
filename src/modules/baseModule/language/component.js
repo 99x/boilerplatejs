@@ -1,11 +1,10 @@
-define(['require', 'Boiler', 'text!./view.html', 'path!./style.css'], function(require, Boiler, template, cssPath) {
+define(['require', 'Boiler', 'text!./view.html'], function(require, Boiler, template) {
 
 	var Component = function(moduleContext) {
 		var panel = null;
 		return {
 			activate : function(parent) {
 				panel = new Boiler.ViewTemplate(parent, template, null);
-				Boiler.ViewTemplate.setStyleLink(cssPath);
 				
 				$('#langEn').click(function (event) { 
 					moduleContext.setLanguage("en");

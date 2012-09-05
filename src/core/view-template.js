@@ -9,10 +9,10 @@
 	 @param {Object} viewTemplate
 	 @param {Object} parentEl
 	 @param {Object} nls
-	 @param {object} style
+	 @param {object} styleText
 	 **/
-	var ViewTemplate = function(parent, viewTemplate, nls, style) {
-		this.createView(parent, viewTemplate, nls, style);
+	var ViewTemplate = function(parent, viewTemplate, nls, styleText) {
+		this.createView(parent, viewTemplate, nls, styleText);
 	};
 
 	/**
@@ -21,10 +21,10 @@
 
 	 @method setStyleText
 	 @param styleId {String} uniqueId for the style tag
-	 @param style {String} CSS text as a string
+	 @param styleText {String} CSS text as a string
 	 **/
-	ViewTemplate.setStyleText = function(styleId, style) {
-		Helpers.Styler.attachCssText(styleId, style);
+	ViewTemplate.setStyleText = function(styleId, styleText) {
+		Helpers.Styler.attachCssText(styleId, styleText);
 	};
 
 	/**
@@ -102,18 +102,12 @@
 	 **/
 	ViewTemplate.prototype.createView = function(parentElement, viewText, nls, styleText) {
 		//apply localization on the template
-		if (nls) {
-			viewText = Helpers.Localizer.localize(viewText, nls);
-		}
+		viewText = Helpers.Localizer.localize(viewText, nls);
 
-		if (!styleText) {
-			styleText = "";
-		} else {
-			styleText = "<style type='text/css' scoped='scoped'>" + styleText + "</style>";
-		}
 		// create a random id for the child and create a new element
 		this.viewId = _.uniqueId(['bpjscontainer_']);
-		this.jQueryElement = $("<span id='" + this.viewId + "'>" + styleText + viewText + "</span>");
+		this.jQueryElement = $("<span id='" + this.viewId + "'>" + viewText + "</span>");
+		Helpers.Styler.attachScopedCss(this.jQueryElement, styleText);
 
 		//if parent is specified, lets attach the element to parent
 		if (parentElement) {

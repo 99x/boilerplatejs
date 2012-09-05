@@ -1,9 +1,9 @@
 .txtbox-input {
-    width: 200px;
+    width: auto;
 }
 
 .select-input {
-    width: 422px;
+    width: 50%;
     height: 150px;
     background-image: url('assets/departments.jpeg');
 }
