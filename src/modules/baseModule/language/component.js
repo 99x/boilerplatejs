@@ -4,24 +4,26 @@ define(['require', 'Boiler', 'text!./view.html'], function(require, Boiler, temp
 		var panel = null;
 		return {
 			activate : function(parent) {
-				panel = new Boiler.ViewTemplate(parent, template, null);
-				
-				$('#langEn').click(function (event) { 
-					moduleContext.setLanguage("en");
-				});
-				
-				$('#langSv').click(function (event) { 
-					moduleContext.setLanguage("sv");
-				});
-
-				$('#clearLang').click(function (event) { 
-					moduleContext.clearLanguage();
-				});
+				if (!panel) {
+					//create the visual language selection component
+					panel = new Boiler.ViewTemplate(parent, template);
+					/* here we do not use any MVC. MVVM but use simple jquery event handler.
+					 * This is to demonstrate that there is no need of knockoutjs or other
+					 * library to use boilerplateJS. But we recommend you to use a MVX library
+					 * for any non trivial code.
+					 */
+					$("#lang-selector li").bind("click", function() {
+						if (this.id) {
+							moduleContext.setLanguage(this.id);
+						}
+					});
+				}
+				panel.show();
 			},
-			
-			deactivate : function(){
-				if(panel) {
-					panel.remove();
+
+			deactivate : function() {
+				if (panel) {
+					panel.hide();
 				}
 			}
 		};
