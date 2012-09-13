@@ -70,6 +70,12 @@ aside li a:hover {
     color: #d70000 !important;
     border-bottom: 1px solid #f1f1f1;
 }
+
+.text-center {
+	text-align: center;
+	font-size: 15px !important;
+}
+
 .menu-item{
     padding-left:32px;
     padding-top: 4px;

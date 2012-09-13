@@ -84,6 +84,11 @@ aside li a:hover, aside span a:hover {
     text-shadow: 1px 1px #000000;
 }
 
+.text-center {
+	text-align: center;
+	font-size: 15px !important;
+}
+
 .menu-item {
     padding: 1px 50px 0px 32px;
     display: block;
