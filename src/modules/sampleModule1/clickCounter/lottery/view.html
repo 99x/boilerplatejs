@@ -1,5 +1,16 @@
 <div class="portlet-gray">
-    <div class="title"><span>Click-n-Win Lottery</span></div>
-    <div id="lotteryWon" class="sub-title text-center" data-bind="visible: hasWon()">Congratulations... You WON!!!</div>
-    <div id="lotteryLost" class="sub-title text-center" data-bind="visible: !hasWon()">Keep Clicking to Win!!!</div>
+    <div class="title">
+        <span>Click-n-Win Lottery</span>
+    </div>
+    <div id="lotteryWon" class="sub-title text-center" data-bind="visible: hasWon()">
+        Congratulations... You WON!!!
+    </div>
+    <div id="lotteryLost"  class='text-center sub-title' data-bind="visible: !hasWon()">
+        <div data-bind='visible: yourNumber'>
+            LuckyNumber was <label data-bind='text: luckyNumber'></label>, but YourNumber is <label data-bind='text: yourNumber'></label>
+        </div>
+        <div>
+            Keep Clicking to Win!!!
+        </div>
+    </div>
 </div>
