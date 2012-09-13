@@ -1,0 +1,13 @@
+<div class="portlet-blue">
+    <div class="title"><span>Click Counter</span></div>
+    <div class="content">
+        <div>You've clicked <span data-bind='text: numberOfClicks'>&nbsp;</span> times</div>
+        <br/>
+        <button data-bind='click: registerClick, visible: !hasClickedTooManyTimes()'>Click me</button>
+        <div data-bind='visible: hasClickedTooManyTimes'>
+            <div class="error">Too many clicks! Stop before you wear out your fingers.</div>
+            <br/><br/>
+            <button data-bind='click: resetClicks'>Reset clicks</button>
+        </div>
+    </div>
+</div>

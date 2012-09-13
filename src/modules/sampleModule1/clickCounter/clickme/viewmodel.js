@@ -5,6 +5,7 @@ define([], function () {
 	 
 	    this.registerClick = function() {
 	        this.numberOfClicks(this.numberOfClicks() + 1);
+	        moduleContext.notify('LOTTERY_ACTIVITY', this.numberOfClicks());
 	    };
 	 
 	    this.resetClicks = function() {
