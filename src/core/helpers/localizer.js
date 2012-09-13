@@ -1,10 +1,5 @@
 define(['./storage'], function(Storage) {
 
-	// do neccesary configurations for the underscore template pattern
-	_.templateSettings = {
-		interpolate : /\{\{(.+?)\}\}/g
-	};
-	
 	//if user has saved the language preference before, lets use that to configure requirejs i18n
 	var userLang;
 	if (userLang = Storage.retreive("user-language")) {
@@ -26,6 +21,26 @@ define(['./storage'], function(Storage) {
 	
 	
 	/**
+	Helper function to keep the global value of _.templateSettings, applies the settings that parses
+	 {{nls.your_tag_name}} and restore the underscore's original settings.
+	@method template
+	@static
+	@param text {String}  string that need to be localized. Tags should be in the form {{nls.your_tag_name}}
+	@return {String} localized text
+	**/
+	function template(text) {
+		var orig_settings = _.templateSettings;
+		_.templateSettings = {
+			interpolate : /\{\{(.+?)\}\}/g
+		};
+
+		var compiled = _.template(text);
+		_.templateSettings = orig_settings;
+		return compiled;
+	}
+	
+	
+	/**
 	Apply localization to the given text. The text should contain tags such as {{nls.your_tag_name}} that will be
 	replaced by the 'your_tag_name' property in the nlsObject. 
 	@method localize
@@ -35,12 +50,11 @@ define(['./storage'], function(Storage) {
 	@return {String} localized text
 	**/
 	Localizer.localize = function(text, nlsObject) {
-		
 		if(!nlsObject) {
 			return text;
 		}
 		
-		var compiled = _.template(text);
+		var compiled = template(text);
 		return compiled({
 			nls : nlsObject
 		});
