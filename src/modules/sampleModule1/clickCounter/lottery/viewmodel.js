@@ -7,7 +7,7 @@ define([], function () {
     	this.yourNumber = ko.observable();
     	
 	    moduleContext.listen("LOTTERY_ACTIVITY", function(activityNumber) {
-	    	self.luckyNumber(Math.floor(Math.random() * 3) + 1);
+	    	self.luckyNumber(Math.floor(Math.random() * 5) + 1);
 	    	self.yourNumber(activityNumber);
 	    	self.hasWon(self.luckyNumber() === self.yourNumber());
 	    });

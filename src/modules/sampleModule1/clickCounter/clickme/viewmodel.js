@@ -13,7 +13,7 @@ define([], function () {
 	    };
 	 
 	    this.hasClickedTooManyTimes = ko.computed(function() {
-	        return this.numberOfClicks() >= 3;
+	        return this.numberOfClicks() >= 5;
 	    }, this);
     };
     
