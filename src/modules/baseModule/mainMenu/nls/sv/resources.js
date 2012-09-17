@@ -5,5 +5,6 @@ define({
     "departments": "Institutioner",
     "clickcounter": "Klicka Räknare",
     "salesdashboard": "Försäljning Dashboard",
-    "employees": "anställda"
+    "employees": "anställda",
+    "todo" : "BackboneJS TODO"
 });

@@ -6,7 +6,8 @@ define({
         "departments": "Knockout MVVM",
         "clickcounter": "Click Counter",
         "salesdashboard": "Complex Dashboard",
-        "employees": "List-Detail Panels"
+        "employees": "List-Detail Panels",
+        "todo" : "BackboneJS TODO"
     },
     
     "sv" : true
