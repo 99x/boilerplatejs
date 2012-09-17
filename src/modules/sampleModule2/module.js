@@ -1,4 +1,4 @@
-define(['Boiler', './settings', './employeeList/component', './employeeDetails/component', './salesDashboard/component'], function(Boiler, settings, EmployeeListRouteHandler, EmployeeDetailRouteHandler, SalesDashboardRouteHandler) {
+define(['Boiler', './settings', './employeeList/component', './employeeDetails/component', './salesDashboard/component', './backboneTodo/component'], function(Boiler, settings, EmployeeListRouteHandler, EmployeeDetailRouteHandler, SalesDashboardRouteHandler, TodoRouteHandler) {
 
 	var Module = function(globalContext) {
 
@@ -9,7 +9,8 @@ define(['Boiler', './settings', './employeeList/component', './employeeDetails/c
 		controller.addRoutes({
 			'employee/all' : new EmployeeListRouteHandler(context),
 			'employee/{id}' : new EmployeeDetailRouteHandler(context),
-			'sales' : new SalesDashboardRouteHandler(context)
+			'sales' : new SalesDashboardRouteHandler(context),
+			'todo/:action:' : new TodoRouteHandler(context)
 		});
 		controller.start();
 	};
