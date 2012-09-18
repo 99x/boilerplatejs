@@ -1,13 +1,13 @@
 define({
     "root": {
-    	"home": "Home",
+    	"home": "Summary Page",
     	"productmodulea": "Product Module A",
     	"productmoduleb": "Product Module B",
-        "departments": "Knockout MVVM",
+        "departments": "Knockout Departments",
         "clickcounter": "Click Counter",
         "salesdashboard": "Complex Dashboard",
         "employees": "List-Detail Panels",
-        "todo" : "BackboneJS TODO"
+        "todo" : "Backbone TODO"
     },
     
     "sv" : true

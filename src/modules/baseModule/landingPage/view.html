@@ -1,49 +1,72 @@
+<br/>
+<div >
+        Congratulations! You are one step closer to creating your next large scale Javascript application!
+        Following sections briefly describe the component samples we have implemented for your reference.
+</div>
+
+<br/>
 <div class="portlet-blue">
-    <div class="title"><span>Welcome to BoilerplateJS!</span></div>
+    <div class="title">
+        <span>Samples in Product Module A</span>
+    </div>
+    <a href="#clickcounter" class="text-solid">Click Counter</a>
     <div class="content">
-        <p>
-            Congratulations! You are one step closer to creating your next big Javascript application!
-            This demo shows you some of the common user scenarios that you can implement with BoilerplateJS.
-            Checkout the product modules
-            by navigating through the left navigation pane.
-        </p>
-
-        <h4>Product Module A</h4>
-
-        <p>The panels under this section show the usage of KnockoutJS with BoilerplateJS.</p>
-        <a href="#clickcounter">Click Counter</a> is a simple adaptation of knockoutJS’s <a
-            href="http://knockoutjs.com/examples/clickCounter.html" target="_blank">Click Counter example</a>.<br/>
-        <a href="#departments">Knockout MVVM</a> shows a more complex usage of knockoutJS’s MVVM
-        architecture and its data bindings. The data for this panel is loaded from the server.
-
-        <h4>Product Module B</h4>
-
-        <p>The panels under this section show the usage some of the advanced patterns.</p>
-        <a href="#sales">Complex Dashboard</a> uses a shared view model. There are two views in
-        this dashboard that use the same shared view model, which enables them to respond to changes among the
-        views.<br/>
-        <a href="#employee/all">The List-Detail panels</a> show a list view and a detail view
-        together with URL based navigation.
-
-        <h4>Languages and Themes</h4>
-
-        <p>Languages and Themes are two feature plugins that we developed for BoilerplateJS.</p>
-
-        <p>We realized that for some applications, multilingual support is essential.
-            On this demo we use RequireJS’s <a href="http://requirejs.org/docs/api.html#i18n" target="_blank">i18n
-                plugin</a>
-            to manage two language packs.</p>
-
-        <p>Presentation and styling should be separate from the rest of the logic of your code. Careful thought went
-            into designing
-            BoilerplateJS’s style sheet structure which allows us to change between themes seamlessly. Try changing
-            into different
-            themes from the top combo box.</p>
-
-        <p>We strongly believe loose coupling is the key to maintainable and adaptable code,
-            and that’s why we do not want to tie you up with a specific technology or library.
-            To prove this point, we’ve implemented the language and themes modules using pure jQuery, and no
-            Knockout bindings!</p>
+        provides an extremly simple adaptation of knockoutJS <a
+        href="http://knockoutjs.com/examples/clickCounter.html" target="_blank">Click Counter example</a>.
+        In addition, we added a lottery component to demonstrate inter-component interactions via events.
+    </div>
+    <br/>
+    <a href="#departments" class="text-solid">Knockout MVVM</a>
+    <div class="content">
+        shows a bit more complex usage of knockoutJS’s MVVM
+        architecture and its data bindings. The data for this panel is loaded from the server
+        through AJAX calls. This component is an adaptation of KnockoutJS
+        <a href="http://knockoutjs.com/examples/betterList.html" target="_blank">Better List example</a>.
+    </div>
+</div>
+<br/>
+<div class="portlet-blue">
+    <div class="title">
+        <span>Samples in Product Module B</span>
+    </div>
+    <a href="#sales" class="text-solid">Complex Dashboard</a>
+    <div class="content">
+        Demonstrates the use of a shared view model across components. There are two views in
+        this dashboard that use the same shared view model, which enables them to easily respond
+        to each other without using events. In addition we use some UI widgets for graphs and trees
+        in this sample.
+    </div>
+    <br/>
+    <a href="#employee/all" class="text-solid">List-Detail panels</a>
+    <div class="content">
+        A demonstration of implementing a list view and the relavant detail view
+        that use URL navigation to switch back and forth. All information is loaded from the server on-demand as JSON
+        documents.
+    </div>
+    <br/>
+    <a href="#todo" class="text-solid">Backbone TODO</a>
+    <div class="content">
+        Latest addition to BoilerplateJS due to the popular demand for
+         <a href="http://backbonejs.org" target="_blank">BackboneJS</a> integration.
+         We ported this component from Addyosmani's <a href="http://addyosmani.github.com/todomvc/dependency-examples/backbone_require/" target="_blank">  TODO example</a> without much changes to the original code. 
+    </div>    
+</div>
+<br/>
+<div class="portlet-blue">
+    <div class="title">
+        <span>Other bits and pieces</span>
+    </div>
+    <div class="content">
+    <p>
+        We implemented theme support as a theme component that you will find at <i>'src/modules/baseModule/theme'</i>. 
+        Try changing the theme via header, you will find the whole application layout responding as well. We strongly believe loose coupling is the key to maintainable and adaptable code. To demonstrate the point
+        for the theme component we do not use knockoutjs or backbonejs but plain jQuery event bindings.
+    </p>
+    <p>
+        For multilingual support we use RequireJS’s <a href="http://requirejs.org/docs/api.html#i18n" target="_blank">i18n
+        plugin</a>. Not all components on the sample have localized text, 
+        but atleast you can see the effect on navigation menu.
+    </p>
     </div>
 </div>
 

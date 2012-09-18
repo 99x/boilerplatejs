@@ -89,6 +89,12 @@ aside li a:hover, aside span a:hover {
 	font-size: 12px !important;
 }
 
+.text-solid {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 10px 10px 10px; 
+}
+
 .menu-item {
     padding: 1px 50px 0px 32px;
     display: block;

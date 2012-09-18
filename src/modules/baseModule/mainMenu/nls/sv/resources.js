@@ -1,10 +1,10 @@
 define({
-	"home": "Hem",
+	"home": "Sammanfattning Page",
 	"productmodulea": "Produkt Modul A",
 	"productmoduleb": "Produkt Modul B",
-    "departments": "Institutioner",
+    "departments": "Knockout Institutioner",
     "clickcounter": "Klicka Räknare",
     "salesdashboard": "Försäljning Dashboard",
-    "employees": "anställda",
-    "todo" : "BackboneJS TODO"
+    "employees": "Lista Detalj Paneler",
+    "todo" : "Backbone TODO"
 });

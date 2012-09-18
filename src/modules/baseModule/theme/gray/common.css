@@ -71,6 +71,11 @@ aside li a:hover {
     border-bottom: 1px solid #f1f1f1;
 }
 
+.text-solid {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 10px 10px 10px; 
+}
 .text-center {
 	text-align: center;
 	font-size: 12px !important;
@@ -249,6 +254,12 @@ p{
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
+
+.portlet-gray .content, .portlet-black .content, .portlet-blue .content {
+    padding: 0px 0px 0px 10px;
+}
+
+
 .portlet-blue .sub-title, .portlet-gray .sub-title, .portlet-black .sub-title  {
     margin-bottom: 15px;
     margin-top: 10px;
