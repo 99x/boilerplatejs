@@ -1,10 +1,9 @@
 ﻿'use strict'; // avoid accidental global variable declarations
 
 /*
- * Lets define short alias for commonly used AMD libraries and name-spaces. With
- * these alias, we do not need to specify lengthy paths in refering to below
- * files. We will be using these alias to 'import' these sripts later in our
- * application.
+ * Let's define short alias for commonly used AMD libraries and name-spaces. Using
+ * these alias, we do not need to specify lengthy paths, when referring a child
+ * files. We will 'import' these scripts, using the alias, later in our application.
  */
 require.config({
 	paths : {
@@ -22,25 +21,25 @@ require.config({
 
 
 /*
- * This is the main entry to the application. This script is called from the
- * main HTML file.
+ * This is the main entry to the application.
+ * This script is called from the main HTML file.
  * 
- * We use requirejs for writing moduler javascripts. Below 'require' function
- * bahaves just as 'import' in PHP or 'using' in .NET. You may define the
+ * We use requirejs for writing modular JavaScript. The 'require' function below
+ * behaves just like 'import' in PHP or 'using' in .NET. You may define the
  * relative path to the script you wish to import in the first array parameter,
- * then requirejs will invove the callback function (given in second param) with
- * return values of those scripts.
+ * then requirejs will invoke the callback function (given in second param) with
+ * the return values of those scripts.
  * 
- * Here we use requirejs domReady plugin to run our code once the DOM is ready to be used.
+ * Here we use the requirejs domReady plugin to run our code, once the DOM is ready to be used.
  */
 require([ "./application", "domReady" ], function( Application, domReady) {
 	domReady(function() {
 		/*
-		 * The "./appcontext" script contains a requirejs AMD module. It
-		 * returns a function (not an object instance) that encapsulates logic
-		 * for creating a GlobalContext. In javascripts, functions can be used
-		 * as classes for OO programming. So below we create an instance by
-		 * calling 'new' operator on that function.
+		 * The "./appcontext" script contains a requirejs AMD module. It returns
+		 * a function (not an object instance) that encapsulates the logic
+		 * for creating a GlobalContext. In JavaScript, functions can be used
+		 * as classes for OO programming. So below, we create an instance by
+		 * calling the 'new' operator on that function.
 		 */
 		new Application();
 	});

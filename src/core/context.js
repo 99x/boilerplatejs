@@ -3,13 +3,13 @@ define(['./helpers/_helpers_'], function (Helpers) {
 
     /**
 	Context is one of the most important classes in boilerplate. This represents a sandboxed environment
-  	for writing group of functionalities. Contexts can be nested to create hierachies for complex 
+  	for writing group of functionalities. Contexts can be nested to create hierarchies for complex 
   	implementations. 
   	For example, 
      - a product suit may have multiple products, 
      - and a product may have multiple modules,
      - and a module may have multiple submodules.
-    It is possible to create such hierachies by nesting contexts. Context can provide several 
+    It is possible to create such hierarchies by nesting contexts. Context can provide several 
     important services such as 'settings store', 'pub-sub event infrastructure', 'logging', etc.
  	
  	@namespace Boiler
@@ -26,12 +26,12 @@ define(['./helpers/_helpers_'], function (Helpers) {
 
 
     /**
-    * This is the method to get settings from the context. This will return a object that has 
-    * settings as object properties. Consimers can simply use the settings property keys 
+    * This is the method used to get settings from the context. This will return an object that has 
+    * settings as object properties. Consumers can simply use the settings' property keys 
     * to retrieve values. For example, context.getSettings().base-server-url will look for a 
-    * setting object defined under 'base-server-url' preperty.
+    * setting object defined under the 'base-server-url' property.
     *
-    * If context is a part of a context hierachy, the settings object returned will contain 
+    * If context is a part of a context hierarchy, the settings object returned will contain 
     * settings of all parent contexts. Settings from child contexts will override settings from 
     * parent contexts, if same key exists.
     *
@@ -47,7 +47,7 @@ define(['./helpers/_helpers_'], function (Helpers) {
 
     /**
     * One can pass an object containing settings as properties in it. If the existing
-    * settings contain properties with same key, those will be replaced.
+    * settings contain a properties with same key, those will be replaced.
 
 	@method addSettings
 	@param {Object} newSettings object containing settings as properties in it
@@ -57,8 +57,8 @@ define(['./helpers/_helpers_'], function (Helpers) {
     };
 
     /**
-    * This is the method to raise an event in the context. All subscribers in the same context hierachy
-    * will be notified. first parameter is the event name as a string, and the next parameter is the 
+    * This is the method to raise an event in the context. All subscribers in the same context hierarchy
+    * will be notified. The first parameter is the event name as a string, and the next parameter is the 
     * event data as a object.
 
 	@method notify
@@ -70,9 +70,9 @@ define(['./helpers/_helpers_'], function (Helpers) {
     };
 
     /**
-    * The method for subscribing to recieve events. first parameter is the name of the event you wish
-    * to recieve. Next is the callback function incase event has occurred. Callback function may have a 
-    * parameter in case it is interesting to recieve the event data as well.
+    * The method for subscribing to receive events. first parameter is the name of the event you wish
+    * to receive. Next, is the callback function to invoke when the event has occurred. The callback  
+    * function may have a parameter in case it is interesting to receive the event data as well.
 
 	@method listen
 	@param {String} event Event name
@@ -84,7 +84,7 @@ define(['./helpers/_helpers_'], function (Helpers) {
 
     /**
     * It is possible to use the context as a medium to share objects. Since context is usually
-    * passed arround, it serves the purpose of sharing well.
+    * passed around, it serves the purpose of sharing well.
 
 	@method persistObject
 	@param {String} key name of the object to store
@@ -107,7 +107,7 @@ define(['./helpers/_helpers_'], function (Helpers) {
     };
     
     /**
-     * Remove the object stored in persistance store. 
+     * Remove the object stored in persistence store. 
     
 	@method removeObject
 	@param {String} key Name of the object to be removed
@@ -152,7 +152,7 @@ define(['./helpers/_helpers_'], function (Helpers) {
 
     /**
     * Helper method to construct child contexts under this parent context.
-    * Children will recieve a reference to this object through a constructor argument.
+    * Children will receive a reference to this object through a constructor argument.
     
 	@method loadChildContexts
    	@param {ObjectArray} children

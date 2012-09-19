@@ -14,7 +14,7 @@
 define(["Boiler", "./settings", "./modules/modules"], function(Boiler, settings, moduleContexts) {
 
 	/**
-	 * Application class holds the global context that will act as the parent for module contexts.
+	 * The Application class holds the global context that will act as the parent for module contexts.
 	 * 
 	 * @class Application
 	 * @constructor
