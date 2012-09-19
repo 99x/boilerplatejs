@@ -1,10 +1,10 @@
 ﻿/*
 * This file holds the function (or you may call it a 'class' if you are from .NET or Java world)
-* to create a root application context. 'Boiler.Context' can be nested to create a hierachy of contexts
+* to create a root application context. 'Boiler.Context' can be nested to create a hierarchy of contexts
 * for complex implementations. Below we use requirejs to import following files
 *      'Boiler'      : Namespace alias for accessing the core boilerplate functions
 *      './settings'    : The global setting ( to make available for all children contexts)
-*      './modules'     : The object containing all sub module calsses
+*      './modules'     : The object containing all sub module classes
 *
 * Note: when we define the variables in AMD callback function, we use PascalCase for namespaces
 * and classes ('Boiler' in the case), whereas object instances ('settings' and 'modules')
