@@ -10,7 +10,7 @@ define([], function() {
 	var Settings = function(parentSettings) {
 		/**
 		@private
-		@property {Boolean} 'isSettingsChained' State wether the settings has been chained 
+		@property {Boolean} 'isSettingsChained' State whether or not the settings has been chained 
 		**/
 		var isSettingsChained = true;
 		/**
