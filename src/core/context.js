@@ -81,41 +81,6 @@ define(['./helpers/_helpers_'], function (Helpers) {
     Context.prototype.listen = function (event, fn) {
         this.mediator.listen(event, fn);
     };
-
-    /**
-    * It is possible to use the context as a medium to share objects. Since context is usually
-    * passed around, it serves the purpose of sharing well.
-
-	@method persistObject
-	@param {String} key name of the object to store
-	@param {Object} objectToStore object to store in
-	**/
-    Context.prototype.persistObject = function (key, objectToStore) {
-        Helpers.Storage.persist(key, objectToStore);
-    };
-
-    /**
-    * Allows developers to retrieve objects that are stored (using 'store' method) in 
-    * this context. 
-    
-	@method retreiveObject
-	@param {String} key name of the object
-	@return {Object} object The stored object if found, else 'undefined'
-	**/
-    Context.prototype.retreiveObject = function (key) {
-        return Helpers.Storage.retreive(key);
-    };
-    
-    /**
-     * Remove the object stored in persistence store. 
-    
-	@method removeObject
-	@param {String} key Name of the object to be removed
-	@return {Object} object
-	**/
-     Context.prototype.removeObject = function (key) {
-         return Helpers.Storage.remove(key);
-     };
      
      /**
      * Set the language for the whole system. Will cause the page to refresh 

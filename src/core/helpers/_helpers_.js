@@ -12,7 +12,6 @@ define(function(require) {
 		Mediator : require("./mediator"),
 		Router : require("./router"),
 		Settings : require("./settings"),
-		Storage : require("./storage"),
 		Styler : require("./styler")
 	};
 }); 

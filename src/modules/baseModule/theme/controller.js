@@ -29,14 +29,14 @@ define(['Boiler', 'path!./red/common.css', 'path!./gray/common.css'], function(B
 			if (themes[selection]) {
 				//set style in header
 				Boiler.ViewTemplate.setStyleLink(themes[selection], DICTIONARY_KEY);
-				//sale in the local store
-				moduleContext.persistObject(DICTIONARY_KEY, selection);
+				//save in the local store
+				localStorage.setItem(DICTIONARY_KEY, selection);
 			}
 		}
 
 		this.init = function() {
 			//if we have a stored theme setting lest use it OR use default
-			var storedThemeKey = moduleContext.retreiveObject(DICTIONARY_KEY);
+			var storedThemeKey = localStorage.getItem(DICTIONARY_KEY);
 			if (!themes[storedThemeKey]) {
 				//if not locally stored, use the default
 				storedThemeKey = "gray";

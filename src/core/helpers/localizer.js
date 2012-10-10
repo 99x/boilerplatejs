@@ -1,8 +1,8 @@
-define(['./storage'], function(Storage) {
+define([], function() {
 
 	//if user has saved the language preference before, lets use that to configure requirejs i18n
 	var userLang;
-	if (userLang = Storage.retreive("user-language")) {
+	if (userLang = localStorage.getItem("user-language")) {
 		require.config({
 			locale : userLang
 		});
@@ -69,7 +69,7 @@ define(['./storage'], function(Storage) {
 	@param locale {String} locale string to which locale should be set
 	**/
 	Localizer.setLanguage = function(locale) {
-		Storage.persist("user-language", locale);
+		localStorage.setItem("user-language", locale);
 		location.reload(); 
 	};
 	
@@ -82,7 +82,7 @@ define(['./storage'], function(Storage) {
 	@static
 	**/
 	Localizer.clearLanguage = function() {
-		Storage.remove("user-language");
+		localStorage.removeItem("user-language");
 		location.reload(); 
 	};
 
