@@ -5,6 +5,6 @@
 * Settings can be simple literal variables or objects having complex definitions.
 */
 define({
-    appName: "BoilerplateJS",
+    appName: "BoilerplateJS"
 });
 
