@@ -2,7 +2,8 @@ define([], function() {
 
 	//if user has saved the language preference before, lets use that to configure requirejs i18n
 	var userLang;
-	if (userLang = localStorage.getItem("user-language")) {
+	if (localStorage.getItem("user-language")) {
+        userLang = localStorage.getItem("user-language");
 		require.config({
 			locale : userLang
 		});
@@ -11,14 +12,13 @@ define([], function() {
 	/**
 	Localizer is used to handle the localization aspects by providing the functions 
 	required for setting a different language and resetting the user language settings to the defaults.
- 	@namespace Boiler.Helpers
- 	@module BoilerCoreClasses
+    @namespace Boiler.Helpers
+    @module BoilerCoreClasses
 	@class Localizer
 	@static    
-	**/
-	var Localizer = function() {
-	};
-	
+    **/
+    var Localizer = function() {};
+
 	
 	/**
 	Helper function to keep the global value of _.templateSettings, applies the settings that parses
