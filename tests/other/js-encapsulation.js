@@ -1,4 +1,4 @@
-require([], function() {
+require(['core/helpers/mediator'], function() {
 
 	module("other/js-encapsulation Tests",{
 		setup : function(){

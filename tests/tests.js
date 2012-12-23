@@ -5,9 +5,9 @@ require.config({
 require.config({
 	paths : {
 		text : './libs/require/text',
-		order : './libs/require/order',
 		i18n : './libs/require/i18n',
-
+		domReady : '../libs/require/domReady',
+		path :  '../libs/require/path',
 		_boiler_ : './core/_boiler_'
 	}
 });
