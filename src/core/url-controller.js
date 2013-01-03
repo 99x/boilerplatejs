@@ -46,12 +46,12 @@
 				selfWrapper.handle.activate(scope, vals);
 			};
 
-			this.deactivate = function() {
+			this.deactivate = function () {
 
-				if (jQuery.isFunction(selfWrapper.handle.deactivate)) {
-					selfWrapper.handle.deactivate();
-				}
-			}
+			    if (jQuery.isFunction(selfWrapper.handle.deactivate)) {
+			        selfWrapper.handle.deactivate();
+			    }
+			};
 		}
 
 		return {

@@ -13,23 +13,23 @@ function(Boiler, Common, Todos, template, AppView, cssPath) {
 		 * @param parent {jQuery Element} parent to which this component get added
 		 * @param params {Object} initialization parameters passed to teh component
 		 */
-		this.activate = function(parent, params) {
-			// if panel is not created, lets create it and initiate bindings
-			if (!panel) {
-				panel = new Boiler.ViewTemplate(parent, template);
-				Boiler.ViewTemplate.setStyleLink(cssPath);
-				appview = new AppView();
-			}
-			
-			// Set the current filter to be used
-			Common.TodoFilter = params.action || '';
+		this.activate = function (parent, params) {
+		    // if panel is not created, lets create it and initiate bindings
+		    if (!panel) {
+		        panel = new Boiler.ViewTemplate(parent, template);
+		        Boiler.ViewTemplate.setStyleLink(cssPath);
+		        appview = new AppView();
+		    }
 
-			// Trigger a collection reset/addAll
-			Todos.trigger('reset');
+		    // Set the current filter to be used
+		    Common.TodoFilter = params.action || '';
 
-			//make the component visible incase it is hidden
-			panel.show();
-		}
+		    // Trigger a collection reset/addAll
+		    Todos.trigger('reset');
+
+		    //make the component visible incase it is hidden
+		    panel.show();
+		};
 		
 		/**
 		 * Take the component out of scope of the UI. If component is available
@@ -37,11 +37,11 @@ function(Boiler, Common, Todos, template, AppView, cssPath) {
 		 * is much efficient.
 		 * @method deactivate
 		 */
-		this.deactivate = function() {
-			if (panel) {
-				panel.hide();
-			}
-		}
+		this.deactivate = function () {
+		    if (panel) {
+		        panel.hide();
+		    }
+		};
 	};
 
 	return Component;
