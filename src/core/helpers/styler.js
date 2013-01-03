@@ -35,7 +35,7 @@ define([], function() {
 		} else {
 			var links = document.getElementsByTagName('link');
 			for (var i = 0; i < links.length; i++) {
-				if (links[i].href && (links[i].href.indexOf(href) != -1)) {//If we have already added this link, just ignore and return
+				if (links[i].href && (links[i].href.indexOf(href) !== -1)) {//If we have already added this link, just ignore and return
 					return;
 				}
 			}

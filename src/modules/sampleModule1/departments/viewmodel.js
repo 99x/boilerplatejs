@@ -21,7 +21,7 @@ define([], function() {
 		};
 
 		this.addItem = function() {
-			if ((this.itemToAdd() != "") && (this.allItems.indexOf(this.itemToAdd()) < 0))// Prevent blanks and duplicates
+			if ((this.itemToAdd() !== "") && (this.allItems.indexOf(this.itemToAdd()) < 0))// Prevent blanks and duplicates
 				this.allItems.push(this.itemToAdd());
 			this.itemToAdd("");
 			// Clear the text box
