@@ -20,8 +20,10 @@
 		 * all components on this parent element to deactivate them.
 		 */
 		scope.bind('DEACTIVATE_HANDLERS', function() {
-			for (handler in allHandles) {
-				allHandles[handler].deactivate();
+		    for (handler in allHandles) {
+		        if (allHandles.hasOwnProperty(handler)) {
+		            allHandles[handler].deactivate();
+		        }
 			}
 		});
 
@@ -62,12 +64,13 @@
 			 @param {Array} handles route-handler object array
 			 **/
 			addRoutes : function(handles) {
-				for (path in handles) {
-					var handlerObj = new Wrapper(handles[path]);
-					router.addRoute(path, handlerObj.activate);
-					allHandles[path] = handlerObj;
+			    for (path in handles) {
+			        if (handles.hasOwnProperty(path)) {
+			            var handlerObj = new Wrapper(handles[path]);
+			            router.addRoute(path, handlerObj.activate);
+			            allHandles[path] = handlerObj;
+			        }
 				}
-
 			},
 
 			/**
