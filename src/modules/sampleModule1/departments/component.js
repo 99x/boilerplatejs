@@ -12,20 +12,20 @@ define(['Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/resources', 'pa
 		 * @param parent {jQuery Element} parent to which this component get added
 		 * @param params {Object} initialization parameters passed to teh component
 		 */
-		this.activate = function(parent, params) {
-			// if panel is not created, lets create it and initiate bindings
-			if (!panel) {
-				panel = new Boiler.ViewTemplate(parent, template, nls);
-				Boiler.ViewTemplate.setStyleLink(cssPath);
-				vm = new ViewModel(moduleContext);
-				ko.applyBindings(vm, panel.getDomElement());
-			}
-			/* It is recommended to keep your views stateless as much as possible. Everytime 
+		this.activate = function (parent, params) {
+		    // if panel is not created, lets create it and initiate bindings
+		    if (!panel) {
+		        panel = new Boiler.ViewTemplate(parent, template, nls);
+		        Boiler.ViewTemplate.setStyleLink(cssPath);
+		        vm = new ViewModel(moduleContext);
+		        ko.applyBindings(vm, panel.getDomElement());
+		    }
+		    /* It is recommended to keep your views stateless as much as possible. Everytime 
 			 * user access the view, we should reload it from server to avoid stale data. */
-			vm.initialize(params.name);
-			//make the component visible incase it is hidden
-			panel.show();
-		}
+		    vm.initialize(params.name);
+		    //make the component visible incase it is hidden
+		    panel.show();
+		};
 		
 		/**
 		 * Take the component out of scope of the UI. If component is available
@@ -33,11 +33,11 @@ define(['Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/resources', 'pa
 		 * is much efficient.
 		 * @method deactivate
 		 */
-		this.deactivate = function() {
-			if (panel) {
-				panel.hide();
-			}
-		}
+		this.deactivate = function () {
+		    if (panel) {
+		        panel.hide();
+		    }
+		};
 	};
 
 	return Component;

@@ -9,11 +9,11 @@ define(['Boiler', 'text!./view.html'], function(Boiler, template) {
 			panel.show();
 		};
 
-		this.deactivate = function() {
-			if (panel) {
-				panel.hide();
-			}
-		}
+		this.deactivate = function () {
+		    if (panel) {
+		        panel.hide();
+		    }
+		};
 	};
 
 	return Component;

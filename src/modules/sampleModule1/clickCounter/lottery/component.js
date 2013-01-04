@@ -4,14 +4,14 @@ define(['Boiler', './viewmodel', 'text!./view.html', 'path!./style.css'], functi
 
 		var vm, panel = null;
 
-		this.initialize = function(parent) {
-			if (!panel) {
-				panel = new Boiler.ViewTemplate(parent, template, null);
-				Boiler.ViewTemplate.setStyleLink(stylePath);
-				vm = new ViewModel(moduleContext);
-				ko.applyBindings(vm, panel.getDomElement());
-			}
-		}
+		this.initialize = function (parent) {
+		    if (!panel) {
+		        panel = new Boiler.ViewTemplate(parent, template, null);
+		        Boiler.ViewTemplate.setStyleLink(stylePath);
+		        vm = new ViewModel(moduleContext);
+		        ko.applyBindings(vm, panel.getDomElement());
+		    }
+		};
 	};
 
 	return Component;
