@@ -1,12 +1,12 @@
 define([], function() {
 
-	var createCssLink = function(href) {
-		var link = document.createElement("link");
-		link.type = "text/css";
-		link.rel = "stylesheet";
-		link.href = href;
-		document.getElementsByTagName("head")[0].appendChild(link);
-	}
+    var createCssLink = function (href) {
+        var link = document.createElement("link");
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.href = href;
+        document.getElementsByTagName("head")[0].appendChild(link);
+    };
 	/**
 	 Styler is used to attach css style sheets to the DOM (Document Object Model) and to attach css text to existing style sheets
 
@@ -35,7 +35,7 @@ define([], function() {
 		} else {
 			var links = document.getElementsByTagName('link');
 			for (var i = 0; i < links.length; i++) {
-				if (links[i].href && (links[i].href.indexOf(href) != -1)) {//If we have already added this link, just ignore and return
+				if (links[i].href && (links[i].href.indexOf(href) !== -1)) {//If we have already added this link, just ignore and return
 					return;
 				}
 			}
@@ -69,12 +69,12 @@ define([], function() {
 
 	};
 
-	Styler.attachScopedCss = function(parent, styleText) {
-		if (styleText) {
-			styleElement = $("<style type='text/css' scoped='scoped'>" + styleText + "</style>");
-			parent.prepend(styleElement);
-		}
-	}
+	Styler.attachScopedCss = function (parent, styleText) {
+	    if (styleText) {
+	        styleElement = $("<style type='text/css' scoped='scoped'>" + styleText + "</style>");
+	        parent.prepend(styleElement);
+	    }
+	};
 
 	return Styler;
 });

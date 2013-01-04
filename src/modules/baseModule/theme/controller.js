@@ -25,14 +25,14 @@ define(['Boiler', 'path!./red/common.css', 'path!./gray/common.css'], function(B
 		
 		var self = this;
 
-		this.changeTheme = function(selection) {
-			if (themes[selection]) {
-				//set style in header
-				Boiler.ViewTemplate.setStyleLink(themes[selection], DICTIONARY_KEY);
-				//save in the local store
-				localStorage.setItem(DICTIONARY_KEY, selection);
-			}
-		}
+		this.changeTheme = function (selection) {
+		    if (themes[selection]) {
+		        //set style in header
+		        Boiler.ViewTemplate.setStyleLink(themes[selection], DICTIONARY_KEY);
+		        //save in the local store
+		        localStorage.setItem(DICTIONARY_KEY, selection);
+		    }
+		};
 
 		this.init = function() {
 			//if we have a stored theme setting lest use it OR use default

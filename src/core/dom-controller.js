@@ -31,22 +31,24 @@ define([], function () {
 			**/	
             start: function () {
                 for (path in self.handles) {
-                    scope.find(path).each(function (index) {
-                        var paramString = $(this).attr("params");
-                        var params = paramString ? eval("({" + paramString + "})") : {};
-                        
-                        //ask other handlers on this component to deactivate
-                        $(this).trigger('DEACTIVATE_HANDLERS');
-                        
-                        //bind the current handler for deactivation events
-                        $(this).bind('DEACTIVATE_HANDLERS', function(){
-                        	(function(handler) {
-                        		handler.deactivate();
-                        	})(self.handles[path]);
+                    if (self.handles.hasOwnProperty(path)) {
+                        scope.find(path).each(function (index) {
+                            var paramString = $(this).attr("params");
+                            var params = paramString ? eval("({" + paramString + "})") : {};
+
+                            //ask other handlers on this component to deactivate
+                            $(this).trigger('DEACTIVATE_HANDLERS');
+
+                            //bind the current handler for deactivation events
+                            $(this).bind('DEACTIVATE_HANDLERS', function () {
+                                (function (handler) {
+                                    handler.deactivate();
+                                })(self.handles[path]);
+                            });
+                            //activate the current handler
+                            self.handles[path].activate($(this), params);
                         });
-                        //activate the current handler
-                        self.handles[path].activate($(this), params);
-                    });
+                    }
                 }
             }
         };

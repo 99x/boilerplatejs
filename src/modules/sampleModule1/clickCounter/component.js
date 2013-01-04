@@ -9,26 +9,25 @@ define(['Boiler', 'text!./view.html', './clickme/component', './lottery/componen
 
 		var parentPanel = null;
 
-		this.activate = function(parent, params) {
-			if (!parentPanel) {
-				//create the holding panel for clickme and lottery components
-				parentPanel = new Boiler.ViewTemplate(parent, template, null);
-				//create the clickme component and append to the parent
-				var clickmeComp = new ClickmeComp(moduleContext);
-				clickmeComp.initialize($('#clickme'));
-				//create lottery component and add to the parent
-				var lotteryComp = new LotteryComp(moduleContext);
-				lotteryComp.initialize($('#lottery'));
-			}
-			parentPanel.show();
-		}
+		this.activate = function (parent, params) {
+		    if (!parentPanel) {
+		        //create the holding panel for clickme and lottery components
+		        parentPanel = new Boiler.ViewTemplate(parent, template, null);
+		        //create the clickme component and append to the parent
+		        var clickmeComp = new ClickmeComp(moduleContext);
+		        clickmeComp.initialize($('#clickme'));
+		        //create lottery component and add to the parent
+		        var lotteryComp = new LotteryComp(moduleContext);
+		        lotteryComp.initialize($('#lottery'));
+		    }
+		    parentPanel.show();
+		};
 
-		this.deactivate = function() {
-			if (parentPanel) {
-				parentPanel.hide();
-			}
-
-		}
+		this.deactivate = function () {
+		    if (parentPanel) {
+		        parentPanel.hide();
+		    }
+		};
 	};
 
 	return ClickCounterComponent;
