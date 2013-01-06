@@ -1,69 +1,69 @@
 ﻿define(['./helpers/_helpers_'], function(Helpers) {
 	/**
-	 ui-panel class
+	  ui-panel class
 
-	 @namespace Boiler
-	 @module BoilerCoreClasses
-	 @class Panel
-	 @constructor
-	 @param {Object} viewTemplate
-	 @param {Object} parentEl
-	 @param {Object} nls
-	 @param {object} styleText
+	  @namespace Boiler
+	  @module BoilerCoreClasses
+	  @class Panel
+	  @constructor
+	  @param {Object} viewTemplate
+	  @param {Object} parentEl
+	  @param {Object} nls
+	  @param {object} styleText
 	 **/
 	var ViewTemplate = function(parent, viewTemplate, nls, styleText) {
 		this.createView(parent, viewTemplate, nls, styleText);
 	};
 
 	/**
-	 Create a style tag on the head and attach the given text in to it as CSS.
-	 If a style tag exists with the given styleId, CSS text will be replaced.
+	  Create a style tag on the head and attach the given text in to it as CSS.
+	  If a style tag exists with the given styleId, CSS text will be replaced.
 
-	 @method setStyleText
-	 @param styleId {String} uniqueId for the style tag
-	 @param styleText {String} CSS text as a string
+	  @method setStyleText
+	  @param styleId {String} uniqueId for the style tag
+	  @param styleText {String} CSS text as a string
 	 **/
 	ViewTemplate.setStyleText = function(styleId, styleText) {
 		Helpers.Styler.attachCssText(styleId, styleText);
 	};
 
 	/**
-	 Create a css link tag on the head with the reference to the given href.
-	 If a link tag exists with the given linkId, href will be replaced.
+	  Create a css link tag on the head with the reference to the given href.
+	  If a link tag exists with the given linkId, href will be replaced.
 
-	 @method setStyleLink
-	 @param href {String} URL to the CSS file
-	 @param linkId {String} uniqueId for the link tag
+	  @method setStyleLink
+	  @param href {String} URL to the CSS file
+	  @param linkId {String} uniqueId for the link tag
 	 **/
 	ViewTemplate.setStyleLink = function(href,linkId) {
 		Helpers.Styler.attachCssLink(href, linkId);
 	};
 
 	/**
-	 Returns the view id
+	  Returns the view id
 
-	 @method getElementId
-	 @return viewId
+	  @method getElementId
+	  @return viewId
 	 **/
 	ViewTemplate.prototype.getElementId = function() {
 		return this.viewId;
 	};
 
 	/**
-	 Returns the jQuery element of this component
+	  Returns the jQuery element of this component
 
-	 @method getJqueryElement
-	 @return viewId
+	  @method getJqueryElement
+	  @return viewId
 	 **/
 	ViewTemplate.prototype.getJQueryElement = function() {
 		return this.jQueryElement;
 	};
 
 	/**
-	 Returns the DOM element
+	  Returns the DOM element
 
-	 @method getDomElement
-	 @return viewId
+	  @method getDomElement
+	  @return viewId
 	 **/
 	ViewTemplate.prototype.getDomElement = function() {
 		return this.jQueryElement.get(0);
@@ -74,9 +74,9 @@
 	};
 
 	/**
-	 Detach theDOM element of this component from the DOM tree
+	  Detach theDOM element of this component from the DOM tree
 
-	 @method dispose
+	  @method dispose
 	 **/
 	ViewTemplate.prototype.remove = function() {
 		this.jQueryElement.remove();
@@ -91,14 +91,14 @@
 	};
 
 	/**
-	 Creates a view
+	  Creates a view
 
-	 @method createView
-	 @param viewText
-	 @param parentElement
-	 @param nls
-	 @param styleText
-	 @return childId
+	  @method createView
+	  @param viewText
+	  @param parentElement
+	  @param nls
+	  @param styleText
+	  @return childId
 	 **/
 	ViewTemplate.prototype.createView = function(parentElement, viewText, nls, styleText) {
 		//apply localization on the template

@@ -7,9 +7,9 @@ define(function(require) {
 	 * the 'define' function above. But following model is a bit simpler to read.
 	 */
 	return [
-            require('./baseModule/module'),
-	    require('./sampleModule1/module'),
-            require('./sampleModule2/module')
+		require('./baseModule/module'),
+		require('./sampleModule1/module'),
+		require('./sampleModule2/module')
 	];
 
 });
