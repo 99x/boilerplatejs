@@ -5,3 +5,4 @@ tools/optimizer/build
 tools/documentation/docs
 .idea/*
 *.swp
+.DS_Store
