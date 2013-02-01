@@ -8,8 +8,8 @@ define(['Boiler', 'text!./view.html', './viewmodel', './chartViewPanel/component
 			if (!panel) {
 				vm = new ViewModel(context);
 				panel = new Boiler.ViewTemplate(parent, viewText);
-				new TreeViewComponent(panel.getJQueryElement());
-				new ChartViewComponent(panel.getJQueryElement());
+				new TreeViewComponent(panel.getJQueryElement().find('#tree'));
+				new ChartViewComponent(panel.getJQueryElement().find('#chart'));
 				ko.applyBindings(vm, panel.getDomElement());
 			}
 			panel.show();
