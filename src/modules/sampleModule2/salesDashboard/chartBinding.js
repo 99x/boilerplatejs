@@ -1,7 +1,7 @@
 /*
  * A Custom Knockout Binding for Flot to update the plot when necessary
  */
-define([], function() {
+define(function() {
 
 	var drawChart = function(element, flotData) {
 		if(flotData.dataItems.length>0) {

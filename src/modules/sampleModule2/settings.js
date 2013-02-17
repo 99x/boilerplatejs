@@ -1,5 +1,8 @@
-
-define(['path!../../../server/'], function(serverPath) {
+define(function(require) {
+    
+    //load dependencies
+    var serverPath = require('path!../../../server/');
+    
     return {
         urls: {
             empimages: serverPath + "{empid}.png",

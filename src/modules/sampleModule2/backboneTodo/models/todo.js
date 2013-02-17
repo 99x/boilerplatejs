@@ -1,4 +1,4 @@
-define([], function() {
+define(function() {
 
 	var TodoModel = Backbone.Model.extend({
 		// Default attributes for the todo

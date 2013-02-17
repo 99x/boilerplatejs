@@ -1,5 +1,11 @@
-define(['Boiler', './common', './collections/todos', 'text!./templates/component.html', './views/app', 'path!./style/base.css'], 
-function(Boiler, Common, Todos, template, AppView, cssPath) {
+define(function(require) {
+    
+    var Boiler = require('Boiler'), 
+        Common = require('./common'), 
+        Todos = require('./collections/todos'), 
+        template = require('text!./templates/component.html'), 
+        AppView = require('./views/app'), 
+        cssPath = require('path!./style/base.css');
 
 	var Component = function(moduleContext) {
 

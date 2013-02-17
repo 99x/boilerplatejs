@@ -1,4 +1,4 @@
-define([], function() {
+define(function(require) {
 	return {
 		// Which filter are we using?
 		TodoFilter: '', // empty, active, completed

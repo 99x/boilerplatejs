@@ -1,4 +1,7 @@
-define(["Boiler"], function(Boiler) {
+define(function(require) {
+
+    // Load the dependencies
+    var Boiler = require('Boiler');
 
 	var ViewModel = function(moduleContext) {
 

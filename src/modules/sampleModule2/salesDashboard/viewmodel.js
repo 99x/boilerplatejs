@@ -1,4 +1,8 @@
-define(['./chartBinding', 'path!./treeViewPanel/jstreestyle/'], function(chartBinding, treeCssPath) {
+define(function(require) {
+
+    // Load the dependencies
+    var chartBinding = require('./chartBinding'),
+        treeCssPath = require('path!./treeViewPanel/jstreestyle/');
 
 	var ViewModel = function(moduleContext) {
 		var self = this;
