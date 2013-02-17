@@ -1,3 +1,4 @@
+
 define(['Boiler', 'text!./view.html', './viewmodel', './chartViewPanel/component', './treeViewPanel/component'], function(Boiler, viewText, ViewModel, ChartViewComponent, TreeViewComponent) {
 
 	var Component = function(context) {

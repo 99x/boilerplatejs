@@ -1,4 +1,10 @@
-define(['Boiler', './viewmodel', 'text!./view.html', 'path!./style.css'], function(Boiler, ViewModel, template, stylePath) {
+define(function(require) {
+
+    // Load the dependencies
+    var Boiler = require('Boiler'), 
+        template = require('text!./view.html'),
+        ViewModel = require('./viewmodel'), 
+        stylePath = require('path!./style.css');
 
 	var Component = function(moduleContext) {
 

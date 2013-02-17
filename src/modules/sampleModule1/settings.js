@@ -1,4 +1,8 @@
-define(['path!../../../server/'], function(serverPath) {
+define(function(require) {
+    
+    //load dependencies
+    var serverPath = require('path!../../../server/');
+    
     return {
         urls: {
             departments: serverPath + "departments.txt"

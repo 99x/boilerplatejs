@@ -1,4 +1,4 @@
-define([], function () {
+define(function (require) {
 
     var ViewModel = function (moduleContext) {
 	    this.numberOfClicks = ko.observable(0);

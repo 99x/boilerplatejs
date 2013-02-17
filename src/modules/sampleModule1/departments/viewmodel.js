@@ -1,4 +1,4 @@
-define([], function() {
+define(function(require) {
 
 	var DEFAULT_DEPT_NAME = 'Boiler Department';
 

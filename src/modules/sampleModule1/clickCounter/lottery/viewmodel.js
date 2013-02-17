@@ -1,4 +1,4 @@
-define([], function () {
+define(function (require) {
 
     var ViewModel = function (moduleContext) {
     	var self = this;

@@ -1,4 +1,12 @@
-define(['Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/resources', 'path!./style.css'], function(Boiler, template, ViewModel, nls, cssPath) {
+define(function(require) {
+
+    // Load the dependencies
+    var Boiler = require('Boiler'), 
+        template = require('text!./view.html'),
+        ViewModel = require('./viewmodel'), 
+        stylePath = require('path!./style.css'), 
+        nls = require('i18n!./nls/resources');
+
 
 	var Component = function(moduleContext) {
 
@@ -16,7 +24,7 @@ define(['Boiler', 'text!./view.html', './viewmodel', 'i18n!./nls/resources', 'pa
 		    // if panel is not created, lets create it and initiate bindings
 		    if (!panel) {
 		        panel = new Boiler.ViewTemplate(parent, template, nls);
-		        Boiler.ViewTemplate.setStyleLink(cssPath);
+		        Boiler.ViewTemplate.setStyleLink(stylePath);
 		        vm = new ViewModel(moduleContext);
 		        ko.applyBindings(vm, panel.getDomElement());
 		    }

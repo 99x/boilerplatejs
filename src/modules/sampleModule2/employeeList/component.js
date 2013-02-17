@@ -1,5 +1,10 @@
-define(['Boiler', 'text!./view.html', './viewmodel'], function(Boiler, template, ViewModel) {
+define(function(require) {
 
+    // Load the dependencies
+    var Boiler = require('Boiler'), 
+        template = require('text!./view.html'),
+        ViewModel = require('./viewmodel');
+        
 	var Component = function(moduleContext) {
 
 		var vm, panel = null;
