@@ -36,20 +36,18 @@ define(function(require) {
      * whereas object instances ('settings' and 'modules') are represented with camelCase variable names.
      */
     var domReady = require("../libs/require/domReady"), // requirejs domReady plugin to know when DOM is ready
-    Boiler = require("Boiler"), // BoilerplateJS namespace used to access core classes
-    settings = require("./settings"), //global settings file of the product suite
-    modules = require("./modules/modules");
-    //file where all of your product modules will be defined
+        Boiler = require("Boiler"), // BoilerplateJS namespace used to access core classes
+        settings = require("./settings"), //global settings file of the product suite
+        modules = require("./modules/modules"); //file where all of your product modules will be listed
 
     //Here we use the requirejs domReady plugin to run our code, once the DOM is ready to be used.
     domReady(function() {
 
         /* In JavaScript, functions can be used similarly to classes in OO programming. Below,
-         * we create an instance of 'Boiler.Context' by calling the 'new' operator.
+         * we create an instance of 'Boiler.Context' by calling the 'new' operator. Then add 
+         * global settings. These will be propagated to child contexts
          */
         var globalContext = new Boiler.Context();
-
-        // now lets add global settings. These will be propagated to child contexts
         globalContext.addSettings(settings);
 
         /* In BoilerplateJS, your product module hierachy is associated to a 'Context' heirachy. Below
@@ -57,8 +55,7 @@ define(function(require) {
          * to create a 'Context' tree (product modules as a tree).
          */
         for (var i = 0; i < modules.length; i++) {
-            var ChildContextClass = modules[i];
-            new ChildContextClass(globalContext);
+            modules[i].initialize(globalContext);
         }
 
     });

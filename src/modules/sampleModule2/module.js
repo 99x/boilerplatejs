@@ -1,20 +1,28 @@
-define(['Boiler', './settings', './employeeList/component', './employeeDetails/component', './salesDashboard/component', './backboneTodo/component'], function(Boiler, settings, EmployeeListRouteHandler, EmployeeDetailRouteHandler, SalesDashboardRouteHandler, TodoRouteHandler) {
+define(function(require) {
 
-	var Module = function(globalContext) {
+    //dependencies
+    var Boiler = require('Boiler'), 
+        settings = require('./settings'), 
+        EmployeeListRouteHandler = require('./employeeList/component'), 
+        EmployeeDetailRouteHandler = require('./employeeDetails/component'), 
+        SalesDashboardRouteHandler = require('./salesDashboard/component'),
+        TodoRouteHandler = require('./backboneTodo/component');
 
-		var context = new Boiler.Context(globalContext);
-		context.addSettings(settings);
+    return {
+        initialize : function(globalContext) {
 
-		var controller = new Boiler.UrlController($(".appcontent"));
-		controller.addRoutes({
-			'employee/all' : new EmployeeListRouteHandler(context),
-			'employee/{id}' : new EmployeeDetailRouteHandler(context),
-			'sales' : new SalesDashboardRouteHandler(context),
-			'todo/:action:' : new TodoRouteHandler(context)
-		});
-		controller.start();
-	};
+            var context = new Boiler.Context(globalContext);
+            context.addSettings(settings);
 
-	return Module;
+            var controller = new Boiler.UrlController($(".appcontent"));
+            controller.addRoutes({
+                'employee/all' : new EmployeeListRouteHandler(context),
+                'employee/{id}' : new EmployeeDetailRouteHandler(context),
+                'sales' : new SalesDashboardRouteHandler(context),
+                'todo/:action:' : new TodoRouteHandler(context)
+            });
+            controller.start();
+        }
+    }
 
-}); 
+});

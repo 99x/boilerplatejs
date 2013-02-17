@@ -1,19 +1,23 @@
-define(['Boiler', './settings', './departments/component', './clickCounter/component'], function(Boiler, settings, DepartmentComponent, ClickCounterComponent) {
+define(function(require) {
 
-	var Module = function(globalContext) {
+    //dependencies
+    var Boiler = require('Boiler'), 
+    settings = require('./settings'), 
+    DepartmentComponent = require('./departments/component'), 
+    ClickCounterComponent = require('./clickCounter/component');
 
-		var context = new Boiler.Context(globalContext);
-		context.addSettings(settings);
+    return {
+        initialize : function(globalContext) {
+            var context = new Boiler.Context(globalContext);
+            context.addSettings(settings);
 
-		var controller = new Boiler.UrlController($(".appcontent"));
-		controller.addRoutes( {
-			'departments/:name:' : new DepartmentComponent(context),
-			'clickcounter' : new ClickCounterComponent(context)
-		});
-		controller.start();
-
-	};
-
-	return Module;
+            var controller = new Boiler.UrlController($(".appcontent"));
+            controller.addRoutes({
+                'departments/:name:' : new DepartmentComponent(context),
+                'clickcounter' : new ClickCounterComponent(context)
+            });
+            controller.start();
+        }
+    }
 
 });
