@@ -1,4 +1,7 @@
-﻿define(['./helpers/_helpers_'], function(Helpers) {
+﻿define(function (require) {
+	
+	var Helpers = require('./helpers/_helpers_'); //helpers namespace
+	
 	/**
 	  ui-panel class
 

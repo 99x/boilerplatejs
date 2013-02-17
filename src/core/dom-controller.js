@@ -1,4 +1,4 @@
-define([], function () {
+define(function (require) {
 
 	/**
 	DOM controller is used when it is required to add certain elements to the DOM when there is a url change

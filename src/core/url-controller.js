@@ -1,4 +1,7 @@
-﻿define(['./helpers/_helpers_'], function(Helpers) {
+﻿define(function (require) {
+	
+	var Helpers = require('./helpers/_helpers_'); //helpers namespace
+	
 	/**
 	  URL controller is used to trigger events when there is a url change
 

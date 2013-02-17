@@ -1,8 +1,9 @@
 /*
- * This AMD module define a object containing settings as its properties. This settings file is 
- * getting loaded to GlobalContext, so that the settings defined here are available to all 
- * sub contexts.
- * Settings can be simple literal variables or objects having complex definitions.
+ * This AMD module define a object containing settings as its properties. Settings can be 
+ * simple literal variables or objects with complex composition.This settings file is 
+ * getting loaded to GlobalContext, so that the settings defined here are copied to all 
+ * sub contexts. Note that sub contexts receive own 'copies' of global settings.
+ * 
  */
 define({
 	appName: "BoilerplateJS"

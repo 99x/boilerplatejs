@@ -10,7 +10,6 @@ require.config({
 		// requirejs plugins in use
 		text : '../libs/require/text',
 		i18n : '../libs/require/i18n',
-		domReady : '../libs/require/domReady',
 		path :  '../libs/require/path',
 		// namespace that aggregate core classes that are in frequent use
 		Boiler : './core/_boiler_'
@@ -18,28 +17,43 @@ require.config({
 });
 
 
-
 /*
- * This is the main entry to the application.
- * This script is called from the main HTML file.
+ * This is the main entry to the application, this script is called from the main HTML file.
  * 
  * We use requirejs for writing modular JavaScript. The 'require' function below
  * behaves just like 'import' in PHP or 'using' in .NET. You may define the
- * relative path to the script you wish to import in the first array parameter,
- * then requirejs will invoke the callback function (given in second param) with
- * the return values of those scripts.
+ * relative paths or alias defined above you wish to import.
  * 
- * Here we use the requirejs domReady plugin to run our code, once the DOM is ready to be used.
+ * You may note here, third party libraries such as jQuery, Underscore are not imported with
+ * requirejs. This is by design as not all thirdparty libs are AMD complieddnt. 
+ * 
  */
-require([ "./application", "domReady" ], function( Application, domReady) {
+define(function(require) {
+	
+	/* 
+	 * Let's import all dependencies as variables of this script file.
+	 * 
+	 * Note: when we define the variables, we use PascalCase for namespaces ('Boiler' in the case) and classes, 
+	 * whereas object instances ('settings' and 'modules') are represented with camelCase variable names.
+	 */
+	var domReady = require("../libs/require/domReady"), // requirejs domReady plugin to know when DOM is ready
+		Boiler = require("Boiler"), // BoilerplateJS namespace used to access core classes
+		settings = require("./settings"), //global settings file of the product suite
+		modules = require("./modules/modules"); //file where all of your product modules will be defined
+		
+	//Here we use the requirejs domReady plugin to run our code, once the DOM is ready to be used.
 	domReady(function() {
 		/*
-		 * The "./appcontext" script contains a requirejs AMD module. It returns
-		 * a function (not an object instance) that encapsulates the logic
-		 * for creating a GlobalContext. In JavaScript, functions can be used
-		 * as classes for OO programming. So below, we create an instance by
-		 * calling the 'new' operator on that function.
+		 * In JavaScript, functions can be used similarlyto classes for OO programming. So below, 
+		 * we create an instance of 'Boiler.Context' by calling the 'new' operator on that function.
+		 * 
+		 * In BoilerplateJS, your product module hierachy is associated to a 'Context' heirachy. Below
+		 * we create the global 'Context' and load child contexts (representing your product sub modules) 
+		 * onto global context to create a 'Context' tree.
 		 */
-		new Application();
+		var globalContext = new Boiler.Context();
+		globalContext.addSettings(settings); // now lets add global settings. These will be propagated to child contexts 
+		globalContext.loadChildContexts(modules); // load the sub module contexts
 	});
 });
+
