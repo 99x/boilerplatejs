@@ -365,8 +365,7 @@ a.external {
     padding: 1.5em;
 }
 
-#classdocs .item .params p,
-    #classdocs .item .returns p,{
+#classdocs .item .params p, #classdocs .item .returns p {
     display: inline;
 }
 

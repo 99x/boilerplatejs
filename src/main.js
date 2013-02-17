@@ -1,4 +1,4 @@
-﻿'use strict'; // avoid accidental global variable declarations
+"use strict"; // avoid accidental global variable declarations
 
 /*
  * Let's define short alias for commonly used AMD libraries and name-spaces. Using
@@ -44,8 +44,8 @@ define(function(require) {
 	//Here we use the requirejs domReady plugin to run our code, once the DOM is ready to be used.
 	domReady(function() {
 		/*
-		 * In JavaScript, functions can be used similarlyto classes for OO programming. So below, 
-		 * we create an instance of 'Boiler.Context' by calling the 'new' operator on that function.
+		 * In JavaScript, functions can be used similarly to classes in OO programming. Below, 
+		 * we create an instance of 'Boiler.Context' by calling the 'new' operator.
 		 * 
 		 * In BoilerplateJS, your product module hierachy is associated to a 'Context' heirachy. Below
 		 * we create the global 'Context' and load child contexts (representing your product sub modules) 
