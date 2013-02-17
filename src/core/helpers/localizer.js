@@ -1,4 +1,4 @@
-define([], function() {
+define(function(require) {
 
 	//if user has saved the language preference before, lets use that to configure requirejs i18n
 	var userLang;

@@ -1,4 +1,5 @@
-define([], function() {
+define(function(require) {
+	
 	/**
 	Mediator is used for handling the messaging inside the framework
  	

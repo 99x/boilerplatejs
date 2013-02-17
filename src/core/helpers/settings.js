@@ -1,4 +1,5 @@
-define([], function() {
+define(function(require) {
+	
 	/**
 	Settings class
  	
