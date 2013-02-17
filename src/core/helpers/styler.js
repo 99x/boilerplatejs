@@ -1,4 +1,4 @@
-define([], function() {
+define(function(require) {
 
     var createCssLink = function (href) {
         var link = document.createElement("link");
