@@ -1,5 +1,18 @@
-define(['Boiler', './mainMenu/component', './language/component', './theme/component', './landingPage/component', './footer/component'], function(Boiler, MainMenuComponent, LanguageComponent, ThemeComponent, LandingPageComponent, FooterComponent) {
+/*
+ * Definition of the base module. Base module contain some common components some one may use in 
+ * creating own application. These components are not a core part of BoilerplateJS, but available as samples.
+ */
+define(function(require) {
 
+    // Load the dependencies
+    var Boiler = require('Boiler'),
+        MainMenuComponent = require('./mainMenu/component'),
+        LanguageComponent = require('./language/component'),
+        ThemeComponent = require('./theme/component'),
+        FooterComponent = require('./footer/component'),
+        LandingPageComponent = require('./landingPage/component');
+    
+    // Definition of the base Module as a class, this is the return value of this AMD script
     var Module = function(globalContext) {
         var context = new Boiler.Context(globalContext);
 

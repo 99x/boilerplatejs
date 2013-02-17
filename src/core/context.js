@@ -117,19 +117,6 @@ define(function (require) {
 		return this.parentContext;
 	};
 
-	/**
-	 * Helper method to construct child contexts under this parent context.
-	 * Children will receive a reference to this object through a constructor argument.
-
-	 @method loadChildContexts
-	 @param {ObjectArray} children
-	 **/
-	Context.prototype.loadChildContexts = function (children) {
-		for (var i = 0; i < children.length; i++) {
-			var ChildContextClass = children[i];
-			new ChildContextClass(this); //initializes the module
-		}
-	};
 
 	//now we have built our Context class with methods. Lets return it so that callers may instantiate.
 	return Context;
