@@ -9,9 +9,9 @@ define(function(require) {
         TodoRouteHandler = require('./backboneTodo/component');
 
     return {
-        initialize : function(globalContext) {
-
-            var context = new Boiler.Context(globalContext);
+        initialize : function(parentContext) {
+            //create a new context which is associated with the parent Context
+            var context = new Boiler.Context(parentContext);
             context.addSettings(settings);
 
             var controller = new Boiler.UrlController($(".appcontent"));

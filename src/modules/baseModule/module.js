@@ -6,18 +6,18 @@ define(function(require) {
 
     // Load the dependencies
     var Boiler = require('Boiler'), 
-    MainMenuComponent = require('./mainMenu/component'), 
-    LanguageComponent = require('./language/component'), 
-    ThemeComponent = require('./theme/component'), 
-    FooterComponent = require('./footer/component'), 
-    LandingPageComponent = require('./landingPage/component');
+        MainMenuComponent = require('./mainMenu/component'), 
+        LanguageComponent = require('./language/component'), 
+        ThemeComponent = require('./theme/component'), 
+        FooterComponent = require('./footer/component'), 
+        LandingPageComponent = require('./landingPage/component');
 
     // Definition of the base Module as an object, this is the return value of this AMD script
     return {
         
-        initialize : function(globalContext) {
+        initialize : function(parentContext) {
             //create module context by assiciating with the parent context
-            var context = new Boiler.Context(globalContext);
+            var context = new Boiler.Context(parentContext);
 
             //scoped DomController that will be effective only on $('#page-content')
             var controller = new Boiler.DomController($('#page-content'));

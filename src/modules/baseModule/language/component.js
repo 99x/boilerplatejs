@@ -1,4 +1,8 @@
-define(['require', 'Boiler', 'text!./view.html'], function(require, Boiler, template) {
+define(function(require) {
+
+    // Load the dependencies
+    var Boiler = require('Boiler'), 
+        template = require('text!./view.html');
 
 	var Component = function(moduleContext) {
 		var panel = null;

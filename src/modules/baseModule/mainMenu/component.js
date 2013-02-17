@@ -1,4 +1,11 @@
-define(['require', 'Boiler', 'text!./view.html', 'i18n!./nls/resources', 'path!./style.css'], function(require, Boiler, template, nls, cssPath) {
+define(function(require) {
+
+    // Load the dependencies
+    var Boiler = require('Boiler'), 
+        template = require('text!./view.html'),
+        nls = require('i18n!./nls/resources'),
+        cssPath = require('path!./style.css');
+
 
 	var Component = function(moduleContext) {
 		var panel = null;

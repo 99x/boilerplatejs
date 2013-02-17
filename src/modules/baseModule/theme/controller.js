@@ -1,4 +1,10 @@
-define(['Boiler', 'path!./red/common.css', 'path!./gray/common.css'], function(Boiler, redThemePath, grayThemePath) {
+define(function(require) {
+
+    // Load the dependencies
+    var Boiler = require('Boiler'), 
+        redThemePath = require('path!./red/common.css'),
+        grayThemePath = require('path!./gray/common.css');
+
 
 	var DICTIONARY_KEY = "themeStylesheet";
 
