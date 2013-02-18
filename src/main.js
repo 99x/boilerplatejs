@@ -36,7 +36,7 @@ define(function(require) {
      * whereas object instances ('settings' and 'modules') are represented with camelCase variable names.
      */
     var domReady = require("../libs/require/domReady"), // requirejs domReady plugin to know when DOM is ready
-        Boiler = require("Boiler"), // BoilerplateJS namespace used to access core classes
+        Boiler = require("Boiler"), // BoilerplateJS namespace used to access core classes, see above for the definition
         settings = require("./settings"), //global settings file of the product suite
         modules = require("./modules/modules"); //file where all of your product modules will be listed
 
