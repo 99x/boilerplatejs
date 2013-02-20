@@ -37,7 +37,7 @@
 
 				if(subs){
 					var len = subs.length,
-						params = (args.length > 1) ? Array.prototype.splice.call(args, 1) : [],
+						params = (args.length > 1) ? Array.prototype.splice.call(args, 1, args.length-1) : [],
 						x = 0;
 
 					var publishFn = function(){
