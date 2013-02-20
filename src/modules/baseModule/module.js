@@ -17,7 +17,7 @@ define(['Boiler', './mainMenu/component', './language/component', './theme/compo
         //the landing page should respond to the root URL, so let's use an URLController too
         var controller = new Boiler.UrlController($(".appcontent"));
         controller.addRoutes({
-            "/" : new LandingPageComponent()
+            "/" : new LandingPageComponent(context)
         });
         controller.start();
     };
