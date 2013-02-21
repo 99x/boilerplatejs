@@ -91,7 +91,7 @@ define([
 		// Generate the attributes for a new Todo item.
 		newAttributes: function() {
 			return {
-				title: this.input.val().trim(),
+				title: $.trim(this.input.val()),
 				order: Todos.nextOrder(),
 				completed: false
 			};
@@ -100,7 +100,7 @@ define([
 		// If you hit return in the main input field, create new **Todo** model,
 		// persisting it to *localStorage*.
 		createOnEnter: function( e ) {
-			if ( e.which !== Common.ENTER_KEY || !this.input.val().trim() ) {
+			if ( e.which !== Common.ENTER_KEY || !$.trim(this.input.val()) ) {
 				return;
 			}
 
