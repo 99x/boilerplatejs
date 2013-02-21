@@ -19,6 +19,7 @@ define(function(require) {
             //create module context by assiciating with the parent context
             var context = new Boiler.Context(parentContext);
 
+<<<<<<< HEAD
             //scoped DomController that will be effective only on $('#page-content')
             var controller = new Boiler.DomController($('#page-content'));
             //add routes with DOM node selector queries and relevant components
@@ -29,11 +30,21 @@ define(function(require) {
                 ".footer" : new FooterComponent(context)
             });
             controller.start();
+=======
+        //the landing page should respond to the root URL, so let's use an URLController too
+        var controller = new Boiler.UrlController($(".appcontent"));
+        controller.addRoutes({
+            "/" : new LandingPageComponent(context)
+        });
+        controller.start();
+    };
+>>>>>>> d85c17fc97063536e3ac2b74b97421d301fbe004
+
 
             //the landing page should respond to the root URL, so let's use an URLController too
             var controller = new Boiler.UrlController($(".appcontent"));
             controller.addRoutes({
-                "/" : new LandingPageComponent(context)
+                "/" : new LandingPageComponent()
             });
             controller.start();
         }
