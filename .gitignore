@@ -7,3 +7,4 @@ tools/documentation/docs
 *.swp
 .DS_Store
 .git/*
+.sonar/
