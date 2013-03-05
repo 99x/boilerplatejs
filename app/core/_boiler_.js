@@ -11,7 +11,7 @@
     * We use 'require' function from requirejs inside the object to load appropriate core classes
     * from the respective AMD modules.
 	
-	@namespace Boiler.Helpers
+	@namespace Boiler
 	@module BoilerCoreClasses
 	@main BoilerCoreClasses
 	**/

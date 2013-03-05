@@ -8,7 +8,7 @@ define(function(require) {
 
 	var DICTIONARY_KEY = "themeStylesheet";
 
-	/**
+	/*
 	 * Lets define the themes we have in the system. We use CSS text to import appropriate
 	 * CSS file when the theme is requested.
 	 */
@@ -18,7 +18,7 @@ define(function(require) {
 	};
 
 	/**
-	 * @calss Controller
+	 * @class Controller
 	 * @constructor
 	 * Here we create a simple controller class to act as the 'V' of our MVC design. We do not use
 	 * any thirdparty MVC library here, but use jQuery event handlers to respond to the users. 
