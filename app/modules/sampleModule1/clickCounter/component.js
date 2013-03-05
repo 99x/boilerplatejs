@@ -2,7 +2,7 @@ define(['Boiler', 'text!./view.html', './clickme/component', './lottery/componen
 
 	/**
 	 * Parent Component class that will hold the clickme and lottery components
-	 * @class 
+	 * @class ClickCounterComponent
 	 * @param moduleContext {Boiler.Context} 
 	 */
 	var ClickCounterComponent = function(moduleContext) {

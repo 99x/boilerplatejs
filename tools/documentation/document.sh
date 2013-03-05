@@ -18,7 +18,7 @@ else
 		CURRENT=$PWD
 		echo "Current :${CURRENT}"
 		cd ../..
-		yuidoc --themedir $CURRENT/template -o $CURRENT/docs src
+		yuidoc --themedir $CURRENT/template -o $CURRENT/docs app
 		echo "Created the documentation on the current directory!"
 	fi
 fi
