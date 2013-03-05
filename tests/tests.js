@@ -1,11 +1,11 @@
 require.config({
-	baseUrl : "../src/", //we will set the application's src folder as the base url
+	baseUrl : "../app/", //we will set the application's app folder as the base url
 });
 
 require.config({
 	paths : {
-		text : './libs/require/text',
-		i18n : './libs/require/i18n',
+		text : '../libs/require/text',
+		i18n : '../libs/require/i18n',
 		domReady : '../libs/require/domReady',
 		path :  '../libs/require/path',
 		_boiler_ : './core/_boiler_'
