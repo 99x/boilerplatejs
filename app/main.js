@@ -1,22 +1,6 @@
 "use strict";// avoid accidental global variable declarations
 
 /*
- * Let's define short alias for commonly used AMD libraries and name-spaces. Using
- * these alias, we do not need to specify lengthy paths, when referring a child
- * files. We will 'import' these scripts, using the alias, later in our application.
- */
-require.config({
-    paths : {
-        // requirejs plugins in use
-        text : '../libs/require/text',
-        i18n : '../libs/require/i18n',
-        path : '../libs/require/path',
-        // namespace that aggregate core classes that are in frequent use
-        Boiler : './core/_boiler_'
-    }
-});
-
-/*
  * This is the main entry to the application, this script is called from the main HTML file.
  *
  * We use requirejs for writing modular JavaScript. The 'require' function below
